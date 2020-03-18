@@ -42,7 +42,7 @@
     <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" show="false" value="enc:system.encryption.key.v1:2nE6hBUb8JPvP1rp/Qc7B0afS5CtcMc29Ao50HzL"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" show="false" value="enc:system.encryption.key.v1:u3OyvkOw8Djr7AdedODRUzKJPXQNuJuPlAagJGXT"/>
     <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
@@ -77,7 +77,7 @@
     <elementParameter field="TEXT" name="PROPERTIES" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:TV9Y+qBA+pTjYzTiCHdyn9lR2Vei5xPqzku9XBzL"/>
+    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:PbixANnogDc+mqY/dBS+usRzCUUMG6Na9hU3QFI7"/>
     <elementParameter field="FILE" name="DBFILE" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE_STATS" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE_LOGS" show="false" value="&quot;&quot;"/>
@@ -118,6 +118,10 @@
     <elementParameter field="TABLE" name="VALUES" show="false">
       <elementValue elementRef="SCHEMA_COLUMN" value="Applied_Load"/>
       <elementValue elementRef="ARRAY" value=" &quot;124&quot; "/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Source_Column"/>
+      <elementValue elementRef="ARRAY" value=" &quot;X&quot; "/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Date"/>
+      <elementValue elementRef="ARRAY" value="TalendDate.parseDate(&quot;yyyy-MM-dd&quot; ,&quot;2019-10-19&quot; )"/>
     </elementParameter>
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
@@ -125,18 +129,31 @@
       <column comment="" defaultValue="" key="false" length="-1" name="Applied_Load" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true">
         <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;...&quot;,&quot;PARAMETERS&quot;:[{&quot;PARAMETER_NAME&quot;:&quot;customize parameter&quot;,&quot;PARAMETER_VALUE&quot;:&quot; \&quot;124\&quot; &quot;}],&quot;PARAMETER_CLASS_NAME&quot;:&quot;&quot;}"/>
       </column>
+      <column comment="" defaultValue="" key="false" length="-1" name="Source_Column" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true">
+        <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;...&quot;,&quot;PARAMETERS&quot;:[{&quot;PARAMETER_NAME&quot;:&quot;customize parameter&quot;,&quot;PARAMETER_VALUE&quot;:&quot; \&quot;X\&quot; &quot;}],&quot;PARAMETER_CLASS_NAME&quot;:&quot;&quot;}"/>
+      </column>
+      <column comment="" defaultValue="" key="false" length="-1" name="Date" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="" type="id_Date" usefulColumn="true">
+        <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;parseDate&quot;,&quot;PARAMETERS&quot;:[{&quot;PARAMETER_NAME&quot;:&quot;pattern&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;yyyy-MM-dd\&quot; &quot;},{&quot;PARAMETER_NAME&quot;:&quot;stringDate&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;2019-10-19\&quot; &quot;}],&quot;PARAMETER_CLASS_NAME&quot;:&quot;TalendDate&quot;}"/>
+      </column>
     </metadata>
   </node>
   <node componentName="tJavaRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="352" posY="128">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tJavaRow_1"/>
-    <elementParameter field="MEMO_JAVA" name="CODE" value="// code sample:&#10;//&#10;// multiply by 2 the row identifier&#10;// output_row.id = input_row.id * 2;&#10;//&#10;// lowercase the name&#10;// output_row.name = input_row.name.toLowerCase();&#10;&#10;output_row.Applied_Load = input_row.Applied_Load;&#10;&#10;try{&#10;&#9;//Numeric&#10;&#9;Float.parseFloat(input_row.Applied_Load);&#10;    output_row.isNumeric=&quot;Y&quot;;&#10;&#9;&#10;&#9;/*/isPositive&#10;&#9;if(input_row.Applied_Load &gt;= 0){&#10;&#9;&#9;output_row.isPositive=&quot;Y&quot;;&#10;&#9;} else {&#10;&#9;&#9;output_row.isPositive=&quot;N&quot;;&#10;&#9;}*/&#10;&#9;&#10;&#9;/*/2 Decimal places&#10;&#9;String regex = &quot;^\\d+\\.\\d{2,2}?$&quot;;&#10;&#9;java.util.regex.Matcher m = java.util.regex.Pattern.compile(regex).matcher(String.valueOf(input_row.Applied_Load));&#10;&#10;&#9;if (m.find()){&#10;&#9;&#9;output_row.isTwoDecimal = &quot;Y&quot;;&#10;&#9;&#10;&#9;} else {&#10;&#9;output_row.isTwoDecimal = &quot;N&quot;;&#10;&#9;}*/&#10;&#9;&#10;&#10;}catch(NumberFormatException e){&#10;    output_row.isNumeric=&quot;N&quot;;&#10;    //output_row.isPositive=&quot;N&quot;;&#10;&#9;//output_row.isTwoDecimal = &quot;N&quot;;&#10;&#9;&#10;}"/>
+    <elementParameter field="MEMO_JAVA" name="CODE" value="// code sample:&#10;//&#10;// multiply by 2 the row identifier&#10;// output_row.id = input_row.id * 2;&#10;//&#10;// lowercase the name&#10;// output_row.name = input_row.name.toLowerCase();&#10;&#10;output_row.Applied_Load = input_row.Applied_Load;&#10;&#10;try{&#10;&#9;//Numeric&#10;&#9;Float.parseFloat(input_row.Applied_Load);&#10;    output_row.isNumeric=&quot;Y&quot;;&#10;&#9;&#10;&#9;/*/isPositive&#10;&#9;if(input_row.Applied_Load &gt;= 0){&#10;&#9;&#9;output_row.isPositive=&quot;Y&quot;;&#10;&#9;} else {&#10;&#9;&#9;output_row.isPositive=&quot;N&quot;;&#10;&#9;}*/&#10;&#9;&#10;&#9;/*/2 Decimal places&#10;&#9;String regex = &quot;^\\d+\\.\\d{2,2}?$&quot;;&#10;&#9;java.util.regex.Matcher m = java.util.regex.Pattern.compile(regex).matcher(String.valueOf(input_row.Applied_Load));&#10;&#10;&#9;if (m.find()){&#10;&#9;&#9;output_row.isTwoDecimal = &quot;Y&quot;;&#10;&#9;&#10;&#9;} else {&#10;&#9;output_row.isTwoDecimal = &quot;N&quot;;&#10;&#9;}*/&#10;&#9;&#10;&#9;if(input_row.Source_Column.equals(&quot;X&quot;) &amp;&amp; input_row.Date.equals(null)){&#10;&#9;&#9;output_row.isDateNull=&quot;Y&quot;;&#10;&#9;} else {&#10;&#9;&#9;output_row.isDateNull=&quot;N&quot;;&#10;&#9;}&#10;&#9;&#10;&#10;}catch(NumberFormatException e){&#10;    output_row.isNumeric=&quot;N&quot;;&#10;    //output_row.isPositive=&quot;N&quot;;&#10;&#9;//output_row.isTwoDecimal = &quot;N&quot;;&#10;&#9;&#10;&#9;if(input_row.Source_Column.equals(&quot;X&quot;) &amp;&amp; input_row.Date.equals(null)){&#10;&#9;&#9;output_row.isDateNull=&quot;Y&quot;;&#10;&#9;} else {&#10;&#9;&#9;output_row.isDateNull=&quot;N&quot;;&#10;&#9;}&#10;&#9;&#10;}"/>
     <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tJavaRow_1">
       <column comment="" key="false" length="-1" name="Applied_Load" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true">
         <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;convertImpliedDecimalFormat&quot;,&quot;PARAMETERS&quot;:[{&quot;PARAMETER_NAME&quot;:&quot;format&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;9V99\&quot; &quot;},{&quot;PARAMETER_NAME&quot;:&quot;toConvert&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;123\&quot; &quot;}],&quot;PARAMETER_CLASS_NAME&quot;:&quot;Numeric&quot;}"/>
       </column>
+      <column comment="" key="false" length="-1" name="Source_Column" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true">
+        <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;...&quot;,&quot;PARAMETERS&quot;:[{&quot;PARAMETER_NAME&quot;:&quot;customize parameter&quot;,&quot;PARAMETER_VALUE&quot;:&quot; \&quot;X\&quot; &quot;}],&quot;PARAMETER_CLASS_NAME&quot;:&quot;&quot;}"/>
+      </column>
+      <column comment="" key="false" length="-1" name="Date" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="" type="id_Date" usefulColumn="true">
+        <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;parseDate&quot;,&quot;PARAMETERS&quot;:[{&quot;PARAMETER_NAME&quot;:&quot;pattern&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;yyyy-MM-dd\&quot; &quot;},{&quot;PARAMETER_NAME&quot;:&quot;stringDate&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;2019-10-19\&quot; &quot;}],&quot;PARAMETER_CLASS_NAME&quot;:&quot;TalendDate&quot;}"/>
+      </column>
       <column comment="" key="false" length="-1" name="isNumeric" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="isNullDate" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="512" posY="128">
@@ -157,28 +174,71 @@
       <column comment="" key="false" length="-1" name="AppliedLoad" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true">
         <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;convertImpliedDecimalFormat&quot;,&quot;PARAMETERS&quot;:[{&quot;PARAMETER_NAME&quot;:&quot;format&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;9V99\&quot; &quot;},{&quot;PARAMETER_NAME&quot;:&quot;toConvert&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;123\&quot; &quot;}],&quot;PARAMETER_CLASS_NAME&quot;:&quot;Numeric&quot;}"/>
       </column>
-      <column comment="" key="false" length="-1" name="isPositive" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="Source_Column" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true">
+        <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;...&quot;,&quot;PARAMETERS&quot;:[{&quot;PARAMETER_NAME&quot;:&quot;customize parameter&quot;,&quot;PARAMETER_VALUE&quot;:&quot; \&quot;X\&quot; &quot;}],&quot;PARAMETER_CLASS_NAME&quot;:&quot;&quot;}"/>
+      </column>
+      <column comment="" key="false" length="-1" name="Date" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="" type="id_Date" usefulColumn="true">
+        <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;parseDate&quot;,&quot;PARAMETERS&quot;:[{&quot;PARAMETER_NAME&quot;:&quot;pattern&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;yyyy-MM-dd\&quot; &quot;},{&quot;PARAMETER_NAME&quot;:&quot;stringDate&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;2019-10-19\&quot; &quot;}],&quot;PARAMETER_CLASS_NAME&quot;:&quot;TalendDate&quot;}"/>
+      </column>
+      <column comment="" key="false" length="-1" name="isNumeric" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="isNullDate" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <metadata connector="FLOW" name="NotPositve">
       <column comment="" key="false" length="-1" name="AppliedLoad" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true">
         <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;convertImpliedDecimalFormat&quot;,&quot;PARAMETERS&quot;:[{&quot;PARAMETER_NAME&quot;:&quot;format&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;9V99\&quot; &quot;},{&quot;PARAMETER_NAME&quot;:&quot;toConvert&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;123\&quot; &quot;}],&quot;PARAMETER_CLASS_NAME&quot;:&quot;Numeric&quot;}"/>
       </column>
-      <column comment="" key="false" length="-1" name="isPositive" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="Source_Column" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true">
+        <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;...&quot;,&quot;PARAMETERS&quot;:[{&quot;PARAMETER_NAME&quot;:&quot;customize parameter&quot;,&quot;PARAMETER_VALUE&quot;:&quot; \&quot;X\&quot; &quot;}],&quot;PARAMETER_CLASS_NAME&quot;:&quot;&quot;}"/>
+      </column>
+      <column comment="" key="false" length="-1" name="Date" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="" type="id_Date" usefulColumn="true">
+        <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;parseDate&quot;,&quot;PARAMETERS&quot;:[{&quot;PARAMETER_NAME&quot;:&quot;pattern&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;yyyy-MM-dd\&quot; &quot;},{&quot;PARAMETER_NAME&quot;:&quot;stringDate&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;2019-10-19\&quot; &quot;}],&quot;PARAMETER_CLASS_NAME&quot;:&quot;TalendDate&quot;}"/>
+      </column>
+      <column comment="" key="false" length="-1" name="isNumeric" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="isNullDate" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <metadata connector="FLOW" name="NullDate">
+      <column comment="" key="false" length="-1" name="Applied_Load" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true">
+        <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;convertImpliedDecimalFormat&quot;,&quot;PARAMETERS&quot;:[{&quot;PARAMETER_NAME&quot;:&quot;format&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;9V99\&quot; &quot;},{&quot;PARAMETER_NAME&quot;:&quot;toConvert&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;123\&quot; &quot;}],&quot;PARAMETER_CLASS_NAME&quot;:&quot;Numeric&quot;}"/>
+      </column>
+      <column comment="" key="false" length="-1" name="Source_Column" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true">
+        <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;...&quot;,&quot;PARAMETERS&quot;:[{&quot;PARAMETER_NAME&quot;:&quot;customize parameter&quot;,&quot;PARAMETER_VALUE&quot;:&quot; \&quot;X\&quot; &quot;}],&quot;PARAMETER_CLASS_NAME&quot;:&quot;&quot;}"/>
+      </column>
+      <column comment="" key="false" length="-1" name="Date" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="" type="id_Date" usefulColumn="true">
+        <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;parseDate&quot;,&quot;PARAMETERS&quot;:[{&quot;PARAMETER_NAME&quot;:&quot;pattern&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;yyyy-MM-dd\&quot; &quot;},{&quot;PARAMETER_NAME&quot;:&quot;stringDate&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;2019-10-19\&quot; &quot;}],&quot;PARAMETER_CLASS_NAME&quot;:&quot;TalendDate&quot;}"/>
+      </column>
+      <column comment="" key="false" length="-1" name="isNumeric" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="isNullDate" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
       <uiProperties shellMaximized="true"/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
-      <outputTables activateExpressionFilter="true" expressionFilter="row2.isNumeric.equals(&quot;Y&quot;)" name="Correct" sizeState="INTERMEDIATE">
+      <outputTables activateExpressionFilter="true" expressionFilter="row2.isNumeric.equals(&quot;Y&quot;) &amp;&amp; row2.isNullDate.equals(&quot;Y&quot;)" name="Correct" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row2.Applied_Load " name="AppliedLoad" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row2.isNumeric " name="isPositive" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.Source_Column " name="Source_Column" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.Date " name="Date" nullable="true" type="id_Date"/>
+        <mapperTableEntries expression="row2.isNumeric " name="isNumeric" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.isNullDate " name="isNullDate" nullable="true" type="id_String"/>
       </outputTables>
       <outputTables activateExpressionFilter="true" expressionFilter="row2.isNumeric.equals(&quot;N&quot;)" name="NotPositve" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row2.Applied_Load " name="AppliedLoad" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row2.isNumeric " name="isPositive" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.Source_Column " name="Source_Column" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.Date " name="Date" nullable="true" type="id_Date"/>
+        <mapperTableEntries expression="row2.isNumeric " name="isNumeric" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.isNullDate " name="isNullDate" nullable="true" type="id_String"/>
+      </outputTables>
+      <outputTables activateExpressionFilter="true" expressionFilter="row2.isNullDate.equals(&quot;Y&quot;)" name="NullDate" sizeState="INTERMEDIATE">
+        <mapperTableEntries expression="row2.Applied_Load " name="Applied_Load" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.Source_Column " name="Source_Column" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.Date " name="Date" nullable="true" type="id_Date"/>
+        <mapperTableEntries expression="row2.isNumeric " name="isNumeric" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.isNullDate " name="isNullDate" nullable="true" type="id_String"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row2" sizeState="INTERMEDIATE">
         <mapperTableEntries name="Applied_Load" nullable="true" type="id_String"/>
+        <mapperTableEntries name="Source_Column" nullable="true" type="id_String"/>
+        <mapperTableEntries name="Date" nullable="true" type="id_Date"/>
         <mapperTableEntries name="isNumeric" nullable="true" type="id_String"/>
+        <mapperTableEntries name="isNullDate" nullable="true" type="id_String"/>
       </inputTables>
     </nodeData>
   </node>
@@ -198,7 +258,13 @@
     <elementParameter field="TABLE" name="LENGTHS" show="false">
       <elementValue elementRef="SCHEMA_COLUMN" value="AppliedLoad"/>
       <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="isPositive"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Source_Column"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Date"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="isNumeric"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="isNullDate"/>
       <elementValue elementRef="LENGTH" value="10"/>
     </elementParameter>
     <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
@@ -208,7 +274,14 @@
       <column comment="" key="false" length="-1" name="AppliedLoad" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true">
         <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;convertImpliedDecimalFormat&quot;,&quot;PARAMETERS&quot;:[{&quot;PARAMETER_NAME&quot;:&quot;format&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;9V99\&quot; &quot;},{&quot;PARAMETER_NAME&quot;:&quot;toConvert&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;123\&quot; &quot;}],&quot;PARAMETER_CLASS_NAME&quot;:&quot;Numeric&quot;}"/>
       </column>
-      <column comment="" key="false" length="-1" name="isPositive" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="Source_Column" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true">
+        <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;...&quot;,&quot;PARAMETERS&quot;:[{&quot;PARAMETER_NAME&quot;:&quot;customize parameter&quot;,&quot;PARAMETER_VALUE&quot;:&quot; \&quot;X\&quot; &quot;}],&quot;PARAMETER_CLASS_NAME&quot;:&quot;&quot;}"/>
+      </column>
+      <column comment="" key="false" length="-1" name="Date" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="" type="id_Date" usefulColumn="true">
+        <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;parseDate&quot;,&quot;PARAMETERS&quot;:[{&quot;PARAMETER_NAME&quot;:&quot;pattern&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;yyyy-MM-dd\&quot; &quot;},{&quot;PARAMETER_NAME&quot;:&quot;stringDate&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;2019-10-19\&quot; &quot;}],&quot;PARAMETER_CLASS_NAME&quot;:&quot;TalendDate&quot;}"/>
+      </column>
+      <column comment="" key="false" length="-1" name="isNumeric" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="isNullDate" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="768" posY="224">
@@ -227,7 +300,13 @@
     <elementParameter field="TABLE" name="LENGTHS" show="false">
       <elementValue elementRef="SCHEMA_COLUMN" value="AppliedLoad"/>
       <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="isPositive"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Source_Column"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Date"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="isNumeric"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="isNullDate"/>
       <elementValue elementRef="LENGTH" value="10"/>
     </elementParameter>
     <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
@@ -237,7 +316,56 @@
       <column comment="" key="false" length="-1" name="AppliedLoad" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true">
         <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;convertImpliedDecimalFormat&quot;,&quot;PARAMETERS&quot;:[{&quot;PARAMETER_NAME&quot;:&quot;format&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;9V99\&quot; &quot;},{&quot;PARAMETER_NAME&quot;:&quot;toConvert&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;123\&quot; &quot;}],&quot;PARAMETER_CLASS_NAME&quot;:&quot;Numeric&quot;}"/>
       </column>
-      <column comment="" key="false" length="-1" name="isPositive" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="Source_Column" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true">
+        <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;...&quot;,&quot;PARAMETERS&quot;:[{&quot;PARAMETER_NAME&quot;:&quot;customize parameter&quot;,&quot;PARAMETER_VALUE&quot;:&quot; \&quot;X\&quot; &quot;}],&quot;PARAMETER_CLASS_NAME&quot;:&quot;&quot;}"/>
+      </column>
+      <column comment="" key="false" length="-1" name="Date" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="" type="id_Date" usefulColumn="true">
+        <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;parseDate&quot;,&quot;PARAMETERS&quot;:[{&quot;PARAMETER_NAME&quot;:&quot;pattern&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;yyyy-MM-dd\&quot; &quot;},{&quot;PARAMETER_NAME&quot;:&quot;stringDate&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;2019-10-19\&quot; &quot;}],&quot;PARAMETER_CLASS_NAME&quot;:&quot;TalendDate&quot;}"/>
+      </column>
+      <column comment="" key="false" length="-1" name="isNumeric" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="isNullDate" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="768" posY="352">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tLogRow_3"/>
+    <elementParameter field="RADIO" name="BASIC_MODE" value="true"/>
+    <elementParameter field="RADIO" name="TABLE_PRINT" value="false"/>
+    <elementParameter field="RADIO" name="VERTICAL" value="false"/>
+    <elementParameter field="RADIO" name="PRINT_UNIQUE" show="false" value="true"/>
+    <elementParameter field="RADIO" name="PRINT_LABEL" show="false" value="false"/>
+    <elementParameter field="RADIO" name="PRINT_UNIQUE_LABEL" show="false" value="false"/>
+    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;|&quot;"/>
+    <elementParameter field="CHECK" name="PRINT_HEADER" value="false"/>
+    <elementParameter field="CHECK" name="PRINT_UNIQUE_NAME" value="false"/>
+    <elementParameter field="CHECK" name="PRINT_COLNAMES" value="false"/>
+    <elementParameter field="CHECK" name="USE_FIXED_LENGTH" value="false"/>
+    <elementParameter field="TABLE" name="LENGTHS" show="false">
+      <elementValue elementRef="SCHEMA_COLUMN" value="Applied_Load"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Source_Column"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Date"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="isNumeric"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="isNullDate"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
+    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="100"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tLogRow_3">
+      <column comment="" key="false" length="-1" name="Applied_Load" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true">
+        <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;convertImpliedDecimalFormat&quot;,&quot;PARAMETERS&quot;:[{&quot;PARAMETER_NAME&quot;:&quot;format&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;9V99\&quot; &quot;},{&quot;PARAMETER_NAME&quot;:&quot;toConvert&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;123\&quot; &quot;}],&quot;PARAMETER_CLASS_NAME&quot;:&quot;Numeric&quot;}"/>
+      </column>
+      <column comment="" key="false" length="-1" name="Source_Column" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true">
+        <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;...&quot;,&quot;PARAMETERS&quot;:[{&quot;PARAMETER_NAME&quot;:&quot;customize parameter&quot;,&quot;PARAMETER_VALUE&quot;:&quot; \&quot;X\&quot; &quot;}],&quot;PARAMETER_CLASS_NAME&quot;:&quot;&quot;}"/>
+      </column>
+      <column comment="" key="false" length="-1" name="Date" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="" type="id_Date" usefulColumn="true">
+        <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;parseDate&quot;,&quot;PARAMETERS&quot;:[{&quot;PARAMETER_NAME&quot;:&quot;pattern&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;yyyy-MM-dd\&quot; &quot;},{&quot;PARAMETER_NAME&quot;:&quot;stringDate&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;2019-10-19\&quot; &quot;}],&quot;PARAMETER_CLASS_NAME&quot;:&quot;TalendDate&quot;}"/>
+      </column>
+      <column comment="" key="false" length="-1" name="isNumeric" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="isNullDate" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
   <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tRowGenerator_1" offsetLabelX="0" offsetLabelY="0" source="tRowGenerator_1" target="tJavaRow_1">
@@ -258,30 +386,65 @@
       <elementValue elementRef="TRACE_COLUMN" value="isTwoDecimal"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="isNullDate"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="Source_Column"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="Date"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row2"/>
   </connection>
   <connection connectorName="FLOW" label="Correct" lineStyle="0" metaname="Correct" offsetLabelX="0" offsetLabelY="0" outputId="1" source="tMap_1" target="tLogRow_1">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="isNullDate"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="Source_Column"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="Date"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="Correct"/>
   </connection>
   <connection connectorName="FLOW" label="NotPositve" lineStyle="0" metaname="NotPositve" offsetLabelX="0" offsetLabelY="0" outputId="2" source="tMap_1" target="tLogRow_2">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="isNullDate"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="Source_Column"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="Date"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="NotPositve"/>
+  </connection>
+  <connection connectorName="FLOW" label="NullDate" lineStyle="0" metaname="NullDate" offsetLabelX="0" offsetLabelY="0" outputId="3" source="tMap_1" target="tLogRow_3">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="NullDate"/>
   </connection>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tRowGenerator_1"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_ebeacf7b-0654-4603-83af-0867a1e5b819"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>dCMO8jYr5tPTEFwGpgwcFa3vfaHVLUoQdlHG+zet29K1tsFZX1Kvpnk1WJTlbLi3McT3RV/GW0lB
-/0VhCeCAXA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_df698412-a0db-400e-bbe4-788175a850b2"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>jCVDXnCEUUuWjZaIB56da3RFwl2FyI1OHFFV+EjvaHh93cSL9Dfwrfnbd7eRWktMeDABIOkGmLXi
-QYsRetvs1A==</DigestValue></Reference></SignedInfo><SignatureValue>fE6pJ+3bYleGWhAjKgOFVySxflB5VzUUXA2iQ8ztd8ORDNNkubJjmNYUX3wymkD3FzkNsJrFqpJV
-Ki3/Vu43Wt7DYQ2LqTV7JMd8LFcnCVzYkdIyVVwjRxn2xTOWucVtqj0ix8az8fgZJ8GeL9ohddFo
-RaSuxacnm7vrlwRP9mmrTVb22Gg7ejU0aVZ/RF9y99UpifQyfdRbC8nwlW4RJRQFo/4Kt6Y8cRKZ
-QYZvXQg91lPiAAT46Rd8tXz1pmhiRv0c5J2r9L4x/dmcSbSgG1Fny+iUAcU9s5lh9RPx9nCf1jz0
-DcKamxUhIB/MOadC6y4iYdjmRVAUwOjlaT6FLA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_2038eb50-be9f-41d0-81dc-c98f7b76fea6"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>gojMPlmoPyNOiQEU6NnovhP/0MDRSfYNtejnKCDswfV/dMcPDpX/Ta1bu7qnSVcxGZQ78rWYkE2p
+F0CqUMGt4w==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_aadc9f06-be9b-434b-8578-e7885fe89646"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>VDy7AWAIQQhPtkjjDfc0b+mjkM4QPHCI6+G6UX2kVVHlVJSyQ95oCOGmd9Xq4zW6oeeXLkReNVMM
+WCvercsUog==</DigestValue></Reference></SignedInfo><SignatureValue>lI6IankYnqklaCpvluHZyOuYDcuORb/oVligayPDrWgBj1pxkkMBKN5e/CnkeyRuT+14FxeL7AoH
+b7gYazpdzcP5xlInNOibOumZwunKKJwyW8ZtPxNPLN5+0NWA0dX7iqg3TO9WITOh1c0tpZ/tHwXw
+Hzp1zS2LoqYaLFPbGbXVGW11/fdOHHnSWhHu0z+VaChA/YB1YB9Xh8FXh2WwINDVp0XgHmPFLFxX
+uljWcmo3bUTig4DvtOYGGZuUQ/OW+otpMEYutWJGDG80wSzmQ0kpmJ4OcRUTQewRKo1rp+twbKNH
+gMJTUtwHWDa4O2NRmQDl9Gu8ZMVGEwfZBLhntQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U
@@ -303,4 +466,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_df698412-a0db-400e-bbe4-788175a850b2" Target="#_ebeacf7b-0654-4603-83af-0867a1e5b819"><Timestamp>2020-03-18 04:07:57</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_aadc9f06-be9b-434b-8578-e7885fe89646" Target="#_2038eb50-be9f-41d0-81dc-c98f7b76fea6"><Timestamp>2020-03-18 04:16:55</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
