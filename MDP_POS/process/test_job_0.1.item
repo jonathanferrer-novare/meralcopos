@@ -42,7 +42,7 @@
     <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" show="false" value="enc:system.encryption.key.v1:j5cupEU4EfZdyEzxkbQZiVrmeF/vrlxU+ccOK/21"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" show="false" value="enc:system.encryption.key.v1:A7/zx+ejUgOq/Sbf9ib7Bd9cwxNl9cjfYY6hqmiH"/>
     <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
@@ -77,7 +77,7 @@
     <elementParameter field="TEXT" name="PROPERTIES" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:IVsGSQPOV16ME0GzPAcm0IYOlZcySvyCpeZ9seEG"/>
+    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:uRUd8Ryvhr8vUtgiMk+1LttZ/LR2mtrv4DPr7+/L"/>
     <elementParameter field="FILE" name="DBFILE" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE_STATS" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE_LOGS" show="false" value="&quot;&quot;"/>
@@ -264,7 +264,7 @@
   </node>
   <node componentName="tJavaRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="288" posY="480">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tJavaRow_2"/>
-    <elementParameter field="MEMO_JAVA" name="CODE" value="//Code generated according to input schema and output schema&#13;&#10;//output_row.newColumn = input_row.newColumn;&#10;import java.util.regex.Pattern;&#10;import java.util.regex.Matcher;&#10;String patternString = &quot;.*[0-9].*&quot;;&#10;Pattern pattern = Pattern.compile(patternString);&#10;Matcher matcher = pattern.matcher(input_row.newColumn);&#10;int count = 0;&#10;while(matcher.find()) {&#10;&#9;count++;&#10;    }&#10;output_row.newColumn = String.valueOf(count);&#13;&#10;output_row.newColumn1 = input_row.newColumn1;"/>
+    <elementParameter field="MEMO_JAVA" name="CODE" value="//Code generated according to input schema and output schema&#13;&#10;//output_row.newColumn = input_row.newColumn;&#10;import java.util.regex.Pattern;&#10;import java.util.regex.Matcher;&#10;String patternString = &quot;.*[0-9].*&quot;;&#10;java.util.regex.Pattern pattern = Pattern.compile(patternString);&#10;java.util.regex.Matcher matcher = pattern.matcher(input_row.newColumn);&#10;int count = 0;&#10;while(matcher.find()) {&#10;&#9;count++;&#10;    }&#10;output_row.newColumn = String.valueOf(count);&#13;&#10;output_row.newColumn1 = input_row.newColumn1;"/>
     <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tJavaRow_2">
@@ -327,13 +327,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_8f41a2f1-5bf4-4d26-8490-d03eea2cee6d"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>STlLVq7MQa0WX5h5cRjVkxVqmsXXsNIo5BK4IgwEadB0/BP3qS1R5LTZLHrF/C2k2Z47tFOEOIwt
-+fnk+UuewA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_3d887d47-afe9-48d3-a2e4-5d7fb981cade"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>1e9+UVW/qFhv1iXH1bVWd9B/XQ81N2KUIjYZE2SAwA9cSUUJmU2nhldnR+p8aGtvR/ASTZX5wbMQ
-m1VU/g5CQg==</DigestValue></Reference></SignedInfo><SignatureValue>jZAkTtdbPlWDX7Ztg2GxU1XpcyKoxDZhFQadZlJ7NzuM+zUqbIFgVVjd2FAjgTrT6C0urKv2QEeZ
-mtobETgzzL83fmMcX18NojSCrzRTDAODnOQFGA5l5FTdYX7EwcoOOrZJKm6vxt41XmPiJ3YgOyCx
-dP58gDLXIgOJJXm93czKQFZZTCcVlOyh10LK9PvzzXaKpPaGRMmyM1sGzBoNtx2KT7zO1+X5CGD1
-m7939YWUPTmmsD+4Nt6f2DBSL1bqz/c2lowFKXjaJOTiWw6yohW8jliTO+ZBGuVfcFDdo+d50uDz
-tpwNllam9WPPSxjfM76D8yf55cLBuXJxoCtBcw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_c0eae58c-0804-41a6-bc03-d55f0ffd1615"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>FCGtfnomqCqW7ETW9sRPdbGNq3E9SkwGvd9acf9OxeJXwOFfI3lobdc7g4e0iARu6W/yaCc1Qc02
+e1GBsXK28Q==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_a6ca7905-b804-4063-9f08-2dc5f81f41e5"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>DbXyVnYsrFKESuRtLWx3ym6oQ6VmJWYZIAjnIv6MsVu6JUdRXxaYZVm3F6k+Q3BYK5qx9bUqoeV+
+g9v3QiZy8A==</DigestValue></Reference></SignedInfo><SignatureValue>j5Wwt3ZJh4UBV0qy+y2leKXTokb+R5jpT3wmN8OfJ9xsqI6n0MU9U/W9I+kIX5Mx1MIYmGvh15ks
+4xkPSUw8kKaEKNp/MPGL8DOUNY2M4Gi4cmh00dJIZo+zvHg04NcC5Wb0Omx1ra717zIT99na1K/0
+9Way7hYPbYvVPC5F2BgKFtbzZZseznkJm6RxFmDBlevRIUy/kIDud77wtQI2eSwMTeQqT0XkVxib
+Qw9n0rGizeTU0qYtlw/fzTCApY8VWJZC3zLYHhTtyCuaHmapOieoxHgyxlKDVeNR94aMueXDl0oF
+EXGiP4UHl1kYH3R6kyM/J2InSzz0D6q4mBXxfA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U
@@ -355,4 +355,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_3d887d47-afe9-48d3-a2e4-5d7fb981cade" Target="#_8f41a2f1-5bf4-4d26-8490-d03eea2cee6d"><Timestamp>2020-03-18 13:17:34</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_a6ca7905-b804-4063-9f08-2dc5f81f41e5" Target="#_c0eae58c-0804-41a6-bc03-d55f0ffd1615"><Timestamp>2020-03-18 13:18:36</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
