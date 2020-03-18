@@ -1,13 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dataquality.analysis:Analysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:dataquality.analysis="http://dataquality.analysis" xmi:id="_cnNegGkTEeqCkc4IyvK3ng" name="Hexadecimal" creationDate="2020-03-18T20:24:43.360+0800">
-  <taggedValue xmi:id="_cnNegWkTEeqCkc4IyvK3ng" tag="Status" value="development"/>
-  <taggedValue xmi:id="_cnNegmkTEeqCkc4IyvK3ng" tag="Author" value="darwin.barlaan@eval12263.talend.com"/>
-  <taggedValue xmi:id="_cnNeg2kTEeqCkc4IyvK3ng" tag="Purpose"/>
-  <taggedValue xmi:id="_cnNehGkTEeqCkc4IyvK3ng" tag="Description"/>
-  <taggedValue xmi:id="_cnNehWkTEeqCkc4IyvK3ng" tag="Version" value="0.1"/>
-  <context xmi:id="_cnNehmkTEeqCkc4IyvK3ng"/>
-  <results xmi:id="_cnNeh2kTEeqCkc4IyvK3ng">
-    <resultMetadata xmi:id="_cnNeiGkTEeqCkc4IyvK3ng"/>
-  </results>
-  <parameters xmi:id="_cnNeiWkTEeqCkc4IyvK3ng" analysisType="Multiple Column Analysis"/>
-</dataquality.analysis:Analysis>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:dataquality.analysis="http://dataquality.analysis" xmlns:dataquality.domain="http://dataquality.domain" xmlns:dataquality.indicators="http://dataquality.indicators" xmlns:relational="http://www.talend.org/cwm/resource/relational/2010">
+  <dataquality.analysis:Analysis xmi:id="_cnNegGkTEeqCkc4IyvK3ng" name="Hexadecimal" creationDate="2020-03-18T20:24:43.360+0800" defaultContext="Default">
+    <clientDependency href="../../metadata/fileDelimited/AppendixB/GIS_0.1.item#_c7H5AGkTEeqCkc4IyvK3ng"/>
+    <taggedValue xmi:id="_cnNegWkTEeqCkc4IyvK3ng" tag="Status" value="development"/>
+    <taggedValue xmi:id="_cnNegmkTEeqCkc4IyvK3ng" tag="Author" value="darwin.barlaan@eval12263.talend.com"/>
+    <taggedValue xmi:id="_cnNeg2kTEeqCkc4IyvK3ng" tag="Purpose" value=""/>
+    <taggedValue xmi:id="_cnNehGkTEeqCkc4IyvK3ng" tag="Description" value=""/>
+    <taggedValue xmi:id="_cnNehWkTEeqCkc4IyvK3ng" tag="Version" value="0.1"/>
+    <taggedValue xmi:id="_c7DAgWkTEeqCkc4IyvK3ng" tag="ANA_LAST_RUN_CONTEXT" value="Default"/>
+    <taggedValue xmi:id="_c7DAgmkTEeqCkc4IyvK3ng" tag="PREVIEW_ROW_NUMBER" value="50"/>
+    <taggedValue xmi:id="_c7DnkGkTEeqCkc4IyvK3ng" tag="NUMBER_OF_CONNECTIONS_PER_ANALYSIS" value="5"/>
+    <taggedValue xmi:id="_c7IgI2kTEeqCkc4IyvK3ng" tag="Is Use Sample Data" value="false"/>
+    <context xmi:id="_cnNehmkTEeqCkc4IyvK3ng">
+      <connection href="../../metadata/fileDelimited/AppendixB/GIS_0.1.item#_W_lHoWkTEeqCkc4IyvK3ng"/>
+      <analysedElements xsi:type="TalendMetadata:MetadataColumn" href="../../metadata/fileDelimited/AppendixB/GIS_0.1.item#_W_lHpGkTEeqCkc4IyvK3ng"/>
+      <analysedElements xsi:type="TalendMetadata:MetadataColumn" href="../../metadata/fileDelimited/AppendixB/GIS_0.1.item#_W_lHpWkTEeqCkc4IyvK3ng"/>
+      <analysedElements xsi:type="TalendMetadata:MetadataColumn" href="../../metadata/fileDelimited/AppendixB/GIS_0.1.item#_W_lHpmkTEeqCkc4IyvK3ng"/>
+    </context>
+    <results xmi:id="_cnNeh2kTEeqCkc4IyvK3ng">
+      <resultMetadata xmi:id="_cnNeiGkTEeqCkc4IyvK3ng"/>
+      <indicators xsi:type="dataquality.indicators:RowCountIndicator" xmi:id="_c7E1sGkTEeqCkc4IyvK3ng">
+        <parameters xmi:id="_c7E1sWkTEeqCkc4IyvK3ng"/>
+        <analyzedElement xsi:type="TalendMetadata:MetadataColumn" href="../../metadata/fileDelimited/AppendixB/GIS_0.1.item#_W_lHpGkTEeqCkc4IyvK3ng"/>
+        <indicatorDefinition href="../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Row_Count_0.1.definition#_ccFOkBF2Ed2PKb6nEJEvhw"/>
+      </indicators>
+      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_c7E1smkTEeqCkc4IyvK3ng">
+        <parameters xmi:id="_c7E1s2kTEeqCkc4IyvK3ng"/>
+        <analyzedElement xsi:type="TalendMetadata:MetadataColumn" href="../../metadata/fileDelimited/AppendixB/GIS_0.1.item#_W_lHpGkTEeqCkc4IyvK3ng"/>
+        <indicatorDefinition href="../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Null_Count_0.1.definition#_GrAeADh9Ed2XmO7pl5Yuyg"/>
+      </indicators>
+      <indicators xsi:type="dataquality.indicators:PatternFreqIndicator" xmi:id="_c7GD0GkTEeqCkc4IyvK3ng">
+        <parameters xmi:id="_c7GD0WkTEeqCkc4IyvK3ng"/>
+        <analyzedElement xsi:type="TalendMetadata:MetadataColumn" href="../../metadata/fileDelimited/AppendixB/GIS_0.1.item#_W_lHpGkTEeqCkc4IyvK3ng"/>
+        <indicatorDefinition href="../../TDQ_Libraries/Indicators/System Indicators/Pattern Frequency Statistics/Pattern_Frequency_Table_0.1.definition#_kQzTsJR-Ed2XO-JvLwVAwg"/>
+      </indicators>
+      <indicators xsi:type="dataquality.indicators:PatternLowFreqIndicator" xmi:id="_c7GD0mkTEeqCkc4IyvK3ng">
+        <parameters xmi:id="_c7GD02kTEeqCkc4IyvK3ng"/>
+        <analyzedElement xsi:type="TalendMetadata:MetadataColumn" href="../../metadata/fileDelimited/AppendixB/GIS_0.1.item#_W_lHpGkTEeqCkc4IyvK3ng"/>
+        <indicatorDefinition href="../../TDQ_Libraries/Indicators/System Indicators/Pattern Frequency Statistics/Pattern_Low_Frequency_Table_0.1.definition#_OCTbwJR_Ed2XO-JvLwVAwg"/>
+      </indicators>
+      <indicators xsi:type="dataquality.indicators:RowCountIndicator" xmi:id="_c7IgEWkTEeqCkc4IyvK3ng">
+        <parameters xmi:id="_c7IgEmkTEeqCkc4IyvK3ng"/>
+        <analyzedElement xsi:type="TalendMetadata:MetadataColumn" href="../../metadata/fileDelimited/AppendixB/GIS_0.1.item#_W_lHpWkTEeqCkc4IyvK3ng"/>
+        <indicatorDefinition href="../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Row_Count_0.1.definition#_ccFOkBF2Ed2PKb6nEJEvhw"/>
+      </indicators>
+      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_c7IgE2kTEeqCkc4IyvK3ng">
+        <parameters xmi:id="_c7IgFGkTEeqCkc4IyvK3ng"/>
+        <analyzedElement xsi:type="TalendMetadata:MetadataColumn" href="../../metadata/fileDelimited/AppendixB/GIS_0.1.item#_W_lHpWkTEeqCkc4IyvK3ng"/>
+        <indicatorDefinition href="../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Null_Count_0.1.definition#_GrAeADh9Ed2XmO7pl5Yuyg"/>
+      </indicators>
+      <indicators xsi:type="dataquality.indicators:PatternFreqIndicator" xmi:id="_c7IgFWkTEeqCkc4IyvK3ng">
+        <parameters xmi:id="_c7IgFmkTEeqCkc4IyvK3ng"/>
+        <analyzedElement xsi:type="TalendMetadata:MetadataColumn" href="../../metadata/fileDelimited/AppendixB/GIS_0.1.item#_W_lHpWkTEeqCkc4IyvK3ng"/>
+        <indicatorDefinition href="../../TDQ_Libraries/Indicators/System Indicators/Pattern Frequency Statistics/Pattern_Frequency_Table_0.1.definition#_kQzTsJR-Ed2XO-JvLwVAwg"/>
+      </indicators>
+      <indicators xsi:type="dataquality.indicators:PatternLowFreqIndicator" xmi:id="_c7IgF2kTEeqCkc4IyvK3ng">
+        <parameters xmi:id="_c7IgGGkTEeqCkc4IyvK3ng"/>
+        <analyzedElement xsi:type="TalendMetadata:MetadataColumn" href="../../metadata/fileDelimited/AppendixB/GIS_0.1.item#_W_lHpWkTEeqCkc4IyvK3ng"/>
+        <indicatorDefinition href="../../TDQ_Libraries/Indicators/System Indicators/Pattern Frequency Statistics/Pattern_Low_Frequency_Table_0.1.definition#_OCTbwJR_Ed2XO-JvLwVAwg"/>
+      </indicators>
+      <indicators xsi:type="dataquality.indicators:RowCountIndicator" xmi:id="_c7IgGmkTEeqCkc4IyvK3ng">
+        <parameters xmi:id="_c7IgG2kTEeqCkc4IyvK3ng"/>
+        <analyzedElement xsi:type="TalendMetadata:MetadataColumn" href="../../metadata/fileDelimited/AppendixB/GIS_0.1.item#_W_lHpmkTEeqCkc4IyvK3ng"/>
+        <indicatorDefinition href="../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Row_Count_0.1.definition#_ccFOkBF2Ed2PKb6nEJEvhw"/>
+      </indicators>
+      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_c7IgHGkTEeqCkc4IyvK3ng">
+        <parameters xmi:id="_c7IgHWkTEeqCkc4IyvK3ng"/>
+        <analyzedElement xsi:type="TalendMetadata:MetadataColumn" href="../../metadata/fileDelimited/AppendixB/GIS_0.1.item#_W_lHpmkTEeqCkc4IyvK3ng"/>
+        <indicatorDefinition href="../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Null_Count_0.1.definition#_GrAeADh9Ed2XmO7pl5Yuyg"/>
+      </indicators>
+      <indicators xsi:type="dataquality.indicators:PatternFreqIndicator" xmi:id="_c7IgHmkTEeqCkc4IyvK3ng">
+        <parameters xmi:id="_c7IgH2kTEeqCkc4IyvK3ng"/>
+        <analyzedElement xsi:type="TalendMetadata:MetadataColumn" href="../../metadata/fileDelimited/AppendixB/GIS_0.1.item#_W_lHpmkTEeqCkc4IyvK3ng"/>
+        <indicatorDefinition href="../../TDQ_Libraries/Indicators/System Indicators/Pattern Frequency Statistics/Pattern_Frequency_Table_0.1.definition#_kQzTsJR-Ed2XO-JvLwVAwg"/>
+      </indicators>
+      <indicators xsi:type="dataquality.indicators:PatternLowFreqIndicator" xmi:id="_c7IgIGkTEeqCkc4IyvK3ng">
+        <parameters xmi:id="_c7IgIWkTEeqCkc4IyvK3ng"/>
+        <analyzedElement xsi:type="TalendMetadata:MetadataColumn" href="../../metadata/fileDelimited/AppendixB/GIS_0.1.item#_W_lHpmkTEeqCkc4IyvK3ng"/>
+        <indicatorDefinition href="../../TDQ_Libraries/Indicators/System Indicators/Pattern Frequency Statistics/Pattern_Low_Frequency_Table_0.1.definition#_OCTbwJR_Ed2XO-JvLwVAwg"/>
+      </indicators>
+    </results>
+    <parameters xmi:id="_cnNeiWkTEeqCkc4IyvK3ng" dataFilter="_c7JHIGkTEeqCkc4IyvK3ng" analysisType="Multiple Column Analysis" executionLanguage="Java"/>
+    <contextType xmi:id="_c7DAgGkTEeqCkc4IyvK3ng" confirmationNeeded="false" name="Default"/>
+  </dataquality.analysis:Analysis>
+  <dataquality.domain:Domain xmi:id="_c7JHIGkTEeqCkc4IyvK3ng" name="Hexadecimal">
+    <ranges xmi:id="_c7JuMGkTEeqCkc4IyvK3ng">
+      <expressions xmi:id="_c7KVQGkTEeqCkc4IyvK3ng">
+        <expression xsi:type="relational:TdExpression" xmi:id="_c7KVQWkTEeqCkc4IyvK3ng" body="" language="SQL"/>
+      </expressions>
+    </ranges>
+  </dataquality.domain:Domain>
+</xmi:XMI>
