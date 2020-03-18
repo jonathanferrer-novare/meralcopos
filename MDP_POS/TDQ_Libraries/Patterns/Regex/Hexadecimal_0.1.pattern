@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dataquality.domain.pattern:Pattern xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dataquality.domain.pattern="http://dataquality.domain.pattern" xmi:id="_KonK8GkTEeqCkc4IyvK3ng" name="Hexadecimal">
-  <taggedValue xmi:id="_KonK8WkTEeqCkc4IyvK3ng" tag="Status" value="development"/>
-  <taggedValue xmi:id="_KonK8mkTEeqCkc4IyvK3ng" tag="Author" value="darwin.barlaan@eval12263.talend.com"/>
-  <taggedValue xmi:id="_KonK82kTEeqCkc4IyvK3ng" tag="Purpose" value=""/>
-  <taggedValue xmi:id="_KonK9GkTEeqCkc4IyvK3ng" tag="Description" value=""/>
-  <taggedValue xmi:id="_KonK9WkTEeqCkc4IyvK3ng" tag="Version" value="0.1"/>
-  <taggedValue xmi:id="_KonK9mkTEeqCkc4IyvK3ng" tag="Validation_Status" value="true"/>
-  <components xsi:type="dataquality.domain.pattern:RegularExpression" xmi:id="_KonK92kTEeqCkc4IyvK3ng" expressionType="REGEXP">
-    <expression xmi:id="_KonK-GkTEeqCkc4IyvK3ng" body="'^[0-9A-F]+$'" language="Java" modificationDate="2020-03-18 20:24:16"/>
-  </components>
-</dataquality.domain.pattern:Pattern>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dataquality.analysis="http://dataquality.analysis" xmlns:dataquality.domain.pattern="http://dataquality.domain.pattern" xmlns:orgomg.cwm.objectmodel.core="http:///orgomg/cwm/objectmodel/core.ecore">
+  <dataquality.domain.pattern:Pattern xmi:id="_KonK8GkTEeqCkc4IyvK3ng" name="Hexadecimal" supplierDependency="_g-eZsGkTEeqCkc4IyvK3ng">
+    <taggedValue xmi:id="_KonK8WkTEeqCkc4IyvK3ng" tag="Status" value="development"/>
+    <taggedValue xmi:id="_KonK8mkTEeqCkc4IyvK3ng" tag="Author" value="darwin.barlaan@eval12263.talend.com"/>
+    <taggedValue xmi:id="_KonK82kTEeqCkc4IyvK3ng" tag="Purpose" value=""/>
+    <taggedValue xmi:id="_KonK9GkTEeqCkc4IyvK3ng" tag="Description" value=""/>
+    <taggedValue xmi:id="_KonK9WkTEeqCkc4IyvK3ng" tag="Version" value="0.1"/>
+    <taggedValue xmi:id="_KonK9mkTEeqCkc4IyvK3ng" tag="Validation_Status" value="true"/>
+    <components xsi:type="dataquality.domain.pattern:RegularExpression" xmi:id="_KonK92kTEeqCkc4IyvK3ng" expressionType="REGEXP">
+      <expression xmi:id="_KonK-GkTEeqCkc4IyvK3ng" body="'^[0-9A-F]+$'" language="Java" modificationDate="2020-03-18 20:24:16"/>
+    </components>
+  </dataquality.domain.pattern:Pattern>
+  <orgomg.cwm.objectmodel.core:Dependency xmi:id="_g-eZsGkTEeqCkc4IyvK3ng" kind="Usage" supplier="_KonK8GkTEeqCkc4IyvK3ng">
+    <client xsi:type="dataquality.analysis:Analysis" href="../../../TDQ_Data Profiling/Analyses/Hexadecimal_0.1.ana#_cnNegGkTEeqCkc4IyvK3ng"/>
+  </orgomg.cwm.objectmodel.core:Dependency>
+</xmi:XMI>
