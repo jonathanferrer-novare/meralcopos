@@ -42,7 +42,7 @@
     <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" show="false" value="enc:system.encryption.key.v1:uTRbMVv1e6gawM2iDNHOZ9OoxEQZW3pLbgfe4QEA"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" show="false" value="enc:system.encryption.key.v1:7Wu+TCtW/zpoyFKWp5yKm+225UNFBNtdBt2BJhNx"/>
     <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
@@ -77,7 +77,7 @@
     <elementParameter field="TEXT" name="PROPERTIES" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:fzWdNt8qK9NHsKMhLsLQjk8hV9YGFemeQPjLKWWi"/>
+    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:Nqi+b4FDV2l9xxpaEp467YcphXjfsbtqM74/YNUp"/>
     <elementParameter field="FILE" name="DBFILE" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE_STATS" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE_LOGS" show="false" value="&quot;&quot;"/>
@@ -139,7 +139,7 @@
   </node>
   <node componentName="tJavaRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="352" posY="128">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tJavaRow_1"/>
-    <elementParameter field="MEMO_JAVA" name="CODE" value="// code sample:&#10;//&#10;// multiply by 2 the row identifier&#10;// output_row.id = input_row.id * 2;&#10;//&#10;// lowercase the name&#10;// output_row.name = input_row.name.toLowerCase();&#10;&#10;output_row.Applied_Load = input_row.Applied_Load;&#10;output_row.Source_Column = input_row.Source_Column;&#10;input_row.Date = null;&#10;output_row.Date = input_row.Date;&#10;&#10;&#10;&#10;try{&#10;&#9;//Numeric&#10;&#9;Float.parseFloat(input_row.Applied_Load);&#10;    output_row.isNumeric=&quot;Y&quot;;&#10;&#9;&#10;&#9;/*/isPositive&#10;&#9;if(input_row.Applied_Load &gt;= 0){&#10;&#9;&#9;output_row.isPositive=&quot;Y&quot;;&#10;&#9;} else {&#10;&#9;&#9;output_row.isPositive=&quot;N&quot;;&#10;&#9;}*/&#10;&#9;&#10;&#9;/*/2 Decimal places&#10;&#9;String regex = &quot;^\\d+\\.\\d{2,2}?$&quot;;&#10;&#9;java.util.regex.Matcher m = java.util.regex.Pattern.compile(regex).matcher(String.valueOf(input_row.Applied_Load));&#10;&#10;&#9;if (m.find()){&#10;&#9;&#9;output_row.isTwoDecimal = &quot;Y&quot;;&#10;&#9;&#10;&#9;} else {&#10;&#9;output_row.isTwoDecimal = &quot;N&quot;;&#10;&#9;}*/&#10;&#9;&#10;&#9;if(input_row.Source_Column.equals(&quot;X&quot;) &amp;&amp; input_row.Date.equals(null)){&#10;&#9;&#9;output_row.isNullDate=&quot;Y&quot;;&#10;&#9;} else {&#10;&#9;&#9;output_row.isNullDate=&quot;N&quot;;&#10;&#9;}&#10;&#9;&#10;&#10;}catch(NumberFormatException e){&#10;    output_row.isNumeric=&quot;N&quot;;&#10;    //output_row.isPositive=&quot;N&quot;;&#10;&#9;//output_row.isTwoDecimal = &quot;N&quot;;&#10;&#9;&#10;}catch(NullPointerException e){&#10;&#9;if(input_row.Source_Column.equals(&quot;X&quot;) &amp;&amp; input_row.Date.equals(null)){&#10;&#9;&#9;output_row.isNullDate=&quot;Y&quot;;&#10;&#9;} else {&#10;&#9;&#9;output_row.isNullDate=&quot;N&quot;;&#10;&#9;}&#10;}&#10;&#10;"/>
+    <elementParameter field="MEMO_JAVA" name="CODE" value="// code sample:&#10;//&#10;// multiply by 2 the row identifier&#10;// output_row.id = input_row.id * 2;&#10;//&#10;// lowercase the name&#10;// output_row.name = input_row.name.toLowerCase();&#10;&#10;output_row.Applied_Load = input_row.Applied_Load;&#10;output_row.Source_Column = input_row.Source_Column;&#10;//input_row.Date = null;&#10;output_row.Date = input_row.Date;&#10;&#10;&#10;&#10;try{&#10;&#9;//Numeric&#10;&#9;Float.parseFloat(input_row.Applied_Load);&#10;    output_row.isNumeric=&quot;Y&quot;;&#10;&#9;&#10;&#9;/*/isPositive&#10;&#9;if(input_row.Applied_Load &gt;= 0){&#10;&#9;&#9;output_row.isPositive=&quot;Y&quot;;&#10;&#9;} else {&#10;&#9;&#9;output_row.isPositive=&quot;N&quot;;&#10;&#9;}*/&#10;&#9;&#10;&#9;/*/2 Decimal places&#10;&#9;String regex = &quot;^\\d+\\.\\d{2,2}?$&quot;;&#10;&#9;java.util.regex.Matcher m = java.util.regex.Pattern.compile(regex).matcher(String.valueOf(input_row.Applied_Load));&#10;&#10;&#9;if (m.find()){&#10;&#9;&#9;output_row.isTwoDecimal = &quot;Y&quot;;&#10;&#9;&#10;&#9;} else {&#10;&#9;output_row.isTwoDecimal = &quot;N&quot;;&#10;&#9;}*/&#10;&#9;&#10;&#9;if(input_row.Source_Column.equals(&quot;X&quot;) &amp;&amp; input_row.Date.equals(null)){&#10;&#9;&#9;output_row.isNullDate=&quot;Y&quot;;&#10;&#9;} else {&#10;&#9;&#9;output_row.isNullDate=&quot;N&quot;;&#10;&#9;}&#10;&#9;&#10;&#10;}catch(NumberFormatException e){&#10;    output_row.isNumeric=&quot;N&quot;;&#10;    //output_row.isPositive=&quot;N&quot;;&#10;&#9;//output_row.isTwoDecimal = &quot;N&quot;;&#10;&#9;&#10;}catch(NullPointerException e){&#10;&#9;if(input_row.Source_Column.equals(&quot;X&quot;) &amp;&amp; input_row.Date.equals(null)){&#10;&#9;&#9;output_row.isNullDate=&quot;Y&quot;;&#10;&#9;} else {&#10;&#9;&#9;output_row.isNullDate=&quot;N&quot;;&#10;&#9;}&#10;}&#10;&#10;"/>
     <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tJavaRow_1">
@@ -438,13 +438,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_8e7257ef-a8de-42a7-950b-e8a762575e04"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>vf3cu8rU2OnO/ZO7dBSHFX2leZK/RpJM579PdH6FxJ2YvvX3PkAt/j4vse1SEfgleUAgIVDJaVxV
-xqrldyiO0A==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_60b145a2-a32c-445a-a79e-82db08e52a53"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>khh/yLDeW9QYe4Qu09bO2ZftSDyYFUQinFkCPC9qWMtrekWB+wvXXRlDrlN0RqI5iiNfWd2keDnR
-xrav5XQuLw==</DigestValue></Reference></SignedInfo><SignatureValue>kfgnexDwNihzG2gfuch0QhfAY2lUWZv7KkVT9bl9HUk/x9L+Vc9FUSEan243Oh2l6o5b4lyd5qlO
-PIWQAKWsLtXXZBARw+PpTrC6RW87teI0SIssuNbhqTArLHswNHuULUwUEJbDYvKStiqgTX4z08YL
-IbBV1+x1CgMXChZR+zgMVpgQI6ziqNn6BNmJhlAxN8UBzXWX1q4BJ11GyekYxx8/jwmx9k9WQY6T
-q861BK/3JKvhgHbyJ3Qe5bODw1HmwEZd7clowIm7T36EwRcd5Xpoc3RtYLhbPFC/5X1Onww/eSNb
-hjvPXYi9TbqfSyhU6W2yq7u0MdzkFqXPmbL30g==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_fd47a4b7-7163-461e-8b32-06d6def694ee"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>M7dnvJBciciOzjTsruHMgQLkKFGykZeFmM4+5Graa8gKyuCeoJrjnF9TZWBWEPUbbfCDDg/xeWKp
+WA4gp6mXMg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_3dbe1e1e-3ebb-4f9a-bf90-150502d6c2ff"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>J0mjZlPdT4dHT+hWMA4655Qr20y2fQ17WnCzvMwZ1iwgvmr96CswoXVyq2oanxGcWkIPdzhnoefu
+KOmi1BZLIw==</DigestValue></Reference></SignedInfo><SignatureValue>T4yUp1HJjA+7xV1TJcw0dYySfV1x6Yud1z1wce+83IjwsbSjE37wRAd7uAHSNa47TcFOMvTEwydS
+ikRgwVTd3gTF9xAlv8hmlwWDSwgHorN+3xdba5siFDOPfU04iWlZ46H0ObkYILdodUf7C45QiQ2T
+WO04FGXaWYOfZSzREGdC8JJsI/BC5tglVfQYONumzVSUke+iqCFR/FrjRejP8BT/DYJLh6lzJ97m
+3b2RyDtjBxCAlEWXBx2CxbB+cWwhVcuAQfnlmtqx9O4S4EUDAEmwp9zzVA7EKaeH89YTQt+g6VO5
+oqzZgOl6sm1MsttPCbb5Wb2uhGyST3gXPkpsCw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U
@@ -466,4 +466,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_60b145a2-a32c-445a-a79e-82db08e52a53" Target="#_8e7257ef-a8de-42a7-950b-e8a762575e04"><Timestamp>2020-03-18 04:24:22</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_3dbe1e1e-3ebb-4f9a-bf90-150502d6c2ff" Target="#_fd47a4b7-7163-461e-8b32-06d6def694ee"><Timestamp>2020-03-18 04:25:01</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
