@@ -42,7 +42,7 @@
     <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" show="false" value="enc:system.encryption.key.v1:8omWF5JXpKHocl9BcqDiSFIvAEV2r1QijfH/D8AY"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" show="false" value="enc:system.encryption.key.v1:xf7ViqNyC4898jdncMa61UnmUig1kOzYY2WD77w8"/>
     <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
@@ -77,7 +77,7 @@
     <elementParameter field="TEXT" name="PROPERTIES" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:Q6+rzSD4DV3jWpDi4+OGK4PXblgE+/qMuz5ccUmf"/>
+    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:wTlr0eFy9A8Aj/rnwvzNQfbYHjl+i0rKWkOCb5uT"/>
     <elementParameter field="FILE" name="DBFILE" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE_STATS" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE_LOGS" show="false" value="&quot;&quot;"/>
@@ -528,7 +528,7 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="512" posY="192">
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="480" posY="192">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_1"/>
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
     <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
@@ -543,7 +543,7 @@
     <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
     <elementParameter field="TEXT" name="LABEL" value="Business Rules"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata name="BusinessRules">
+    <metadata connector="FLOW" name="BusinessRules">
       <column comment="" key="false" length="8" name="PERIOD" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
       <column comment="" key="false" length="1" name="SOURCE_SYSTEM" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Character" usefulColumn="true"/>
       <column comment="" key="false" length="3" name="RECORD_TYPE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
@@ -763,22 +763,128 @@
       </inputTables>
     </nodeData>
   </node>
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="736" posY="192">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_2"/>
+    <elementParameter field="EXTERNAL" name="MAP" value=""/>
+    <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
+    <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
+    <elementParameter field="IMAGE" name="PREVIEW" value="_J0IuIGkgEeqCx9syHNtiOQ-tMap_2-PREVIEW.bmp"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" show="false" value="true"/>
+    <elementParameter field="CHECK" name="LKUP_PARALLELIZE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="LEVENSHTEIN" show="false" value="0"/>
+    <elementParameter field="TEXT" name="JACCARD" show="false" value="0"/>
+    <elementParameter field="CHECK" name="ENABLE_AUTO_CONVERT_TYPE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="ROWS_BUFFER_SIZE" value="2000000"/>
+    <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
+    <elementParameter field="TEXT" name="LABEL" value="Aggregated"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata name="Aggregated">
+      <column comment="" key="false" length="8" name="PERIOD_" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendMapper:MapperData">
+      <uiProperties shellMaximized="true"/>
+      <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
+      <outputTables name="Aggregated" sizeState="INTERMEDIATE">
+        <mapperTableEntries expression="BusinessRules.PERIOD " name="PERIOD_" nullable="true" type="id_Integer"/>
+      </outputTables>
+      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="BusinessRules" sizeState="INTERMEDIATE">
+        <mapperTableEntries name="PERIOD" nullable="true" type="id_Integer"/>
+        <mapperTableEntries name="SOURCE_SYSTEM" nullable="true" type="id_Character"/>
+        <mapperTableEntries name="RECORD_TYPE" nullable="true" type="id_String"/>
+        <mapperTableEntries name="CASE_NUMBER" nullable="true" type="id_String"/>
+        <mapperTableEntries name="APPLICATION_DATE" nullable="true" type="id_Date"/>
+        <mapperTableEntries name="DASHBOARD_STATUS_CODE" nullable="true" type="id_String"/>
+        <mapperTableEntries name="DASHBOARD_STATUS" nullable="true" type="id_String"/>
+        <mapperTableEntries name="DASHBOARD_STATUS_DATE" nullable="true" type="id_Date"/>
+        <mapperTableEntries name="TARGET_DATE" nullable="true" type="id_Date"/>
+        <mapperTableEntries name="TARGET_ENERGIZATION_DATE" nullable="true" type="id_String"/>
+        <mapperTableEntries name="CRS_ORG_LEVEL_4" nullable="true" type="id_String"/>
+        <mapperTableEntries name="PARENT_APPLICATION_DATE" nullable="true" type="id_String"/>
+        <mapperTableEntries name="DASHBOARD_APPLICATION_TYPE" nullable="true" type="id_String"/>
+        <mapperTableEntries name="PROJECT_TYPE" nullable="true" type="id_String"/>
+        <mapperTableEntries name="APPLIED_LOAD" nullable="true" type="id_String"/>
+        <mapperTableEntries name="CONTRACTED_CAPACITY" nullable="true" type="id_String"/>
+        <mapperTableEntries name="RESN_UNITS" nullable="true" type="id_String"/>
+        <mapperTableEntries name="NONIND_UNITS" nullable="true" type="id_String"/>
+        <mapperTableEntries name="INDUST_UNITS" nullable="true" type="id_String"/>
+        <mapperTableEntries name="APPLICATION_RECEIVED" nullable="true" type="id_Date"/>
+        <mapperTableEntries name="APPLICATION_VALIDATED" nullable="true" type="id_String"/>
+        <mapperTableEntries name="APPLICATION_EVALUATED" nullable="true" type="id_String"/>
+        <mapperTableEntries name="INSP_FO_RSLVD_APPR" nullable="true" type="id_String"/>
+        <mapperTableEntries name="INSP_FO_RSLVD_DISAPPR" nullable="true" type="id_String"/>
+        <mapperTableEntries name="APPLICATION_APPR" nullable="true" type="id_String"/>
+        <mapperTableEntries name="CONTRACT_FINALIZED" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ENERGIZED" nullable="true" type="id_String"/>
+        <mapperTableEntries name="WASSGN" nullable="true" type="id_String"/>
+        <mapperTableEntries name="WAPPR" nullable="true" type="id_String"/>
+        <mapperTableEntries name="DPRG" nullable="true" type="id_String"/>
+        <mapperTableEntries name="DPRG_RDR" nullable="true" type="id_String"/>
+        <mapperTableEntries name="PROJ_COST_RECEIVED" nullable="true" type="id_String"/>
+        <mapperTableEntries name="APPLICANT_NOTIFIED" nullable="true" type="id_String"/>
+        <mapperTableEntries name="DAPPR" nullable="true" type="id_String"/>
+        <mapperTableEntries name="DCOMP" nullable="true" type="id_String"/>
+        <mapperTableEntries name="PROJ_CHARGES_SETTLED" nullable="true" type="id_String"/>
+        <mapperTableEntries name="APP_READY_CON" nullable="true" type="id_String"/>
+        <mapperTableEntries name="AUTHZD" nullable="true" type="id_String"/>
+        <mapperTableEntries name="WMTRL" nullable="true" type="id_String"/>
+        <mapperTableEntries name="APPR" nullable="true" type="id_String"/>
+        <mapperTableEntries name="SCHED" nullable="true" type="id_String"/>
+        <mapperTableEntries name="INPRG" nullable="true" type="id_String"/>
+        <mapperTableEntries name="FCOMP" nullable="true" type="id_String"/>
+        <mapperTableEntries name="COMP" nullable="true" type="id_String"/>
+        <mapperTableEntries name="TECO" nullable="true" type="id_String"/>
+        <mapperTableEntries name="CLOSE_" nullable="true" type="id_String"/>
+        <mapperTableEntries name="SRVC_APPL_CLOSED" nullable="true" type="id_String"/>
+        <mapperTableEntries name="GENERAL_STATUS" nullable="true" type="id_String"/>
+        <mapperTableEntries name="AOS" nullable="true" type="id_String"/>
+        <mapperTableEntries name="AREA" nullable="true" type="id_String"/>
+        <mapperTableEntries name="PROW_REQD" nullable="true" type="id_String"/>
+        <mapperTableEntries name="OVERALL_STATUS_PERMIT" nullable="true" type="id_String"/>
+        <mapperTableEntries name="DPRG_QUOTED_DATE" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ON_TIME_TAG" nullable="true" type="id_String"/>
+        <mapperTableEntries name="DAYS_DELAY" nullable="true" type="id_Integer"/>
+        <mapperTableEntries name="PROJECTED_DAYS_DELAY" nullable="true" type="id_String"/>
+        <mapperTableEntries name="AGE_DAYS_RANGE_ID" nullable="true" type="id_Integer"/>
+        <mapperTableEntries name="AGE_RECEIPT_DAYS_RANGE_ID" nullable="true" type="id_Integer"/>
+        <mapperTableEntries name="KWH" nullable="true" type="id_String"/>
+        <mapperTableEntries name="PROJECTED_DAYS_DELAY_PRD" nullable="true" type="id_Integer"/>
+        <mapperTableEntries name="PROJECTED_DAYS_DELAY_TGT" nullable="true" type="id_Integer"/>
+        <mapperTableEntries name="APT_AE_DAYS" nullable="true" type="id_Integer"/>
+        <mapperTableEntries name="APT_TD_DAYS" nullable="true" type="id_Integer"/>
+        <mapperTableEntries name="APT_DES_DAYS" nullable="true" type="id_Integer"/>
+        <mapperTableEntries name="APT_AN_DAYS" nullable="true" type="id_Integer"/>
+        <mapperTableEntries name="APT_PAF_DAYS" nullable="true" type="id_Integer"/>
+        <mapperTableEntries name="APT_DCOMP_DAYS" nullable="true" type="id_Integer"/>
+        <mapperTableEntries name="APT_CCR_DAYS" nullable="true" type="id_Integer"/>
+        <mapperTableEntries name="APT_WORA_DAYS" nullable="true" type="id_Integer"/>
+        <mapperTableEntries name="WORA_WMTRL" nullable="true" type="id_Integer"/>
+        <mapperTableEntries name="WMTRL_FCOMP" nullable="true" type="id_Integer"/>
+        <mapperTableEntries name="APT" nullable="true" type="id_Integer"/>
+        <mapperTableEntries name="AGE_RECEIPT_DAYS" nullable="true" type="id_Integer"/>
+        <mapperTableEntries name="AGE_DAYS" nullable="true" type="id_Integer"/>
+      </inputTables>
+    </nodeData>
+  </node>
   <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tFileInputDelimited_1" offsetLabelX="0" offsetLabelY="0" source="tFileInputDelimited_1" target="tMap_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row1"/>
+  </connection>
+  <connection connectorName="FLOW" label="BusinessRules" lineStyle="0" metaname="BusinessRules" offsetLabelX="0" offsetLabelY="0" source="tMap_1" target="tMap_2">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="BusinessRules"/>
   </connection>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileInputDelimited_1"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_e76d1ba2-3e58-496c-b560-2704faaeb084"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Y+eBCUN0KVWG0ofAaQi/bfDHdSPtJWTRbmFuMaAnL5M14hRvm9FQXngb7RUS8DCNWJSTrb5l0JC7
-waeBR/hv4w==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_573626a8-2468-4027-9a33-002d1175d02e"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>bAZo/TgLZf6ILgkEAAMqWuC8OY1w1z5ttzizWKKu2CsioiKzvczRKg7e78ocn3UZy5Bzv0iT28jK
-LSSs2Orq8A==</DigestValue></Reference></SignedInfo><SignatureValue>M/knuOE53AaMFn/qHe228qIhzEiQyJ1XH1gCBR2YpQo9WQqymCU0ZIU/errxVs/L7hP6PaiOHCcW
-JTNKAQpMhWopqrUCNigiDjh1vawEo4faG4+VjgPL56YGS21qhctK/EkwoKcrpM64iLpX/SZ8NLK6
-KB614n05HtThLi0xynjmFvGj+KMcicq4Eo3YoLeVosB+95J4ZrgYOSlVBIFxgJp+N6o+uhG+stdI
-BRXMNO0uCVbG9dLRixmP15eT82uMUgTGNPcrW8o3NHDWs8it2VMIPMkujuFFeLA3r6WpzlRJ1Lhs
-n3akpX7EDwM+L81BcfoE7/o7yBHmuh/rru40kw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_16fbf8e1-3bf0-4319-8700-3b7b98fde7dc"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>yDsuOtIpGYV+UKKLzPVC3AKKw8J2SVtJsWcBvOFwNxJUZ/KwZtaKdduoYVNoBbNabhRZBAYA7655
+eWsbVYfABg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_159fe0e4-078b-4071-bbe0-0b03cdfc235b"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>FeMrSIFSLxKOzJKSx7LwmKN2LEdZ+pljL5Zekuzdp/45qBuHiMQIPJfvfTzVMcv2ype1gm1O5rfM
+ikoEQHsBEw==</DigestValue></Reference></SignedInfo><SignatureValue>g97j9oC1iK8PqKAFEMggQDKCUouFAmfFrAYkYfsiHBnS2xv1vbNnQtnLkuS+O5b+17j7TCP1ljTU
+gfs8Jit5WzzIj2h/mI1nlSZpP4eV7P/9SR/h9lqO9Q+Snl7uNiJKvP9oHx0SxYKWp9li8Tz/o2C5
+aQCKII4zWmgRVhm0tJo1rkTzpdkQLMwKO++oGxjV038KNMj9hlX9vp1Pttw1Yk5EsN5cBm54B9vd
+UIAPmcFDMsBwK2CynSC7udqW47J0mrQBGAwb1EM+c6+N4ubdqoEjyfbL9Lsv0fBXvXZ1aItGvH30
+6ZpEw0B+pWAtPRKQj7K/hA1JizZwT6Wz4Rwyww==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U
@@ -800,4 +906,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_573626a8-2468-4027-9a33-002d1175d02e" Target="#_e76d1ba2-3e58-496c-b560-2704faaeb084"><Timestamp>2020-03-18 14:06:44</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_159fe0e4-078b-4071-bbe0-0b03cdfc235b" Target="#_16fbf8e1-3bf0-4319-8700-3b7b98fde7dc"><Timestamp>2020-03-18 14:08:14</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
