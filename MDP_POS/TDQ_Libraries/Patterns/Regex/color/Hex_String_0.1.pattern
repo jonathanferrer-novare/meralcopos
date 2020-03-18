@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataquality.domain.pattern:Pattern xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dataquality.domain.pattern="http://dataquality.domain.pattern" xmi:id="_RvREkGkTEeqqEqrV7GF_qw" name="Hex String">
+  <taggedValue xmi:id="_RvREkWkTEeqqEqrV7GF_qw" tag="Author" value="jonathan.ferrer@eval12263.talend.com"/>
+  <taggedValue xmi:id="_RvREkmkTEeqqEqrV7GF_qw" tag="Description" value="Matches valid 3 or 6 character hex codes used for HTML or CSS.&#xA;Matches fff | #990000 | #cc3366 | #AAAAAA&#xA;Non-Matches #5555 | #ZJK000 | CDCDCDCD"/>
+  <taggedValue xmi:id="_RvREk2kTEeqqEqrV7GF_qw" tag="Purpose" value="Check hex codes used for HTML or CSS"/>
+  <taggedValue xmi:id="_RvRElGkTEeqqEqrV7GF_qw" tag="Status" value="Production"/>
+  <taggedValue xmi:id="_RvRElWkTEeqqEqrV7GF_qw" tag="Validation_Status" value="true"/>
+  <components xsi:type="dataquality.domain.pattern:RegularExpression" xmi:id="_RvRElmkTEeqqEqrV7GF_qw" expressionType="REGEXP">
+    <expression xmi:id="_RvREl2kTEeqqEqrV7GF_qw" body="'^\#?[A-Fa-f0-9]{3}([A-Fa-f0-9]{3})?$'" language="SQL"/>
+  </components>
+  <components xsi:type="dataquality.domain.pattern:RegularExpression" xmi:id="_RvREmGkTEeqqEqrV7GF_qw" expressionType="REGEXP">
+    <expression xmi:id="_RvREmWkTEeqqEqrV7GF_qw" body="'^\\#?[A-Fa-f0-9]{3}([A-Fa-f0-9]{3})?$'" language="MySQL"/>
+  </components>
+</dataquality.domain.pattern:Pattern>
