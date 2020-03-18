@@ -42,7 +42,7 @@
     <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" show="false" value="enc:system.encryption.key.v1:F8NBTjUEEHPSajXgV4BSXfXbq08PNMeLbK8Co8z2"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" show="false" value="enc:system.encryption.key.v1:fLahvKCqcXNdXjhVPy8wcPQvDxYq6IHMTC2gD6Ew"/>
     <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
@@ -77,7 +77,7 @@
     <elementParameter field="TEXT" name="PROPERTIES" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:KnburPA+nvwNWDPsH5UlorBqh/vkxXZA65ACCO2i"/>
+    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:GxRA3pNXWcWzZZVca1mglGEmvmRKXCel6dzTagnJ"/>
     <elementParameter field="FILE" name="DBFILE" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE_STATS" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE_LOGS" show="false" value="&quot;&quot;"/>
@@ -117,27 +117,26 @@
     <elementParameter field="TEXT" name="NB_ROWS" show="false" value="100"/>
     <elementParameter field="TABLE" name="VALUES" show="false">
       <elementValue elementRef="SCHEMA_COLUMN" value="Applied_Load"/>
-      <elementValue elementRef="ARRAY" value="Numeric.convertImpliedDecimalFormat(&quot;9V99&quot; ,&quot;12&quot; )"/>
+      <elementValue elementRef="ARRAY" value=" a1241 "/>
     </elementParameter>
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tRowGenerator_1">
-      <column comment="" defaultValue="" key="false" length="-1" name="Applied_Load" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Float" usefulColumn="true">
-        <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;convertImpliedDecimalFormat&quot;,&quot;PARAMETERS&quot;:[{&quot;PARAMETER_NAME&quot;:&quot;format&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;9V99\&quot; &quot;},{&quot;PARAMETER_NAME&quot;:&quot;toConvert&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;12\&quot; &quot;}],&quot;PARAMETER_CLASS_NAME&quot;:&quot;Numeric&quot;}"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="Applied_Load" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true">
+        <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;...&quot;,&quot;PARAMETERS&quot;:[{&quot;PARAMETER_NAME&quot;:&quot;customize parameter&quot;,&quot;PARAMETER_VALUE&quot;:&quot; a1241 &quot;}],&quot;PARAMETER_CLASS_NAME&quot;:&quot;&quot;}"/>
       </column>
     </metadata>
   </node>
   <node componentName="tJavaRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="352" posY="128">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tJavaRow_1"/>
-    <elementParameter field="MEMO_JAVA" name="CODE" value="// code sample:&#10;//&#10;// multiply by 2 the row identifier&#10;// output_row.id = input_row.id * 2;&#10;//&#10;// lowercase the name&#10;// output_row.name = input_row.name.toLowerCase();&#10;&#10;output_row.Applied_Load = input_row.Applied_Load;&#10;&#10;try{&#10;&#9;//Numeric&#10;&#9;//Float.parseFloat(input_row.APPLIED_LOAD);&#10;    //output_row.isNumeric=&quot;Y&quot;;&#10;&#9;&#10;&#9;//isPositive&#10;&#9;if(input_row.Applied_Load &gt;= 0){&#10;&#9;&#9;output_row.isPositive=&quot;Y&quot;;&#10;&#9;} else {&#10;&#9;&#9;output_row.isPositive=&quot;N&quot;;&#10;&#9;}&#10;&#9;&#10;&#9;//2 Decimal places&#10;&#9;String regex = &quot;^\\d+\\.\\d{2,2}?$&quot;;&#10;&#9;java.util.regex.Matcher m = java.util.regex.Pattern.compile(regex).matcher(String.valueOf(input_row.Applied_Load));&#10;&#10;&#9;if (m.find()){&#10;&#9;&#9;output_row.isTwoDecimal = &quot;Y&quot;;&#10;&#9;&#10;&#9;} else {&#10;&#9;output_row.isTwoDecimal = &quot;N&quot;;&#10;&#9;}&#10;&#9;&#10;&#10;}catch(NumberFormatException e){&#10;    //output_row.isNumeric=&quot;N&quot;;&#10;    output_row.isPositive=&quot;N&quot;;&#10;&#9;output_row.isTwoDecimal = &quot;N&quot;;&#10;&#9;&#10;}"/>
+    <elementParameter field="MEMO_JAVA" name="CODE" value="// code sample:&#10;//&#10;// multiply by 2 the row identifier&#10;// output_row.id = input_row.id * 2;&#10;//&#10;// lowercase the name&#10;// output_row.name = input_row.name.toLowerCase();&#10;&#10;output_row.Applied_Load = input_row.Applied_Load;&#10;&#10;try{&#10;&#9;//Numeric&#10;&#9;Float.parseFloat(input_row.APPLIED_LOAD);&#10;    output_row.isNumeric=&quot;Y&quot;;&#10;&#9;&#10;&#9;/*/isPositive&#10;&#9;if(input_row.Applied_Load &gt;= 0){&#10;&#9;&#9;output_row.isPositive=&quot;Y&quot;;&#10;&#9;} else {&#10;&#9;&#9;output_row.isPositive=&quot;N&quot;;&#10;&#9;}*/&#10;&#9;&#10;&#9;/*/2 Decimal places&#10;&#9;String regex = &quot;^\\d+\\.\\d{2,2}?$&quot;;&#10;&#9;java.util.regex.Matcher m = java.util.regex.Pattern.compile(regex).matcher(String.valueOf(input_row.Applied_Load));&#10;&#10;&#9;if (m.find()){&#10;&#9;&#9;output_row.isTwoDecimal = &quot;Y&quot;;&#10;&#9;&#10;&#9;} else {&#10;&#9;output_row.isTwoDecimal = &quot;N&quot;;&#10;&#9;}*/&#10;&#9;&#10;&#10;}catch(NumberFormatException e){&#10;    output_row.isNumeric=&quot;N&quot;;&#10;    //output_row.isPositive=&quot;N&quot;;&#10;&#9;//output_row.isTwoDecimal = &quot;N&quot;;&#10;&#9;&#10;}"/>
     <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tJavaRow_1">
       <column comment="" defaultValue="" key="false" length="-1" name="Applied_Load" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Float" usefulColumn="true">
         <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;convertImpliedDecimalFormat&quot;,&quot;PARAMETERS&quot;:[{&quot;PARAMETER_NAME&quot;:&quot;format&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;9V99\&quot; &quot;},{&quot;PARAMETER_NAME&quot;:&quot;toConvert&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;123\&quot; &quot;}],&quot;PARAMETER_CLASS_NAME&quot;:&quot;Numeric&quot;}"/>
       </column>
-      <column comment="" key="false" length="-1" name="isPositive" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="isTwoDecimal" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="isNumeric" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="512" posY="128">
@@ -159,44 +158,27 @@
         <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;convertImpliedDecimalFormat&quot;,&quot;PARAMETERS&quot;:[{&quot;PARAMETER_NAME&quot;:&quot;format&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;9V99\&quot; &quot;},{&quot;PARAMETER_NAME&quot;:&quot;toConvert&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;123\&quot; &quot;}],&quot;PARAMETER_CLASS_NAME&quot;:&quot;Numeric&quot;}"/>
       </column>
       <column comment="" key="false" length="-1" name="isPositive" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="isTwoDecimal" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <metadata connector="FLOW" name="NotPositve">
       <column comment="" defaultValue="" key="false" length="-1" name="AppliedLoad" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Float" usefulColumn="true">
         <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;convertImpliedDecimalFormat&quot;,&quot;PARAMETERS&quot;:[{&quot;PARAMETER_NAME&quot;:&quot;format&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;9V99\&quot; &quot;},{&quot;PARAMETER_NAME&quot;:&quot;toConvert&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;123\&quot; &quot;}],&quot;PARAMETER_CLASS_NAME&quot;:&quot;Numeric&quot;}"/>
       </column>
       <column comment="" key="false" length="-1" name="isPositive" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="isTwoDecimal" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-    </metadata>
-    <metadata connector="FLOW" name="NotDecimalPlaces">
-      <column comment="" defaultValue="" key="false" length="-1" name="AppliedLoad" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Float" usefulColumn="true">
-        <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;convertImpliedDecimalFormat&quot;,&quot;PARAMETERS&quot;:[{&quot;PARAMETER_NAME&quot;:&quot;format&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;9V99\&quot; &quot;},{&quot;PARAMETER_NAME&quot;:&quot;toConvert&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;123\&quot; &quot;}],&quot;PARAMETER_CLASS_NAME&quot;:&quot;Numeric&quot;}"/>
-      </column>
-      <column comment="" key="false" length="-1" name="isPositive" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="isTwoDecimal" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
       <uiProperties shellMaximized="true"/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
-      <outputTables activateExpressionFilter="true" expressionFilter="row2.isPositive.equals(&quot;Y&quot;)" name="Correct" sizeState="INTERMEDIATE">
+      <outputTables activateExpressionFilter="true" expressionFilter="row2.isNumeric.equals(&quot;Y&quot;)" name="Correct" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row2.Applied_Load " name="AppliedLoad" nullable="true" type="id_Float"/>
-        <mapperTableEntries expression="row2.isPositive " name="isPositive" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row2.isTwoDecimal " name="isTwoDecimal" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.isNumeric " name="isPositive" nullable="true" type="id_String"/>
       </outputTables>
-      <outputTables activateExpressionFilter="true" expressionFilter="row2.isPositive.equals(&quot;N&quot;)" name="NotPositve" sizeState="INTERMEDIATE">
+      <outputTables activateExpressionFilter="true" expressionFilter="row2.isNumeric.equals(&quot;N&quot;)" name="NotPositve" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row2.Applied_Load " name="AppliedLoad" nullable="true" type="id_Float"/>
-        <mapperTableEntries expression="row2.isPositive " name="isPositive" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row2.isTwoDecimal " name="isTwoDecimal" nullable="true" type="id_String"/>
-      </outputTables>
-      <outputTables activateExpressionFilter="true" expressionFilter="row2.isTwoDecimal.equals(&quot;N&quot;)" name="NotDecimalPlaces" sizeState="INTERMEDIATE">
-        <mapperTableEntries expression="row2.Applied_Load " name="AppliedLoad" nullable="true" type="id_Float"/>
-        <mapperTableEntries expression="row2.isPositive " name="isPositive" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row2.isTwoDecimal " name="isTwoDecimal" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.isNumeric " name="isPositive" nullable="true" type="id_String"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row2" sizeState="INTERMEDIATE">
         <mapperTableEntries name="Applied_Load" nullable="true" type="id_Float"/>
-        <mapperTableEntries name="isPositive" nullable="true" type="id_String"/>
-        <mapperTableEntries name="isTwoDecimal" nullable="true" type="id_String"/>
+        <mapperTableEntries name="isNumeric" nullable="true" type="id_String"/>
       </inputTables>
     </nodeData>
   </node>
@@ -218,8 +200,6 @@
       <elementValue elementRef="LENGTH" value="10"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="isPositive"/>
       <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="isTwoDecimal"/>
-      <elementValue elementRef="LENGTH" value="10"/>
     </elementParameter>
     <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
     <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="100"/>
@@ -229,7 +209,6 @@
         <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;convertImpliedDecimalFormat&quot;,&quot;PARAMETERS&quot;:[{&quot;PARAMETER_NAME&quot;:&quot;format&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;9V99\&quot; &quot;},{&quot;PARAMETER_NAME&quot;:&quot;toConvert&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;123\&quot; &quot;}],&quot;PARAMETER_CLASS_NAME&quot;:&quot;Numeric&quot;}"/>
       </column>
       <column comment="" key="false" length="-1" name="isPositive" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="isTwoDecimal" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="768" posY="224">
@@ -250,8 +229,6 @@
       <elementValue elementRef="LENGTH" value="10"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="isPositive"/>
       <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="isTwoDecimal"/>
-      <elementValue elementRef="LENGTH" value="10"/>
     </elementParameter>
     <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
     <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="100"/>
@@ -261,39 +238,6 @@
         <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;convertImpliedDecimalFormat&quot;,&quot;PARAMETERS&quot;:[{&quot;PARAMETER_NAME&quot;:&quot;format&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;9V99\&quot; &quot;},{&quot;PARAMETER_NAME&quot;:&quot;toConvert&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;123\&quot; &quot;}],&quot;PARAMETER_CLASS_NAME&quot;:&quot;Numeric&quot;}"/>
       </column>
       <column comment="" key="false" length="-1" name="isPositive" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="isTwoDecimal" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-    </metadata>
-  </node>
-  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="768" posY="352">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tLogRow_3"/>
-    <elementParameter field="RADIO" name="BASIC_MODE" value="true"/>
-    <elementParameter field="RADIO" name="TABLE_PRINT" value="false"/>
-    <elementParameter field="RADIO" name="VERTICAL" value="false"/>
-    <elementParameter field="RADIO" name="PRINT_UNIQUE" show="false" value="true"/>
-    <elementParameter field="RADIO" name="PRINT_LABEL" show="false" value="false"/>
-    <elementParameter field="RADIO" name="PRINT_UNIQUE_LABEL" show="false" value="false"/>
-    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;|&quot;"/>
-    <elementParameter field="CHECK" name="PRINT_HEADER" value="false"/>
-    <elementParameter field="CHECK" name="PRINT_UNIQUE_NAME" value="false"/>
-    <elementParameter field="CHECK" name="PRINT_COLNAMES" value="false"/>
-    <elementParameter field="CHECK" name="USE_FIXED_LENGTH" value="false"/>
-    <elementParameter field="TABLE" name="LENGTHS" show="false">
-      <elementValue elementRef="SCHEMA_COLUMN" value="AppliedLoad"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="isPositive"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="isTwoDecimal"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-    </elementParameter>
-    <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
-    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="100"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tLogRow_3">
-      <column comment="" defaultValue="" key="false" length="-1" name="AppliedLoad" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Float" usefulColumn="true">
-        <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;convertImpliedDecimalFormat&quot;,&quot;PARAMETERS&quot;:[{&quot;PARAMETER_NAME&quot;:&quot;format&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;9V99\&quot; &quot;},{&quot;PARAMETER_NAME&quot;:&quot;toConvert&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;123\&quot; &quot;}],&quot;PARAMETER_CLASS_NAME&quot;:&quot;Numeric&quot;}"/>
-      </column>
-      <column comment="" key="false" length="-1" name="isPositive" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="isTwoDecimal" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
   <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tRowGenerator_1" offsetLabelX="0" offsetLabelY="0" source="tRowGenerator_1" target="tJavaRow_1">
@@ -305,7 +249,7 @@
       <elementValue elementRef="TRACE_COLUMN" value="isNumeric"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
-      <elementValue elementRef="TRACE_COLUMN" value="isPositive"/>
+      <elementValue elementRef="TRACE_COLUMN" value="isNumeric"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
       <elementValue elementRef="TRACE_COLUMN" value="Applied_Load"/>
@@ -326,22 +270,18 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="NotPositve"/>
   </connection>
-  <connection connectorName="FLOW" label="NotDecimalPlaces" lineStyle="0" metaname="NotDecimalPlaces" offsetLabelX="0" offsetLabelY="0" outputId="3" source="tMap_1" target="tLogRow_3">
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="NotDecimalPlaces"/>
-  </connection>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tRowGenerator_1"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_2706ee7d-e185-412f-a86b-98e6bf3fb42e"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Hh/+i+25ISbvoELxNZGm0V3n/K3W7zEgwKLyJ5dK8NTB/j6itTSWL80DZhqnWliyS5kYYZmxqq80
-A+SreOfcWw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_23850c75-86d9-41ac-b8f7-007ec5a4f052"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>4DEiMpo9eLRBfnXa/gU2hnxsidnVyLtCNCzrBwmMWWlXlOa+4ks3FBoXET7wSmKRQiICVQUh6rec
-MXvcJjD5eA==</DigestValue></Reference></SignedInfo><SignatureValue>AWf6kDQEryK5R2VwbUxiiOOXR01SUNzqfIuL6yRP5s47bpTKrEX1v5GH8jYtw5zjrnbNo3MpI2Wd
-CJJtvFaTDduDgmvcXEDiRMqzD46OJu980b9H8KGkBlr6jvigHZglDUoSHMHe481MHox3SRcPETLo
-WqQpzm0R0hzyWK51jYeOZK4jm7gcKlqrdoT3lJ00skk/npuWcTTWq2HU4thhwCzUL0TefIFLONFY
-E1nxRUZz3L8VSG3DJksj10su4JggdXSd5BvMTqql72nIu2hZKQUQuWoLhYEobxGl+5eSAokYS4E5
-BQp358/XRTEk0rYR8iXiAN47h4onNqj2TkNunQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_770c7c2b-c7fa-4c27-8036-f4c26b44264c"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>e7I15KfQrk35TDmIXHnEbEr1PsmjD2EZU18ronV/8X06YgwxmG0VVXtW1mucfK2DQKFYh4KnuBX8
+1v7gPZIngQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_00e2f22a-e1ae-4f17-a60d-d0b8d4625ca1"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>C8vZyK8W/XPGeI+qtaGnO1XLX7Y49Jz0CDVMHbSGKv9ZUh+BOS2eUY60ixDoCswglscFL4LC4si5
+UvfVKjYwfg==</DigestValue></Reference></SignedInfo><SignatureValue>OJ+25COgZUtN7/M71Sh85zg/y36G1gNaLRUp43JcZsUg1wVtESPr1aIjaW1i46KYjtGqGv9Rxg2E
+bHCEVyp1Z9RJ7hnDR8dVQFpV4QftvxVTzBDWhuwu8x0NvTua3c4ZQLlrhvWlwcNmhpqcaeZSqS6C
+oYY7r9dSa3A9GmIU8pOoN2I4RsN7GpI+iU0LD1JVNDL54OL1GfAwxEZDIXwULmamA3eTJLl32csL
+n3jvLsVz8xsBDfX8uLQCTrJ2x9liBKAsjMko2UfrA0l0hwy/Dg+BxEjtSvAXBRr4zg2c32rXNKR4
+dq/L/IAlZmF2uravPd/eNWzdDONqvJY8RW7ZeQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U
@@ -363,4 +303,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_23850c75-86d9-41ac-b8f7-007ec5a4f052" Target="#_2706ee7d-e185-412f-a86b-98e6bf3fb42e"><Timestamp>2020-03-18 04:03:01</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_00e2f22a-e1ae-4f17-a60d-d0b8d4625ca1" Target="#_770c7c2b-c7fa-4c27-8036-f4c26b44264c"><Timestamp>2020-03-18 04:06:10</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
