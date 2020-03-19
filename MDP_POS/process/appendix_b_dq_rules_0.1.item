@@ -42,7 +42,7 @@
     <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" show="false" value="enc:system.encryption.key.v1:M3Voifp1tdytNuoSIdQdvxsNEprdUHGoKiqG2Dgd"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" show="false" value="enc:system.encryption.key.v1:gChMO0A6Qlejz8GTnsVHV6qnhVKRoAUTN0yPfQVb"/>
     <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
@@ -77,7 +77,7 @@
     <elementParameter field="TEXT" name="PROPERTIES" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:biiaa9LvnpTTIRGBwiejzOpv2MulIDeLh4Fi3rv9"/>
+    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:Hkh0r/rr9Kh0tH4PGOGs+SOKJx+Ht9yk1iL2CXo/"/>
     <elementParameter field="FILE" name="DBFILE" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE_STATS" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE_LOGS" show="false" value="&quot;&quot;"/>
@@ -246,7 +246,6 @@
       <column comment="" key="false" length="5" name="Interruption_Duration__sec_" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
       <column comment="" key="false" length="27" name="Interruption_time" nullable="true" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="0" type="id_Date" usefulColumn="true"/>
       <column comment="" key="false" length="27" name="Restoration_time" nullable="true" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="0" type="id_Date" usefulColumn="true"/>
-      <column comment="" key="false" length="27" name="Restoration_time_1" nullable="true" originalDbColumnName="Restoration_time" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="0" type="id_Date" usefulColumn="true"/>
     </metadata>
     <metadata connector="FLOW" name="moreLess12">
       <column comment="" key="false" length="80" name="SDP_GID_H" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
@@ -267,7 +266,7 @@
       <column comment="" key="false" length="27" name="Restoration_time" nullable="true" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="0" type="id_Date" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables activateExpressionFilter="true" expressionFilter="!(Relational.ISNULL(row1.SIN_H)) &amp;&amp; StringHandling.LEN(row1.SIN_H) == 12 &amp;&amp; !(row1.SIN_H.equals(&quot;0&quot;))" name="goodWithDuplicates" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row1.SDP_GID_H  " name="SDP_GID_H" nullable="true" type="id_String"/>
@@ -279,14 +278,13 @@
         <mapperTableEntries expression="row1.Restoration_time  " name="Restoration_time" nullable="true" type="id_Date"/>
       </outputTables>
       <outputTables activateExpressionFilter="true" expressionFilter="row1.SIN_H.equals(&quot;0&quot;)" name="notNumeric" sizeState="INTERMEDIATE">
-        <mapperTableEntries name="SDP_GID_H" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row1.SDP_GID_H  " name="SIN_H" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row1.SIN_H  " name="SECTOR_H" nullable="true" type="id_Float"/>
-        <mapperTableEntries expression="row1.SECTOR_H  " name="Incident_ID" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row1.Incident_ID  " name="Interruption_Duration__sec_" nullable="true" type="id_Integer"/>
-        <mapperTableEntries expression="row1.Interruption_Duration__sec_  " name="Interruption_time" nullable="true" type="id_Date"/>
-        <mapperTableEntries expression="row1.Interruption_time  " name="Restoration_time" nullable="true" type="id_Date"/>
-        <mapperTableEntries expression="row1.Restoration_time " name="Restoration_time_1" nullable="true" type="id_Date"/>
+        <mapperTableEntries expression="row1.SDP_GID_H  " name="SDP_GID_H" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.SIN_H  " name="SIN_H" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.SECTOR_H  " name="SECTOR_H" nullable="true" type="id_Float"/>
+        <mapperTableEntries expression="row1.Incident_ID  " name="Incident_ID" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.Interruption_Duration__sec_  " name="Interruption_Duration__sec_" nullable="true" type="id_Integer"/>
+        <mapperTableEntries expression="row1.Interruption_time  " name="Interruption_time" nullable="true" type="id_Date"/>
+        <mapperTableEntries expression="row1.Restoration_time  " name="Restoration_time" nullable="true" type="id_Date"/>
       </outputTables>
       <outputTables activateCondensedTool="true" activateExpressionFilter="true" columnNameFilter="" expressionFilter="StringHandling.LEN(row1.SIN_H.replaceAll( &quot;[a-fA-F]&quot;, &quot;&quot; )) &gt;= 12" name="moreLess12" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row1.SDP_GID_H  " name="SDP_GID_H" nullable="true" type="id_String"/>
@@ -629,8 +627,8 @@
     <elementParameter field="TEXT" name="FS_DEFAULT_NAME" value="&quot;hdfs://localhost:9000/&quot;"/>
     <elementParameter field="TEXT" name="ADLS_FS_DEFAULT_NAME" show="false" value="&quot;adl://account.azuredatalakestore.net&quot;"/>
     <elementParameter field="TEXT" name="ADLS_CLIENT_ID" show="false" value="&quot;XXXX&quot;"/>
-    <elementParameter field="PASSWORD" name="ADLS_AUTH_TOKEN_ENDPOINT" show="false" value="enc:system.encryption.key.v1:V5UUu5LH+Kr+u9h5BzBY6wtJN75eME5/zKDpJI1fGeeQiQ9sBWGz86k6G/WUTFSiRzKJTymWpCbqu9z13eHp/LXJR71CLD20dwFmBmr/DjY="/>
-    <elementParameter field="PASSWORD" name="ADLS_CLIENT_KEY" show="false" value="enc:system.encryption.key.v1:UWApC4Nujc6HqdQc+cMq7SQXPAo8UPRC/+zJPTKE/yBeHw=="/>
+    <elementParameter field="PASSWORD" name="ADLS_AUTH_TOKEN_ENDPOINT" show="false" value="enc:system.encryption.key.v1:kXfbod9jSF/ATtuTVaoaPnbJ8LREGJeU8uGDAH5LvuxmecfmwZ00h1omAaIlDVmMNHkivnXYmaLQjobXnGt+1tIisX2ZXuvlA5f7XQPQ78c="/>
+    <elementParameter field="PASSWORD" name="ADLS_CLIENT_KEY" show="false" value="enc:system.encryption.key.v1:9GQJwor9YExR2fZSOSvXzAt+BnFncRuYDcv1Knf6jEyeqw=="/>
     <elementParameter field="CHECK" name="USE_DATANODE_HOSTNAME" value="true"/>
     <elementParameter field="CHECK" name="USE_KRB" value="false"/>
     <elementParameter field="TEXT" name="NAMENODE_PRINCIPAL" show="false" value="&quot;nn/_HOST@EXAMPLE.COM&quot;"/>
@@ -640,7 +638,7 @@
     <elementParameter field="CHECK" name="USE_MAPRTICKET" show="false" value="false"/>
     <elementParameter field="TEXT" name="USERNAME" value="&quot;anonymous&quot;"/>
     <elementParameter field="TEXT" name="GROUP" show="false" value="&quot;supergroup&quot;"/>
-    <elementParameter field="PASSWORD" name="MAPRTICKET_PASSWORD" show="false" value="enc:system.encryption.key.v1:9zSanizzDqujzAukAXtxXK+nL5zmdnbYYr+MH53V"/>
+    <elementParameter field="PASSWORD" name="MAPRTICKET_PASSWORD" show="false" value="enc:system.encryption.key.v1:jzZbHwu7KgSezAr4nqucY1GoAQ8yRI1bq1KacgP3"/>
     <elementParameter field="TEXT" name="MAPRTICKET_CLUSTER" show="false" value="&quot;demo.mapr.com&quot;"/>
     <elementParameter field="TEXT" name="MAPRTICKET_DURATION" show="false" value="86400L"/>
     <elementParameter field="BOTH_HADOOP" name="FILENAME" value="&quot;&quot;"/>
@@ -1186,7 +1184,7 @@
   </node>
   <node componentName="tJavaRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1120" posY="64">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tJavaRow_3"/>
-    <elementParameter field="MEMO_JAVA" name="CODE" value="//Code generated according to input schema and output schema&#13;&#10;output_row.SDP_GID_H = input_row.SDP_GID_H;&#13;&#10;//output_row.TLN_H = input_row.TLN_H;&#10;if (input_row.TLN_H.matches(\w&quot;)) {&#10;&#9;output_row.TLN_H = &quot;0&quot;;&#10;&#9;}&#10;else {&#10;&#9;output_row.TLN_H = input_row.TLN_H;&#10;&#9;}&#10;//output_row.SIN_H = input_row.SIN_H;&#10;if (input_row.SIN_H.matches(&quot;.*[0-9A-Fa-f]{80}.*&quot;)) {&#10;&#9;output_row.SIN_H = input_row.SIN_H;&#10;&#9;}&#10;else {&#10;&#9;output_row.SIN_H = &quot;0&quot;;&#10;&#9;}&#10;&#13;&#10;"/>
+    <elementParameter field="MEMO_JAVA" name="CODE" value="//Code generated according to input schema and output schema&#13;&#10;output_row.SDP_GID_H = input_row.SDP_GID_H;&#13;&#10;//output_row.TLN_H = input_row.TLN_H;&#10;if (input_row.TLN_H.matches(&quot;.*\\w.*&quot;)) {&#10;&#9;output_row.TLN_H = &quot;0&quot;;&#10;&#9;}&#10;else {&#10;&#9;output_row.TLN_H = input_row.TLN_H;&#10;&#9;}&#10;//output_row.SIN_H = input_row.SIN_H;&#10;if (input_row.SIN_H.matches(&quot;.*[0-9A-Fa-f]{80}.*&quot;)) {&#10;&#9;output_row.SIN_H = input_row.SIN_H;&#10;&#9;}&#10;else {&#10;&#9;output_row.SIN_H = &quot;0&quot;;&#10;&#9;}&#10;&#13;&#10;"/>
     <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="metadata" name="tJavaRow_3">
@@ -1210,9 +1208,9 @@
     <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="copyOfnotNumeric_0">
-      <column comment="" key="false" length="80" name="SIN_H" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="80" name="SDP_GID_H" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="80" name="TLN_H" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="SECTOR_H" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Float" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="SIN_H" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <metadata connector="FLOW" name="copyOfnullValues_0">
       <column comment="" key="false" length="80" name="SDP_GID_H" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
@@ -1230,12 +1228,12 @@
       <column comment="" key="false" length="-1" name="SIN_H" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables activateExpressionFilter="true" expressionFilter="row33.SIN_H.equals(&quot;0&quot;)" name="copyOfnotNumeric_0" sizeState="INTERMEDIATE">
-        <mapperTableEntries expression="row33.SDP_GID_H  " name="SIN_H" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row33.SDP_GID_H " name="SDP_GID_H" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row33.TLN_H " name="TLN_H" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row33.SIN_H  " name="SECTOR_H" nullable="true" type="id_Float"/>
+        <mapperTableEntries expression="row33.SIN_H " name="SIN_H" nullable="true" type="id_String"/>
       </outputTables>
       <outputTables activateExpressionFilter="true" expressionFilter="Relational.ISNULL(row33.SIN_H)" name="copyOfnullValues_0" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row33.SDP_GID_H  " name="SDP_GID_H" nullable="true" type="id_String"/>
@@ -1615,8 +1613,8 @@
     <elementParameter field="TEXT" name="FS_DEFAULT_NAME" value="&quot;hdfs://localhost:9000/&quot;"/>
     <elementParameter field="TEXT" name="ADLS_FS_DEFAULT_NAME" show="false" value="&quot;adl://account.azuredatalakestore.net&quot;"/>
     <elementParameter field="TEXT" name="ADLS_CLIENT_ID" show="false" value="&quot;XXXX&quot;"/>
-    <elementParameter field="PASSWORD" name="ADLS_AUTH_TOKEN_ENDPOINT" show="false" value="enc:system.encryption.key.v1:RNcIzzuxgEQm8Po9iV7H8rMRZ2CDkRCaHo6d24iXjQf0ffBgYXgm5YK05fjYSG4P3Cq27olUMGINGtck09cXfBSbnKn2MGdK/CoIWUTQeOo="/>
-    <elementParameter field="PASSWORD" name="ADLS_CLIENT_KEY" show="false" value="enc:system.encryption.key.v1:a7cHPl30YHkt/TIBwNxFEGRF0UndGtwpxKKEw03aqClm0A=="/>
+    <elementParameter field="PASSWORD" name="ADLS_AUTH_TOKEN_ENDPOINT" show="false" value="enc:system.encryption.key.v1:d3JWNqiN588OzxGrxfPPp4ZZY5axbhgFSfMkEgiweJU/yXvk+wPOdz383/G4P9q34Z1l+oJxMIxhvVBqlYNu6afoK6YYgsjQ53G7xRheJOQ="/>
+    <elementParameter field="PASSWORD" name="ADLS_CLIENT_KEY" show="false" value="enc:system.encryption.key.v1:o1H2XeTN6scXJqe/I9Jv3V3XHWxYKAPETbzAmSADcOxFqQ=="/>
     <elementParameter field="CHECK" name="USE_DATANODE_HOSTNAME" value="true"/>
     <elementParameter field="CHECK" name="USE_KRB" value="false"/>
     <elementParameter field="TEXT" name="NAMENODE_PRINCIPAL" show="false" value="&quot;nn/_HOST@EXAMPLE.COM&quot;"/>
@@ -1626,7 +1624,7 @@
     <elementParameter field="CHECK" name="USE_MAPRTICKET" show="false" value="false"/>
     <elementParameter field="TEXT" name="USERNAME" value="&quot;anonymous&quot;"/>
     <elementParameter field="TEXT" name="GROUP" show="false" value="&quot;supergroup&quot;"/>
-    <elementParameter field="PASSWORD" name="MAPRTICKET_PASSWORD" show="false" value="enc:system.encryption.key.v1:iIZ7Y3nibog4Lxzz3MMB573CFwplBBjqoGj0P9zg"/>
+    <elementParameter field="PASSWORD" name="MAPRTICKET_PASSWORD" show="false" value="enc:system.encryption.key.v1:tUamFTSNtlF1XpbiQwHo9LNzpp758a3WuE5pHode"/>
     <elementParameter field="TEXT" name="MAPRTICKET_CLUSTER" show="false" value="&quot;demo.mapr.com&quot;"/>
     <elementParameter field="TEXT" name="MAPRTICKET_DURATION" show="false" value="86400L"/>
     <elementParameter field="BOTH_HADOOP" name="FILENAME" value="&quot;&quot;"/>
@@ -1750,45 +1748,45 @@
     <metadata connector="FLOW" name="copyOfgoodWithDuplicates_0">
       <column comment="" key="false" length="80" name="SIN_H" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="80" name="TLN_H" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="SECTOR_H" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Float" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="SECTOR_H" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Long" usefulColumn="true"/>
     </metadata>
     <metadata connector="FLOW" name="copyOfnotNumeric_1">
       <column comment="" key="false" length="80" name="SIN_H" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="80" name="TLN_H" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="SECTOR_H" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Float" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="SECTOR_H" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Long" usefulColumn="true"/>
     </metadata>
     <metadata connector="FLOW" name="copyOfmoreLess12_0">
       <column comment="" key="false" length="80" name="SIN_H" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="80" name="TLN_H" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="SECTOR_H" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Float" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="SECTOR_H" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Long" usefulColumn="true"/>
     </metadata>
     <metadata connector="FLOW" name="copyOfnullValues_1">
       <column comment="" key="false" length="80" name="SIN_H" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="80" name="TLN_H" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="SECTOR_H" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Float" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="SECTOR_H" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Long" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables activateExpressionFilter="true" expressionFilter="!(Relational.ISNULL(row54.SIN_H)) &amp;&amp; StringHandling.LEN(row54.SIN_H) == 12 &amp;&amp; !(row54.SIN_H.equals(&quot;0&quot;))" name="copyOfgoodWithDuplicates_0" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row54.SIN_H  " name="SIN_H" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row54.TLN_H " name="TLN_H" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row54.SECTOR_H  " name="SECTOR_H" nullable="true" type="id_Float"/>
+        <mapperTableEntries expression="row54.SECTOR_H  " name="SECTOR_H" nullable="true" type="id_Long"/>
       </outputTables>
       <outputTables activateExpressionFilter="true" expressionFilter="row54.SIN_H.equals(&quot;0&quot;)" name="copyOfnotNumeric_1" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row54.SIN_H   " name="SIN_H" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row54.TLN_H  " name="TLN_H" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row54.SECTOR_H   " name="SECTOR_H" nullable="true" type="id_Float"/>
+        <mapperTableEntries expression="row54.SECTOR_H   " name="SECTOR_H" nullable="true" type="id_Long"/>
       </outputTables>
       <outputTables activateCondensedTool="true" activateExpressionFilter="true" columnNameFilter="" expressionFilter="StringHandling.LEN(row54.SIN_H.replaceAll( &quot;[a-fA-F]&quot;, &quot;&quot; )) &gt;= 12" name="copyOfmoreLess12_0" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row54.SIN_H    " name="SIN_H" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row54.TLN_H   " name="TLN_H" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row54.SECTOR_H    " name="SECTOR_H" nullable="true" type="id_Float"/>
+        <mapperTableEntries expression="row54.SECTOR_H    " name="SECTOR_H" nullable="true" type="id_Long"/>
       </outputTables>
       <outputTables activateExpressionFilter="true" expressionFilter="Relational.ISNULL(row54.SIN_H)" name="copyOfnullValues_1" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row54.SIN_H     " name="SIN_H" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row54.TLN_H    " name="TLN_H" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row54.SECTOR_H     " name="SECTOR_H" nullable="true" type="id_Float"/>
+        <mapperTableEntries expression="row54.SECTOR_H     " name="SECTOR_H" nullable="true" type="id_Long"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row54" sizeState="INTERMEDIATE">
         <mapperTableEntries name="SIN_H" nullable="true" type="id_String"/>
@@ -1860,7 +1858,7 @@
     <metadata connector="FLOW" name="tHashOutput_17">
       <column comment="" key="false" length="80" name="SIN_H" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="80" name="TLN_H" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="SECTOR_H" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Float" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="SECTOR_H" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Long" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="672" posY="1184">
@@ -2156,7 +2154,7 @@
       <column comment="" key="false" length="-1" name="SECTOR_H" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Float" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables activateCondensedTool="true" name="copyOfuniqueValues_0" rejectInnerJoin="true" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row42.SIN_H " name="SIN_H" nullable="true" type="id_String"/>
@@ -2176,7 +2174,7 @@
       <inputTables activateCondensedTool="true" innerJoin="true" lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row56" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row42.SIN_H " name="SIN_H" nullable="true" operator="=" type="id_String"/>
         <mapperTableEntries name="TLN_H" nullable="true" type="id_String"/>
-        <mapperTableEntries name="SECTOR_H" nullable="true" type="id_Long"/>
+        <mapperTableEntries name="SECTOR_H" nullable="true" type="id_Float"/>
       </inputTables>
     </nodeData>
   </node>
@@ -2207,7 +2205,7 @@
     <metadata connector="UNIQUE" label="metadata" name="UNIQUE">
       <column comment="" key="false" length="80" name="SIN_H" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="80" name="TLN_H" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="19" name="SECTOR_H" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Long" usefulColumn="true"/>
+      <column comment="" key="false" length="19" name="SECTOR_H" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Float" usefulColumn="true"/>
     </metadata>
     <metadata connector="DUPLICATE" label="metadata" name="DUPLICATE">
       <column comment="" key="false" length="80" name="SIN_H" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
@@ -2450,8 +2448,8 @@
     <elementParameter field="TEXT" name="FS_DEFAULT_NAME" value="&quot;hdfs://localhost:9000/&quot;"/>
     <elementParameter field="TEXT" name="ADLS_FS_DEFAULT_NAME" show="false" value="&quot;adl://account.azuredatalakestore.net&quot;"/>
     <elementParameter field="TEXT" name="ADLS_CLIENT_ID" show="false" value="&quot;XXXX&quot;"/>
-    <elementParameter field="PASSWORD" name="ADLS_AUTH_TOKEN_ENDPOINT" show="false" value="enc:system.encryption.key.v1:GB/wPJDjl7FwTvE0wJJwf5kE89rBQuI6fUTsSHEBnWgdEsgWQq3EgsExikqMZqJ6AZXjLfUKKEG5HjHn3or7CO8yHY8HIQWiRwEFiN6XXx8="/>
-    <elementParameter field="PASSWORD" name="ADLS_CLIENT_KEY" show="false" value="enc:system.encryption.key.v1:X+v/8gIqPLAtKRC5fwLBNH43HFMPmJSOlyQX9pHqtK8klA=="/>
+    <elementParameter field="PASSWORD" name="ADLS_AUTH_TOKEN_ENDPOINT" show="false" value="enc:system.encryption.key.v1:UYPgDnqTz1XPrkVahC61Ik5SB2wkSWv12qGmRlbYqKgAsSAkcE4a0/njBNSYye+qffxygxMV7K1Yx0OJRJz2zWbDYUSFwkfFlnKdimuSaUo="/>
+    <elementParameter field="PASSWORD" name="ADLS_CLIENT_KEY" show="false" value="enc:system.encryption.key.v1:A3yBKFYn/qY4vGjt9+CfNllR+AdzCaZ8Oa8W+Z7tzAH29A=="/>
     <elementParameter field="CHECK" name="USE_DATANODE_HOSTNAME" value="true"/>
     <elementParameter field="CHECK" name="USE_KRB" value="false"/>
     <elementParameter field="TEXT" name="NAMENODE_PRINCIPAL" show="false" value="&quot;nn/_HOST@EXAMPLE.COM&quot;"/>
@@ -2461,7 +2459,7 @@
     <elementParameter field="CHECK" name="USE_MAPRTICKET" show="false" value="false"/>
     <elementParameter field="TEXT" name="USERNAME" value="&quot;anonymous&quot;"/>
     <elementParameter field="TEXT" name="GROUP" show="false" value="&quot;supergroup&quot;"/>
-    <elementParameter field="PASSWORD" name="MAPRTICKET_PASSWORD" show="false" value="enc:system.encryption.key.v1:F/dQtpoXnGv2EodCjrVdq9cs53X2Ue5L5qQiFBi2"/>
+    <elementParameter field="PASSWORD" name="MAPRTICKET_PASSWORD" show="false" value="enc:system.encryption.key.v1:F5dEOv/cANDAiUDAIIG7Z6IRjtqtZM4tVLmedgxl"/>
     <elementParameter field="TEXT" name="MAPRTICKET_CLUSTER" show="false" value="&quot;demo.mapr.com&quot;"/>
     <elementParameter field="TEXT" name="MAPRTICKET_DURATION" show="false" value="86400L"/>
     <elementParameter field="BOTH_HADOOP" name="FILENAME" value="&quot;&quot;"/>
@@ -2844,6 +2842,9 @@
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
       <elementValue elementRef="TRACE_COLUMN" value="TLN_H"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="SDP_GID_H"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
@@ -3371,13 +3372,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_e01a9478-f45d-4bca-aa37-2bb0db9b995f"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>tbFbtIkO7us/vMP6z9wzXzaXQ9fwR7Cqa435qhr1feUNBE6vzFgstY05+i30NtqA9q/yvlTuKrRf
-nNBiiXCRFw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_04a614b0-1089-46e9-a6f1-17ddeaf7335f"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>vsc2C2/c6GkqxIBNktRLwfhyTmXuqn9tT7QPBm8xHXsQZgXIzMwK2IPY7qpvVYjaZoWj+FPEcHFk
-qUyn2Uh+YQ==</DigestValue></Reference></SignedInfo><SignatureValue>BGOVX60+pzrPKbSZWpnJIiUpDzpO2FCtn6lz0YE3otjdtHe68oH3fhF2Ls4tr+1zOaS1nacPaRl8
-riFU9uj6LW4ZGJD5AElDF0ScjlWIWyHwdCRq6gj7w9Yge7Oul27njexwFgWkEDcy1YMXhlkwbCEr
-0BfEkBc8OLMaq2v3n/bM1JHtGTxsc7SmcZQj4KjqdZCRfFCmfWdWWoLAjKmNfW/ppj9JY04DW/6n
-ynPpDG13cQDo76ljRAlqvbKZK3CwNu1MJt5SjVvto9fsEZLj4r4GujWZczLE+V5PtozNcyMlR9Hs
-DA/cD6EIEELzkc8utSPTsBckcWwqFzfXdvrnag==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_0c0542a0-a309-4d85-9019-84f68b2df606"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>si5vN1FNVNIw6cr3AAqCGxE+Tb9z/Ygdfb87NIldvTpPO3lwcP3Qk7phEbctwQfO5wYn8PEyB06Q
+7sqJtfvygg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_a782a7ac-0562-4b75-94bc-960335be70ee"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>9eGcK2fCyo+SqT1K8zNegj5dq9vibOp3Iai0pR4un0SHbGe+8sj5mwsdX8RWAas4nnNqi+cSm+uU
+zFymycuQ+Q==</DigestValue></Reference></SignedInfo><SignatureValue>iCk6nrd+5Apy2HpBZzaCspnM6Nw30JfSZkS21imt2MZRiIcx1zQvJq3poSyG0eLWJCMtqGfhPkKD
+qihFP+iQS6Tewg/+5sMe6GgImWJ4v/AzSzCw/3EdA3TXUOjf2ymvdAsaRl/aeS7ZoOZhuH6EALqi
+EEC8ZVhhoUTsdDKaCB6q+9+t9jfE2KfKYZ+0dYDkIaJmiSnU8BeulCsvnfHG0/EQOqQLWyU/quZo
+TuATGNV+Ee4VC9uZ2JT/92VlvOX95QDHL3NEAAWRqONfVRcvai0IBXuCLB1ba210Lw7RjvCMTrz8
+qwGEtA/Ma0D8zVBTvPFUUf2j5CHSQ5XUYUx0qQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U
@@ -3399,4 +3400,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_04a614b0-1089-46e9-a6f1-17ddeaf7335f" Target="#_e01a9478-f45d-4bca-aa37-2bb0db9b995f"><Timestamp>2020-03-19 16:10:20</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_a782a7ac-0562-4b75-94bc-960335be70ee" Target="#_0c0542a0-a309-4d85-9019-84f68b2df606"><Timestamp>2020-03-19 17:55:28</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
