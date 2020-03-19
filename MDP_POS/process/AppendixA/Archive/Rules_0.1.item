@@ -42,7 +42,7 @@
     <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" show="false" value="enc:system.encryption.key.v1:kKkY1yh/mN6TKoRMrw2iJxk4RCcERrWZAeFQeTZX"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" show="false" value="enc:system.encryption.key.v1:adiuxWuLK5Df2pkpzg9nHTzHL6QfYr/rMue+6pht"/>
     <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
@@ -77,7 +77,7 @@
     <elementParameter field="TEXT" name="PROPERTIES" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:xRvd8j3asWPkCZKQeA9c0K/ODXKwxoK66rCP1hnK"/>
+    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:dFFB+O/8pRPEj8q2SmkEiukIX/yBLACHkafUqheK"/>
     <elementParameter field="FILE" name="DBFILE" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE_STATS" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE_LOGS" show="false" value="&quot;&quot;"/>
@@ -240,7 +240,7 @@
     <elementParameter field="CHECK" name="USE_MAPRTICKET" show="false" value="false"/>
     <elementParameter field="TEXT" name="USERNAME" value="&quot;anonymous&quot;"/>
     <elementParameter field="TEXT" name="GROUP" show="false" value="&quot;supergroup&quot;"/>
-    <elementParameter field="PASSWORD" name="MAPRTICKET_PASSWORD" show="false" value="enc:system.encryption.key.v1:Be4sKYLl+FUBoEg7bD9f3Dsnbsawx6orSRDSBnta"/>
+    <elementParameter field="PASSWORD" name="MAPRTICKET_PASSWORD" show="false" value="enc:system.encryption.key.v1:kse18TC8T4pXYgLo7OXtrWOVCCF5DVTlU3WWv0tn"/>
     <elementParameter field="TEXT" name="MAPRTICKET_CLUSTER" show="false" value="&quot;demo.mapr.com&quot;"/>
     <elementParameter field="TEXT" name="MAPRTICKET_DURATION" show="false" value="86400L"/>
     <elementParameter field="TABLE" name="HADOOP_ADVANCED_PROPERTIES"/>
@@ -249,8 +249,8 @@
     <elementParameter field="TEXT" name="HDFS_ENCRYPTION_KEY_PROVIDER" show="false" value="&quot;kms://http@localhost:16000/kms&quot;"/>
     <elementParameter field="TEXT" name="ADLS_FS_DEFAULT_NAME" show="false" value="&quot;adl://account.azuredatalakestore.net&quot;"/>
     <elementParameter field="TEXT" name="ADLS_CLIENT_ID" show="false" value="&quot;XXXX&quot;"/>
-    <elementParameter field="PASSWORD" name="ADLS_AUTH_TOKEN_ENDPOINT" show="false" value="enc:system.encryption.key.v1:eOpa82gUiSqvMSUlvOtvs2bJJB442ytFznEJfuBRdZEkNh1J0EMWm4OolTkkRAmHFelCM30uUpFzmFMeNHPzrCWDz/607GJdq/1aIvIA64s="/>
-    <elementParameter field="PASSWORD" name="ADLS_CLIENT_KEY" show="false" value="enc:system.encryption.key.v1:3TGYzF2F9msTjjHxrqjG5jmTowBQ5IZBglq+NEEv2BPTcQ=="/>
+    <elementParameter field="PASSWORD" name="ADLS_AUTH_TOKEN_ENDPOINT" show="false" value="enc:system.encryption.key.v1:ng8MHML0X5JXvAxT4nzWU/ota3dCchdtr3LjGUyBlsVU9pqaGNpFQLVau7bNlCswp2TYMd3rqSwfRxi3HzODnKSI1p6epl94hovlUGY1W4c="/>
+    <elementParameter field="PASSWORD" name="ADLS_CLIENT_KEY" show="false" value="enc:system.encryption.key.v1:9XlAcsIXMVGJpDOrMMLuk02YeOjB/XAeMoFm38VuEUBWMw=="/>
     <elementParameter field="CHECK" name="SET_MAPR_HOME_DIR" show="false" value="false"/>
     <elementParameter field="TEXT" name="MAPR_HOME_DIR" show="false" value="&quot;/opt/mapr&quot;"/>
     <elementParameter field="CHECK" name="SET_HADOOP_LOGIN" show="false" value="false"/>
@@ -379,26 +379,31 @@
       <column comment="" key="false" length="1" name="SOURCE_SYSTEM" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Character" usefulColumn="true"/>
       <column comment="" key="false" length="10" name="DASHBOARD_STATUS_DATE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Date" usefulColumn="true"/>
       <column comment="" key="false" length="9" name="APPLIED_LOAD" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="Correct" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <metadata connector="FLOW" name="NotPositive1">
       <column comment="" key="false" length="1" name="SOURCE_SYSTEM" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Character" usefulColumn="true"/>
       <column comment="" key="false" length="10" name="DASHBOARD_STATUS_DATE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Date" usefulColumn="true"/>
       <column comment="" key="false" length="9" name="APPLIED_LOAD" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="RowCount" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <metadata connector="FLOW" name="NotNumeric">
       <column comment="" key="false" length="1" name="SOURCE_SYSTEM" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Character" usefulColumn="true"/>
       <column comment="" key="false" length="10" name="DASHBOARD_STATUS_DATE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Date" usefulColumn="true"/>
       <column comment="" key="false" length="9" name="APPLIED_LOAD" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="RowCount" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <metadata connector="FLOW" name="Not2Decimal">
       <column comment="" key="false" length="1" name="SOURCE_SYSTEM" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Character" usefulColumn="true"/>
       <column comment="" key="false" length="10" name="DASHBOARD_STATUS_DATE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Date" usefulColumn="true"/>
       <column comment="" key="false" length="9" name="APPLIED_LOAD" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="RowCount" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <metadata connector="FLOW" name="NullDate1">
       <column comment="" key="false" length="1" name="SOURCE_SYSTEM" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Character" usefulColumn="true"/>
       <column comment="" key="false" length="10" name="DASHBOARD_STATUS_DATE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Date" usefulColumn="true"/>
       <column comment="" key="false" length="9" name="APPLIED_LOAD" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="RowCount" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
       <uiProperties shellMaximized="true"/>
@@ -407,26 +412,31 @@
         <mapperTableEntries expression="row5.SOURCE_SYSTEM " name="SOURCE_SYSTEM" nullable="true" type="id_Character"/>
         <mapperTableEntries expression="row5.DASHBOARD_STATUS_DATE " name="DASHBOARD_STATUS_DATE" nullable="true" type="id_Date"/>
         <mapperTableEntries expression="row5.APPLIED_LOAD " name="APPLIED_LOAD" nullable="true" type="id_String"/>
+        <mapperTableEntries name="Correct" nullable="true" type="id_String"/>
       </outputTables>
       <outputTables activateExpressionFilter="true" expressionFilter="row5.isPositive.equals(&quot;N&quot;)" name="NotPositive1" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row5.SOURCE_SYSTEM " name="SOURCE_SYSTEM" nullable="true" type="id_Character"/>
         <mapperTableEntries expression="row5.DASHBOARD_STATUS_DATE " name="DASHBOARD_STATUS_DATE" nullable="true" type="id_Date"/>
         <mapperTableEntries expression="row5.APPLIED_LOAD " name="APPLIED_LOAD" nullable="true" type="id_String"/>
+        <mapperTableEntries name="RowCount" nullable="true" type="id_String"/>
       </outputTables>
       <outputTables activateExpressionFilter="true" expressionFilter="row5.isNumeric.equals(&quot;N&quot;)" name="NotNumeric" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row5.SOURCE_SYSTEM " name="SOURCE_SYSTEM" nullable="true" type="id_Character"/>
         <mapperTableEntries expression="row5.DASHBOARD_STATUS_DATE " name="DASHBOARD_STATUS_DATE" nullable="true" type="id_Date"/>
         <mapperTableEntries expression="row5.APPLIED_LOAD " name="APPLIED_LOAD" nullable="true" type="id_String"/>
+        <mapperTableEntries name="RowCount" nullable="true" type="id_String"/>
       </outputTables>
       <outputTables activateExpressionFilter="true" expressionFilter="row5.isTwoDecimal.equals(&quot;N&quot;)" name="Not2Decimal" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row5.SOURCE_SYSTEM " name="SOURCE_SYSTEM" nullable="true" type="id_Character"/>
         <mapperTableEntries expression="row5.DASHBOARD_STATUS_DATE " name="DASHBOARD_STATUS_DATE" nullable="true" type="id_Date"/>
         <mapperTableEntries expression="row5.APPLIED_LOAD " name="APPLIED_LOAD" nullable="true" type="id_String"/>
+        <mapperTableEntries name="RowCount" nullable="true" type="id_String"/>
       </outputTables>
       <outputTables activateExpressionFilter="true" expressionFilter="row5.SOURCE_SYSTEM.equals('X') &amp;&amp; StringHandling.LEN(String.valueOf(row5.DASHBOARD_STATUS_DATE)) == 0 &#10;|| String.valueOf(row5.DASHBOARD_STATUS_DATE) == null || String.valueOf(row5.DASHBOARD_STATUS_DATE).equals(null)" name="NullDate1" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row5.SOURCE_SYSTEM " name="SOURCE_SYSTEM" nullable="true" type="id_Character"/>
         <mapperTableEntries expression="row5.DASHBOARD_STATUS_DATE " name="DASHBOARD_STATUS_DATE" nullable="true" type="id_Date"/>
         <mapperTableEntries expression="row5.APPLIED_LOAD " name="APPLIED_LOAD" nullable="true" type="id_String"/>
+        <mapperTableEntries name="RowCount" nullable="true" type="id_String"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row5" sizeState="INTERMEDIATE">
         <mapperTableEntries name="SOURCE_SYSTEM" nullable="true" type="id_Character"/>
@@ -440,7 +450,10 @@
   </node>
   <node componentName="tAggregateRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="864" posY="192">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tAggregateRow_1"/>
-    <elementParameter field="TABLE" name="GROUPBYS"/>
+    <elementParameter field="TABLE" name="GROUPBYS">
+      <elementValue elementRef="OUTPUT_COLUMN" value="APPLIED_LOAD"/>
+      <elementValue elementRef="INPUT_COLUMN" value="Correct"/>
+    </elementParameter>
     <elementParameter field="TABLE" name="OPERATIONS">
       <elementValue elementRef="OUTPUT_COLUMN" value="SOURCE_SYSTEM"/>
       <elementValue elementRef="FUNCTION" value="count"/>
@@ -478,7 +491,10 @@
   </node>
   <node componentName="tAggregateRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="864" posY="288">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tAggregateRow_2"/>
-    <elementParameter field="TABLE" name="GROUPBYS"/>
+    <elementParameter field="TABLE" name="GROUPBYS">
+      <elementValue elementRef="OUTPUT_COLUMN" value="DASHBOARD_STATUS_DATE"/>
+      <elementValue elementRef="INPUT_COLUMN" value="RowCount"/>
+    </elementParameter>
     <elementParameter field="TABLE" name="OPERATIONS">
       <elementValue elementRef="OUTPUT_COLUMN" value="SOURCE_SYSTEM"/>
       <elementValue elementRef="FUNCTION" value="count"/>
@@ -516,7 +532,10 @@
   </node>
   <node componentName="tAggregateRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="864" posY="384">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tAggregateRow_3"/>
-    <elementParameter field="TABLE" name="GROUPBYS"/>
+    <elementParameter field="TABLE" name="GROUPBYS">
+      <elementValue elementRef="OUTPUT_COLUMN" value="APPLIED_LOAD"/>
+      <elementValue elementRef="INPUT_COLUMN" value="RowCount"/>
+    </elementParameter>
     <elementParameter field="TABLE" name="OPERATIONS">
       <elementValue elementRef="OUTPUT_COLUMN" value="SOURCE_SYSTEM"/>
       <elementValue elementRef="FUNCTION" value="count"/>
@@ -554,7 +573,10 @@
   </node>
   <node componentName="tAggregateRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="864" posY="480">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tAggregateRow_4"/>
-    <elementParameter field="TABLE" name="GROUPBYS"/>
+    <elementParameter field="TABLE" name="GROUPBYS">
+      <elementValue elementRef="OUTPUT_COLUMN" value="APPLIED_LOAD"/>
+      <elementValue elementRef="INPUT_COLUMN" value="RowCount"/>
+    </elementParameter>
     <elementParameter field="TABLE" name="OPERATIONS">
       <elementValue elementRef="OUTPUT_COLUMN" value="SOURCE_SYSTEM"/>
       <elementValue elementRef="FUNCTION" value="count"/>
@@ -592,7 +614,10 @@
   </node>
   <node componentName="tAggregateRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="864" posY="576">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tAggregateRow_5"/>
-    <elementParameter field="TABLE" name="GROUPBYS"/>
+    <elementParameter field="TABLE" name="GROUPBYS">
+      <elementValue elementRef="OUTPUT_COLUMN" value="DASHBOARD_STATUS_DATE"/>
+      <elementValue elementRef="INPUT_COLUMN" value="RowCount"/>
+    </elementParameter>
     <elementParameter field="TABLE" name="OPERATIONS">
       <elementValue elementRef="OUTPUT_COLUMN" value="SOURCE_SYSTEM"/>
       <elementValue elementRef="FUNCTION" value="count"/>
@@ -643,8 +668,8 @@
     <elementParameter field="TEXT" name="FS_DEFAULT_NAME" value="&quot;hdfs://localhost:9000/&quot;"/>
     <elementParameter field="TEXT" name="ADLS_FS_DEFAULT_NAME" show="false" value="&quot;adl://account.azuredatalakestore.net&quot;"/>
     <elementParameter field="TEXT" name="ADLS_CLIENT_ID" show="false" value="&quot;XXXX&quot;"/>
-    <elementParameter field="PASSWORD" name="ADLS_AUTH_TOKEN_ENDPOINT" show="false" value="enc:system.encryption.key.v1:IKtLU4I26nrFDDw+51G1Oe/AjTSR8FmCILolZmRm6bkps9l1pNkcAq9qobOvO6TcL7ryX8j1iG3dXksUJEyy59tyNuSgCe/fFMoYUU+SWOY="/>
-    <elementParameter field="PASSWORD" name="ADLS_CLIENT_KEY" show="false" value="enc:system.encryption.key.v1:KRjlCG3egbh1h1DBtoHw3MS3pTVKmaBWP+PrkJYAOohLIw=="/>
+    <elementParameter field="PASSWORD" name="ADLS_AUTH_TOKEN_ENDPOINT" show="false" value="enc:system.encryption.key.v1:i4N+Kl6NsDkYpYlyGTBc25xL2UU7bNcAyiwAj9wp/8YrHE0Fm/p5V1ds7kq1T7UwSRv4KB+OcDbAm6Z7X0j1rv7K5mlQu0sO0z/Bo1pXuZs="/>
+    <elementParameter field="PASSWORD" name="ADLS_CLIENT_KEY" show="false" value="enc:system.encryption.key.v1:w5ZeAdK39haHX7EvyGqpUt6xnHszb95BqceXHdT+Hk4CUg=="/>
     <elementParameter field="CHECK" name="USE_DATANODE_HOSTNAME" value="true"/>
     <elementParameter field="CHECK" name="USE_KRB" value="false"/>
     <elementParameter field="TEXT" name="NAMENODE_PRINCIPAL" show="false" value="&quot;nn/_HOST@EXAMPLE.COM&quot;"/>
@@ -654,7 +679,7 @@
     <elementParameter field="CHECK" name="USE_MAPRTICKET" show="false" value="false"/>
     <elementParameter field="TEXT" name="USERNAME" value="&quot;anonymous&quot;"/>
     <elementParameter field="TEXT" name="GROUP" show="false" value="&quot;supergroup&quot;"/>
-    <elementParameter field="PASSWORD" name="MAPRTICKET_PASSWORD" show="false" value="enc:system.encryption.key.v1:RSfzFFqPyVHdD4j9OOkpjVQYzQKHiHAu29ATldYv"/>
+    <elementParameter field="PASSWORD" name="MAPRTICKET_PASSWORD" show="false" value="enc:system.encryption.key.v1:RcQ3KsUZP0vkpiDx8F8Dv4h0W2jxE+Fzb9R0TAaL"/>
     <elementParameter field="TEXT" name="MAPRTICKET_CLUSTER" show="false" value="&quot;demo.mapr.com&quot;"/>
     <elementParameter field="TEXT" name="MAPRTICKET_DURATION" show="false" value="86400L"/>
     <elementParameter field="BOTH_HADOOP" name="FILENAME" value="&quot;&quot;"/>
@@ -791,22 +816,47 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row5"/>
   </connection>
   <connection connectorName="FLOW" label="Correct1" lineStyle="0" metaname="Correct1" offsetLabelX="0" offsetLabelY="0" outputId="1" source="tMap_5" target="tAggregateRow_1">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="Correct"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="Correct1"/>
   </connection>
   <connection connectorName="FLOW" label="NotPositive1" lineStyle="0" metaname="NotPositive1" offsetLabelX="0" offsetLabelY="0" outputId="2" source="tMap_5" target="tAggregateRow_2">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="RowCount"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="NotPositive1"/>
   </connection>
   <connection connectorName="FLOW" label="NotNumeric" lineStyle="0" metaname="NotNumeric" offsetLabelX="0" offsetLabelY="0" outputId="3" source="tMap_5" target="tAggregateRow_3">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="RowCount"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="NotNumeric"/>
   </connection>
   <connection connectorName="FLOW" label="Not2Decimal" lineStyle="0" metaname="Not2Decimal" offsetLabelX="0" offsetLabelY="0" outputId="4" source="tMap_5" target="tAggregateRow_4">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="RowCount"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="Not2Decimal"/>
   </connection>
   <connection connectorName="FLOW" label="NullDate1" lineStyle="0" metaname="NullDate1" offsetLabelX="0" offsetLabelY="0" outputId="5" source="tMap_5" target="tAggregateRow_5">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="RowCount"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="NullDate1"/>
   </connection>
@@ -862,13 +912,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_27259af6-8028-4800-a9cb-381675db76b3"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Y/jQA5soEo+fA13nvq0vPqWr94YU7yLy4dDVRiP+/m0G9HYNn4EDluVRlCupP4etK6bku4fUBSHh
-8Lo5PEkxpQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_20511f44-7015-4e5d-9c78-9e20fdcc0e8d"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>07kMP9uVY8teVcNMu9lG6wX4XMeJGUahS2ocYdfzsztYgYB8wRpFUVtwrLwgyWd1goqO2tD35kap
-g3q1Qs7t3g==</DigestValue></Reference></SignedInfo><SignatureValue>oZ3rIDvBXS6+I91Nxq0w4kMonDZF1pmt3xK1vhbz9vxumLUjK3k1YaqNpZMW29evbshKjWxiKH0F
-I7gZZQNQOxvJaJm4+9+yVsLmnY5t2yy5SW3U/Yd2bZioPWku7/cGsyXz9JkchBP6JdCjK5Hr3Nb3
-Ke7a5yiykKV+hVbnnonL02Ho2YGq6NFL4f4TRfNy74ugHp6cY8knHbHAZyg6bNbhBc5MO3lsRRCl
-hggYvyhgYDD5L5+8NmvTRbgQoXMtqRUvguK/Ai6RgKIIQJgJVwHnwiWvXd2RyJ+hfbZavGDO9SV1
-Zr2u4tzWM1I0T1PfGReJCfs+YnYUO6wMtmDQXg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_547a5ccf-d834-42c7-9036-c979245f3800"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>5DDtPqJ3Rz0RaAbarggMYxj6gto6J6KdeEgqJxr2JkxiHp9olAXwNT/a9glL70hHZKAbauChVbgH
+PvH1a0jUXg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_da91a8d0-9898-467c-ba44-a4c948290da5"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>LHagB0AWM/dXZ7+hkk/UhaD889CcNdpTr6v3M8Km6zvEIen270Gi82XE0lXbQGl3MudTLizJEQA7
+rDm3t+8M1Q==</DigestValue></Reference></SignedInfo><SignatureValue>ZS4eLr8j8syCzu0JwhuODeAIKIxg/lwkQXTyvWhvYREl0gNzuW8OB6lWrZNsyEFLdbdbnU/vgJiI
+kh+Ssyd9RDXFtGfMzAWr3IrUuCwjuBnXT9y47Q86pwWPzR9Gu+MVwejsNZoyc3XFu7YwevkjnBoD
+MEqLZbRA5okCYNzw03wneW/ZQ491bJw2q3SBMiMDdNoefLTS2+KzG/jXzAKMTOTxyDrceqm89CSt
+jvudMCHnqY7/y0QtQyyPZEOfJt43PevEu125lRcdoLMuqSK8BLpoxzGRKwC4oEJHBqPqi5B+FSHe
+vbnkVqii7ZTVyVIYbq6U/150QeI8fZyvqR9m1g==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U
@@ -890,4 +940,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_20511f44-7015-4e5d-9c78-9e20fdcc0e8d" Target="#_27259af6-8028-4800-a9cb-381675db76b3"><Timestamp>2020-03-19 01:13:53</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_da91a8d0-9898-467c-ba44-a4c948290da5" Target="#_547a5ccf-d834-42c7-9036-c979245f3800"><Timestamp>2020-03-19 01:18:05</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
