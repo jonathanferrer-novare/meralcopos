@@ -42,7 +42,7 @@
     <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" show="false" value="enc:system.encryption.key.v1:eNiycf+QZ8CTD1QNGn2alaa9u0KHg0gKNd/dljgt"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" show="false" value="enc:system.encryption.key.v1:VIXcv4/SO62GiIuTW2ltD7nG2yCPJXO0Hn1qRnOU"/>
     <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
@@ -77,7 +77,7 @@
     <elementParameter field="TEXT" name="PROPERTIES" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:Z4OSsNB2UNxqFyfA5J7SQCwkurj5wOqtnOPX54o9"/>
+    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:+GBFVzsHyRWYDpPKVLN0vyYt4KDx6LyfYN94ugql"/>
     <elementParameter field="FILE" name="DBFILE" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE_STATS" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE_LOGS" show="false" value="&quot;&quot;"/>
@@ -288,7 +288,7 @@
         <mapperTableEntries expression="row1.Interruption_time  " name="Restoration_time" nullable="true" type="id_Date"/>
         <mapperTableEntries expression="row1.Restoration_time " name="Restoration_time_1" nullable="true" type="id_Date"/>
       </outputTables>
-      <outputTables activateCondensedTool="true" activateExpressionFilter="true" columnNameFilter="" expressionFilter="StringHandling.COUNT(row1.SIN_H,[0-9])" name="moreLess12" sizeState="INTERMEDIATE">
+      <outputTables activateCondensedTool="true" activateExpressionFilter="true" columnNameFilter="" expressionFilter="StringHandling.LEN(row1.SIN_H.replaceAll( &quot;[a-fA-F]&quot;, &quot;&quot; )) &gt;= 12" name="moreLess12" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row1.SDP_GID_H  " name="SDP_GID_H" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.SIN_H  " name="SIN_H" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.SECTOR_H  " name="SECTOR_H" nullable="true" type="id_Float"/>
@@ -356,7 +356,7 @@
       <column comment="" key="false" length="-1" name="errorType" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="copyOfout1_0" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="&quot;GSL&quot;" name="tblName" nullable="true" type="id_String"/>
@@ -426,7 +426,7 @@
       <column comment="" key="false" length="-1" name="errorType" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="copyOfout1" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="&quot;GSL&quot;" name="tblName" nullable="true" type="id_String"/>
@@ -496,7 +496,7 @@
       <column comment="" key="false" length="-1" name="errorType" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="out1" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="&quot;GSL&quot;" name="tblName" nullable="true" type="id_String"/>
@@ -629,8 +629,8 @@
     <elementParameter field="TEXT" name="FS_DEFAULT_NAME" value="&quot;hdfs://localhost:9000/&quot;"/>
     <elementParameter field="TEXT" name="ADLS_FS_DEFAULT_NAME" show="false" value="&quot;adl://account.azuredatalakestore.net&quot;"/>
     <elementParameter field="TEXT" name="ADLS_CLIENT_ID" show="false" value="&quot;XXXX&quot;"/>
-    <elementParameter field="PASSWORD" name="ADLS_AUTH_TOKEN_ENDPOINT" show="false" value="enc:system.encryption.key.v1:CyPLMEO5N/PD2nC+TfomPErdb6l7NO16nC0v9sprtSqafq2DfjGLMPAixUYTo9oa4BDQ7WmLhrvEC7IWoEu8Rj5vkMJBPgovFbxrWgZYHCI="/>
-    <elementParameter field="PASSWORD" name="ADLS_CLIENT_KEY" show="false" value="enc:system.encryption.key.v1:sLtUmtzHKo6TEeQAfYjPH5LX+4ErsGFU3nug4mls9rs3iw=="/>
+    <elementParameter field="PASSWORD" name="ADLS_AUTH_TOKEN_ENDPOINT" show="false" value="enc:system.encryption.key.v1:TI5bPt5K4cAZcX0IagPwfnGh+SawiMWpgVRz4pQiYY2rTeoh4HG3XyFDwdms3C9vca7AJ+1W54OxpJjdRxlI2NmHw16YKsZVjsuUSOXlmkQ="/>
+    <elementParameter field="PASSWORD" name="ADLS_CLIENT_KEY" show="false" value="enc:system.encryption.key.v1:plU6PN4Rclins1iMU/NXkGFwGVPEC4cdyw/uZOUeNv4VMA=="/>
     <elementParameter field="CHECK" name="USE_DATANODE_HOSTNAME" value="true"/>
     <elementParameter field="CHECK" name="USE_KRB" value="false"/>
     <elementParameter field="TEXT" name="NAMENODE_PRINCIPAL" show="false" value="&quot;nn/_HOST@EXAMPLE.COM&quot;"/>
@@ -640,7 +640,7 @@
     <elementParameter field="CHECK" name="USE_MAPRTICKET" show="false" value="false"/>
     <elementParameter field="TEXT" name="USERNAME" value="&quot;anonymous&quot;"/>
     <elementParameter field="TEXT" name="GROUP" show="false" value="&quot;supergroup&quot;"/>
-    <elementParameter field="PASSWORD" name="MAPRTICKET_PASSWORD" show="false" value="enc:system.encryption.key.v1:Zqf9suyWbGmbSF+M/N2g3tN6bcl8iat9CIjYhsWc"/>
+    <elementParameter field="PASSWORD" name="MAPRTICKET_PASSWORD" show="false" value="enc:system.encryption.key.v1:Qwvr/9KauwR15Lw7RzIdBCrTtJbv6vXGyXTvm1x0"/>
     <elementParameter field="TEXT" name="MAPRTICKET_CLUSTER" show="false" value="&quot;demo.mapr.com&quot;"/>
     <elementParameter field="TEXT" name="MAPRTICKET_DURATION" show="false" value="86400L"/>
     <elementParameter field="BOTH_HADOOP" name="FILENAME" value="&quot;&quot;"/>
@@ -736,7 +736,7 @@
       <column comment="" key="false" length="27" name="Restoration_time" nullable="true" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="0" type="id_Date" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables activateCondensedTool="true" name="uniqueValues" rejectInnerJoin="true" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row6.SDP_GID_H " name="SDP_GID_H" nullable="true" type="id_String"/>
@@ -1021,7 +1021,7 @@
       <column comment="" key="false" length="-1" name="errorType" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="copyOfout1_3" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="&quot;GSL&quot;" name="tblName" nullable="true" type="id_String"/>
@@ -1091,7 +1091,7 @@
       <column comment="" key="false" length="-1" name="errorType" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="copyOfout1_4" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="&quot;GSL&quot;" name="tblName" nullable="true" type="id_String"/>
@@ -1230,7 +1230,7 @@
       <column comment="" key="false" length="-1" name="SIN_H" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables activateExpressionFilter="true" expressionFilter="row33.SIN_H.equals(&quot;0&quot;)" name="copyOfnotNumeric_0" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row33.SDP_GID_H  " name="SIN_H" nullable="true" type="id_String"/>
@@ -1311,7 +1311,7 @@
       <column comment="" key="false" length="-1" name="errorType" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="copyOfout1_2" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="&quot;SIN-TLN&quot;" name="tblName" nullable="true" type="id_String"/>
@@ -1345,7 +1345,7 @@
       <column comment="" key="false" length="-1" name="errorType" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="copyOfcopyOfout1_0_0" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="&quot;SIN-TLN&quot;" name="tblName" nullable="true" type="id_String"/>
@@ -1433,7 +1433,7 @@
       <column comment="" key="false" length="-1" name="errorType" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="copyOfcopyOfout1_2" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="&quot;SIN-TLN&quot;" name="tblName" nullable="true" type="id_String"/>
@@ -1503,7 +1503,7 @@
       <column comment="" key="false" length="-1" name="errorType" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="copyOfcopyOfout1_2_0" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="&quot;SIN-TLN&quot;" name="tblName" nullable="true" type="id_String"/>
@@ -1615,8 +1615,8 @@
     <elementParameter field="TEXT" name="FS_DEFAULT_NAME" value="&quot;hdfs://localhost:9000/&quot;"/>
     <elementParameter field="TEXT" name="ADLS_FS_DEFAULT_NAME" show="false" value="&quot;adl://account.azuredatalakestore.net&quot;"/>
     <elementParameter field="TEXT" name="ADLS_CLIENT_ID" show="false" value="&quot;XXXX&quot;"/>
-    <elementParameter field="PASSWORD" name="ADLS_AUTH_TOKEN_ENDPOINT" show="false" value="enc:system.encryption.key.v1:xKi3m0pCOvfAoCb85sYLwaaKEJOjmYjJfULOD3m+8hilAKQGEEPfkMnnnaLXXiG3M3TQGn89yTlTUppnGrxVfuQp31kqL5ykT1cM8F2EiK8="/>
-    <elementParameter field="PASSWORD" name="ADLS_CLIENT_KEY" show="false" value="enc:system.encryption.key.v1:U+t2UJSNbsq2WG5YL65TFEiZ3jsELJm8G9osyKY1HEF3Ww=="/>
+    <elementParameter field="PASSWORD" name="ADLS_AUTH_TOKEN_ENDPOINT" show="false" value="enc:system.encryption.key.v1:wBqELhXpMPiQDU1DzJuYJdc8208Gm2GtjHoXaysw0aixZhOuH7EGY2sfHCA8D87F/nGnSa5nVLEj8fX5F1NSojJDaKKAay9WO4oFdMxA2nI="/>
+    <elementParameter field="PASSWORD" name="ADLS_CLIENT_KEY" show="false" value="enc:system.encryption.key.v1:+1LwfRM7gYs66lfuohOYfmAlsfgkJPMBMmrmmsZqnnBSEQ=="/>
     <elementParameter field="CHECK" name="USE_DATANODE_HOSTNAME" value="true"/>
     <elementParameter field="CHECK" name="USE_KRB" value="false"/>
     <elementParameter field="TEXT" name="NAMENODE_PRINCIPAL" show="false" value="&quot;nn/_HOST@EXAMPLE.COM&quot;"/>
@@ -1626,7 +1626,7 @@
     <elementParameter field="CHECK" name="USE_MAPRTICKET" show="false" value="false"/>
     <elementParameter field="TEXT" name="USERNAME" value="&quot;anonymous&quot;"/>
     <elementParameter field="TEXT" name="GROUP" show="false" value="&quot;supergroup&quot;"/>
-    <elementParameter field="PASSWORD" name="MAPRTICKET_PASSWORD" show="false" value="enc:system.encryption.key.v1:EF2W0eQlF//hgyo4QhtZfgkWDv/Qls9vAAOOaYg3"/>
+    <elementParameter field="PASSWORD" name="MAPRTICKET_PASSWORD" show="false" value="enc:system.encryption.key.v1:kENDjZUK+ixxrXAPO3VkR+g2jBNhZQCfiQkCgA/3"/>
     <elementParameter field="TEXT" name="MAPRTICKET_CLUSTER" show="false" value="&quot;demo.mapr.com&quot;"/>
     <elementParameter field="TEXT" name="MAPRTICKET_DURATION" show="false" value="86400L"/>
     <elementParameter field="BOTH_HADOOP" name="FILENAME" value="&quot;&quot;"/>
@@ -1780,7 +1780,7 @@
         <mapperTableEntries expression="row54.TLN_H  " name="TLN_H" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row54.SECTOR_H   " name="SECTOR_H" nullable="true" type="id_Float"/>
       </outputTables>
-      <outputTables activateCondensedTool="true" activateExpressionFilter="true" columnNameFilter="" expressionFilter="StringHandling.COUNT(row54.SIN_H,[0-9])" name="copyOfmoreLess12_0" sizeState="INTERMEDIATE">
+      <outputTables activateCondensedTool="true" activateExpressionFilter="true" columnNameFilter="" expressionFilter="StringHandling.LEN(row54.SIN_H.replaceAll( &quot;[a-fA-F]&quot;, &quot;&quot; )) &gt;= 12" name="copyOfmoreLess12_0" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row54.SIN_H    " name="SIN_H" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row54.TLN_H   " name="TLN_H" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row54.SECTOR_H    " name="SECTOR_H" nullable="true" type="id_Float"/>
@@ -1884,7 +1884,7 @@
       <column comment="" key="false" length="-1" name="errorType" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="copyOfout1_5" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="&quot;GIS&quot;" name="tblName" nullable="true" type="id_String"/>
@@ -1918,7 +1918,7 @@
       <column comment="" key="false" length="-1" name="errorType" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="copyOfcopyOfout1_1" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="&quot;GIS&quot;" name="tblName" nullable="true" type="id_String"/>
@@ -1952,7 +1952,7 @@
       <column comment="" key="false" length="-1" name="errorType" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="copyOfcopyOfout1_0_1" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="&quot;GIS&quot;" name="tblName" nullable="true" type="id_String"/>
@@ -2156,7 +2156,7 @@
       <column comment="" key="false" length="-1" name="SECTOR_H" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Float" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables activateCondensedTool="true" name="copyOfuniqueValues_0" rejectInnerJoin="true" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row42.SIN_H " name="SIN_H" nullable="true" type="id_String"/>
@@ -2254,7 +2254,7 @@
       <column comment="" key="false" length="-1" name="errorType" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="copyOfcopyOfout1_3_0" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="&quot;GIS&quot;" name="tblName" nullable="true" type="id_String"/>
@@ -2324,7 +2324,7 @@
       <column comment="" key="false" length="-1" name="errorType" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="copyOfcopyOfout1_4_0" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="&quot;GIS&quot;" name="tblName" nullable="true" type="id_String"/>
@@ -2450,8 +2450,8 @@
     <elementParameter field="TEXT" name="FS_DEFAULT_NAME" value="&quot;hdfs://localhost:9000/&quot;"/>
     <elementParameter field="TEXT" name="ADLS_FS_DEFAULT_NAME" show="false" value="&quot;adl://account.azuredatalakestore.net&quot;"/>
     <elementParameter field="TEXT" name="ADLS_CLIENT_ID" show="false" value="&quot;XXXX&quot;"/>
-    <elementParameter field="PASSWORD" name="ADLS_AUTH_TOKEN_ENDPOINT" show="false" value="enc:system.encryption.key.v1:pWahS32AO+8+20WE3kVHEtkJ9HmW7dDEOD/766cHDOu1BSEmpdUQJvJpR8Ap3LyIxDsXkrL1dlvMqn6H7us4OPwvqqOmBudMvJg5kOO8dAY="/>
-    <elementParameter field="PASSWORD" name="ADLS_CLIENT_KEY" show="false" value="enc:system.encryption.key.v1:TV0qfULR1KsUMILvCgZUGeTFRIikT7DACS55WhcMdQ/irw=="/>
+    <elementParameter field="PASSWORD" name="ADLS_AUTH_TOKEN_ENDPOINT" show="false" value="enc:system.encryption.key.v1:V4XpqRTwyaqg48jJBYW7sp8KYLzYyxVGRANNXUTb2WkyTrL43Az23P5uv6zF4UV1xhA6+/ty6x19hc3nPua59OFXTqjo4dAzrytJvjbxtqU="/>
+    <elementParameter field="PASSWORD" name="ADLS_CLIENT_KEY" show="false" value="enc:system.encryption.key.v1:P3nP7PhT7MC6Pw6v9th7YT6MR7Kz1s2sAUmTaktopsIzag=="/>
     <elementParameter field="CHECK" name="USE_DATANODE_HOSTNAME" value="true"/>
     <elementParameter field="CHECK" name="USE_KRB" value="false"/>
     <elementParameter field="TEXT" name="NAMENODE_PRINCIPAL" show="false" value="&quot;nn/_HOST@EXAMPLE.COM&quot;"/>
@@ -2461,12 +2461,12 @@
     <elementParameter field="CHECK" name="USE_MAPRTICKET" show="false" value="false"/>
     <elementParameter field="TEXT" name="USERNAME" value="&quot;anonymous&quot;"/>
     <elementParameter field="TEXT" name="GROUP" show="false" value="&quot;supergroup&quot;"/>
-    <elementParameter field="PASSWORD" name="MAPRTICKET_PASSWORD" show="false" value="enc:system.encryption.key.v1:r2XGjNwsodZV2w4XtAFKr6Ae7MkwaLY90kGON9jK"/>
+    <elementParameter field="PASSWORD" name="MAPRTICKET_PASSWORD" show="false" value="enc:system.encryption.key.v1:JbI9dL69sWtFWtspZePcS/XCADzfqYoDxliNlaE4"/>
     <elementParameter field="TEXT" name="MAPRTICKET_CLUSTER" show="false" value="&quot;demo.mapr.com&quot;"/>
     <elementParameter field="TEXT" name="MAPRTICKET_DURATION" show="false" value="86400L"/>
     <elementParameter field="BOTH_HADOOP" name="FILENAME" value="&quot;&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TYPEFILE" value="TEXT"/>
-    <elementParameter field="CLOSED_LIST" name="FILE_ACTION" value="CREATE"/>
+    <elementParameter field="CLOSED_LIST" name="FILE_ACTION" value="APPEND"/>
     <elementParameter field="TEXT" name="ROWSEPARATOR" value="&quot;\n&quot;"/>
     <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;;&quot;"/>
     <elementParameter field="CHECK" name="CUSTOM_ENCODING" value="false"/>
@@ -3371,13 +3371,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_d37a7ee6-44b7-47ae-96da-50ca430a2c88"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Qc8VP45ByFkAKyngWLwJ/Lz77xB9ANir/lKn2aek4z7bIWIoaSsHH97kKnLs0SaFwXszX9QgUCpt
-H7QV2n+vJg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_0598d7bd-34d2-4be8-ad9d-9e86b1f2dca8"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>JU7t/8jOQq/khyNZ68LV7id8R0PpsBouJ4Oej7W1tkQN3olNC7zN8sIvzAl2Tqrw7U5ASG250aqi
-ivxCPNB7oQ==</DigestValue></Reference></SignedInfo><SignatureValue>LV2TSlCPPDvGH54NcUFmrK3x5RB3NosYZ/kT+mTc96ywYLkdE0F141sWWjb0Ldtdb6i2Q0CQCcJ/
-Aua+jDQbBGwhJDEn1G7FVtQRVZXbXGTf/8h6+6uTKv+OmueLquo7vgHD/d+zrO1zKp96cGS44f2v
-7iVDLi50phvnJ0WAoINWRhZC4Ef5b7r5oqALdMRJRTnAtyZ9M1AeL3yF/UKysaEujZXbJriC7EwS
-kX3xkq446W3pJV8GfZCJPgLFBDR6aPJwVFxxP13QIo3t72+FouelIZZl3vieNu9RB1zjVFYkn5Q+
-++i5UmoVmFXtiT/qgW/JGMYzWW/6JqHUWW8ZaQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_0aa4d09d-5eaa-4885-a156-81fc3ee723ec"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>63Pd8dOzPRNIjt84kFUR3R+G6vOBBGWRe6M0sXo03+8kbyNj3LnIsKa1a52yC7aV6vnr3tlhboQb
+/Nbj83di+g==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_7fac87c5-11df-4a44-b5d9-3ecbebf36e8f"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>BJve3nMLHEqfIb3ZNglstBkW/IhLSygIMT5rQ7EQYtAd5RsamZcU5hq0OmbCjfxe2sZM8bUT4XS6
+SLXM2QPC8A==</DigestValue></Reference></SignedInfo><SignatureValue>S+Gu/XlPqE2CuYB2sf7E+cG+/29UksAzLTs9k71xUcSeM/92XDW8b6dTxCdgRShyCQE08vBgemkP
+MJ1lOd6tyvCTdD80PzsHoMDDMhotEqyWwGCGMJjAxH3yhkJ3D0NpL9siSa2tw8TM6a0lrEt2XY81
+WYM4g0u8V5Hfy4yJvPO5MdccI7LJMRR7NTRe7dtrHULONaJhLoImuE/yzfVkK9Q5hBR3COXRmezO
+4PHJHxPbxrV2nLlAfb5JuLSiWQ0RMWu/5TD711x8bvo3zJky+sGUJkdaaezHkVrnswOfGqaEvbq3
+HHJIA4kKvHPj6K3BJV9LRfdPqCWCD3j2gkzKaA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U
@@ -3399,4 +3399,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_0598d7bd-34d2-4be8-ad9d-9e86b1f2dca8" Target="#_d37a7ee6-44b7-47ae-96da-50ca430a2c88"><Timestamp>2020-03-18 14:25:23</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_7fac87c5-11df-4a44-b5d9-3ecbebf36e8f" Target="#_0aa4d09d-5eaa-4885-a156-81fc3ee723ec"><Timestamp>2020-03-19 08:18:06</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
