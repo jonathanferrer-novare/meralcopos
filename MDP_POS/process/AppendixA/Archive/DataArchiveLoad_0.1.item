@@ -51,7 +51,7 @@
     <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" show="false" value="enc:system.encryption.key.v1:5nfIfLhxEKPB35fG20XZRLO9u+JIjtb6POm4Mqpg"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" show="false" value="enc:system.encryption.key.v1:cpfJHU7NwgA8DEuJc+xekqQN4daffKeYoGqBPQF2"/>
     <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
@@ -86,7 +86,7 @@
     <elementParameter field="TEXT" name="PROPERTIES" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:x/bBnIQAh9jp/f/K1WyZM7AyEb9n3bt5yNrrZBSB"/>
+    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:nHtIgLKWhAR/qkL3Ifcm9Qf7K3OnaQoKzEweKqm2"/>
     <elementParameter field="FILE" name="DBFILE" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE_STATS" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE_LOGS" show="false" value="&quot;&quot;"/>
@@ -540,9 +540,9 @@
     <elementParameter field="TABLE" name="MODIF_TABLE">
       <elementValue elementRef="INPUT_COLUMN" value="CASE_NUMBER"/>
       <elementValue elementRef="CATEGORY" value="CHARACTER_HANDLING"/>
-      <elementValue elementRef="FUNCTION" value="REPLACE_NUMERIC"/>
+      <elementValue elementRef="FUNCTION" value="REPLACE_ALL"/>
       <elementValue elementRef="METHOD" value="AES_CBC_PRF"/>
-      <elementValue elementRef="ALPHABET" value="DIGITS"/>
+      <elementValue elementRef="ALPHABET" value="BEST_GUESS"/>
       <elementValue elementRef="EXTRA_PARAMETER" value="&quot;&quot;"/>
       <elementValue elementRef="KEEP_FORMAT" value="false"/>
       <elementValue elementRef="INPUT_COLUMN" value="APPLICATION_DATE"/>
@@ -553,7 +553,7 @@
       <elementValue elementRef="EXTRA_PARAMETER" value="&quot;&quot;"/>
       <elementValue elementRef="KEEP_FORMAT" value="false"/>
     </elementParameter>
-    <elementParameter field="PASSWORD" name="PASSWORD" value="enc:system.encryption.key.v1:kp7x2ITq824OOMy2vjmKZ3WDqU4DSa8O8Tjs/3Cy"/>
+    <elementParameter field="PASSWORD" name="PASSWORD" value="enc:system.encryption.key.v1:oTrVaxrfqtDYX6+qMa9vmLUKl2BkqdyVd312srNB"/>
     <elementParameter field="CHECK" name="USE_TWEAK" value="false"/>
     <elementParameter field="TEXT" name="RANDOM_SEED" value=""/>
     <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;UTF-8&quot;"/>
@@ -770,8 +770,8 @@
     <elementParameter field="TEXT" name="FS_DEFAULT_NAME" show="false" value="&quot;hdfs://localhost:9000/&quot;"/>
     <elementParameter field="TEXT" name="ADLS_FS_DEFAULT_NAME" show="false" value="&quot;adl://account.azuredatalakestore.net&quot;"/>
     <elementParameter field="TEXT" name="ADLS_CLIENT_ID" show="false" value="&quot;XXXX&quot;"/>
-    <elementParameter field="PASSWORD" name="ADLS_AUTH_TOKEN_ENDPOINT" show="false" value="enc:system.encryption.key.v1:gJTuk40G5+yo6p/7ASnd4I5Nuc5NkONc82y2EZoxSpgY2GBiJuJz6mHXD81EIdjxq76mdBXgcDOzWQh0Ye27ZVvOLmLTXQx7rLIZ/+o7i8w="/>
-    <elementParameter field="PASSWORD" name="ADLS_CLIENT_KEY" show="false" value="enc:system.encryption.key.v1:wdjGw6UNyMqQkQ648mEecfww4OG0oFVEWsHN3uo8rbqX2w=="/>
+    <elementParameter field="PASSWORD" name="ADLS_AUTH_TOKEN_ENDPOINT" show="false" value="enc:system.encryption.key.v1:mYX3UP1uBd7Kopryswdof4trsqFeepfUU/WgXPRqIPBwX0pFowJRDF2mjML6YYJCID9v6uYmgDENQ/lKz8GpV/DxLyJMjd3H9c6WQ+RLjnI="/>
+    <elementParameter field="PASSWORD" name="ADLS_CLIENT_KEY" show="false" value="enc:system.encryption.key.v1:z+g38xcF7+xQiNvKLpOR1glSWe53h0h/YeVf9zt+bGjNQQ=="/>
     <elementParameter field="CHECK" name="USE_DATANODE_HOSTNAME" show="false" value="true"/>
     <elementParameter field="CHECK" name="USE_KRB" show="false" value="false"/>
     <elementParameter field="TEXT" name="NAMENODE_PRINCIPAL" show="false" value="&quot;nn/_HOST@EXAMPLE.COM&quot;"/>
@@ -781,7 +781,7 @@
     <elementParameter field="CHECK" name="USE_MAPRTICKET" show="false" value="false"/>
     <elementParameter field="TEXT" name="USERNAME" show="false" value="&quot;anonymous&quot;"/>
     <elementParameter field="TEXT" name="GROUP" show="false" value="&quot;supergroup&quot;"/>
-    <elementParameter field="PASSWORD" name="MAPRTICKET_PASSWORD" show="false" value="enc:system.encryption.key.v1:CMQu3yG9g4/gczOl7izKOnAZl275px9ZuaiCAsFo"/>
+    <elementParameter field="PASSWORD" name="MAPRTICKET_PASSWORD" show="false" value="enc:system.encryption.key.v1:VGgeHuDH2hItTo3QWu2odPXh2cFtxev3iiZ+5P5J"/>
     <elementParameter field="TEXT" name="MAPRTICKET_CLUSTER" show="false" value="&quot;demo.mapr.com&quot;"/>
     <elementParameter field="TEXT" name="MAPRTICKET_DURATION" show="false" value="86400L"/>
     <elementParameter field="BOTH_HADOOP" name="FILENAME" value="&quot;/data/archive/sources/ft_sa_pipeline_consol/FT_SA_PIPELINE_CONSOL.csv&quot;"/>
@@ -964,8 +964,8 @@
     <elementParameter field="TEXT" name="FS_DEFAULT_NAME" show="false" value="&quot;hdfs://localhost:9000/&quot;"/>
     <elementParameter field="TEXT" name="ADLS_FS_DEFAULT_NAME" show="false" value="&quot;adl://account.azuredatalakestore.net&quot;"/>
     <elementParameter field="TEXT" name="ADLS_CLIENT_ID" show="false" value="&quot;XXXX&quot;"/>
-    <elementParameter field="PASSWORD" name="ADLS_AUTH_TOKEN_ENDPOINT" show="false" value="enc:system.encryption.key.v1:gwkuLAK4iRBR4wY2QSI2YEX40zovfT6LWJGnoksEVhHD/vdSl6tJgNxFTRH6gEZDgMXfCDlvzJhAGMA1Q7O/PwBXua0XvAI1+xaXhPG3NJI="/>
-    <elementParameter field="PASSWORD" name="ADLS_CLIENT_KEY" show="false" value="enc:system.encryption.key.v1:XE4QWFbo+gjtzpBhutaAZhB42Wlc83Syp30/IMdib3pfQQ=="/>
+    <elementParameter field="PASSWORD" name="ADLS_AUTH_TOKEN_ENDPOINT" show="false" value="enc:system.encryption.key.v1:PJ0Euu0isNRnbC2+DCPJCFibI4v10C8SGISK2h5HG1AlG9ZAdgletwUoMb08NIQxYmlo0nDEFFV6bSAGVAFk+v/YkQhGYf5fG/VeBRIRKp4="/>
+    <elementParameter field="PASSWORD" name="ADLS_CLIENT_KEY" show="false" value="enc:system.encryption.key.v1:CYO4yrfTztyU1DFU976pR7wmIx67p8nABC+QB34Ln5hlgw=="/>
     <elementParameter field="CHECK" name="USE_DATANODE_HOSTNAME" show="false" value="true"/>
     <elementParameter field="CHECK" name="USE_KRB" show="false" value="false"/>
     <elementParameter field="TEXT" name="NAMENODE_PRINCIPAL" show="false" value="&quot;nn/_HOST@EXAMPLE.COM&quot;"/>
@@ -975,7 +975,7 @@
     <elementParameter field="CHECK" name="USE_MAPRTICKET" show="false" value="false"/>
     <elementParameter field="TEXT" name="USERNAME" show="false" value="&quot;anonymous&quot;"/>
     <elementParameter field="TEXT" name="GROUP" show="false" value="&quot;supergroup&quot;"/>
-    <elementParameter field="PASSWORD" name="MAPRTICKET_PASSWORD" show="false" value="enc:system.encryption.key.v1:FBNV4OSVG/ce7FdyYgYcIfYyO/+IjR3vSbknelwJ"/>
+    <elementParameter field="PASSWORD" name="MAPRTICKET_PASSWORD" show="false" value="enc:system.encryption.key.v1:Xrj+0FMBzLue54bqBRFL+r6xzfpXeRVmsB9CdHHo"/>
     <elementParameter field="TEXT" name="MAPRTICKET_CLUSTER" show="false" value="&quot;demo.mapr.com&quot;"/>
     <elementParameter field="TEXT" name="MAPRTICKET_DURATION" show="false" value="86400L"/>
     <elementParameter field="BOTH_HADOOP" name="FILENAME" value="&quot;/data/archive/sources/RF_CRS_OFFICE_MAP/RF_CRS_OFFICE_MAP.csv&quot;"/>
@@ -1137,8 +1137,8 @@
     <elementParameter field="TEXT" name="FS_DEFAULT_NAME" show="false" value="&quot;hdfs://localhost:9000/&quot;"/>
     <elementParameter field="TEXT" name="ADLS_FS_DEFAULT_NAME" show="false" value="&quot;adl://account.azuredatalakestore.net&quot;"/>
     <elementParameter field="TEXT" name="ADLS_CLIENT_ID" show="false" value="&quot;XXXX&quot;"/>
-    <elementParameter field="PASSWORD" name="ADLS_AUTH_TOKEN_ENDPOINT" show="false" value="enc:system.encryption.key.v1:Ezxhp3AjXzErvqLTWTvNeQ31Ps3rchOrD9oUnbTOpdQRsRgEnd5doPHJcesWMoGQRmGkxI4PeedXSvJw7xrN5TSfayxEjhB9LDKRuEs5F+4="/>
-    <elementParameter field="PASSWORD" name="ADLS_CLIENT_KEY" show="false" value="enc:system.encryption.key.v1:JAV5fS7RpNmn0mSMB6yxcStbsX6ikjHebbs4Z4DInorAfA=="/>
+    <elementParameter field="PASSWORD" name="ADLS_AUTH_TOKEN_ENDPOINT" show="false" value="enc:system.encryption.key.v1:cVMpn6gBqfNYibs4AJBEDvSe+xM+fVy8ypISk9y7i1w9fW/hbh3sArFCAootwLVxdnyAFgAEpS10V6icY3LUDZcFKLJ1P9o8KTtacHBpYJo="/>
+    <elementParameter field="PASSWORD" name="ADLS_CLIENT_KEY" show="false" value="enc:system.encryption.key.v1:l6uDY8scJ/cOW1IY2SH/Ekbga5BVaoGGZZk54tR5xmcp2A=="/>
     <elementParameter field="CHECK" name="USE_DATANODE_HOSTNAME" show="false" value="true"/>
     <elementParameter field="CHECK" name="USE_KRB" show="false" value="false"/>
     <elementParameter field="TEXT" name="NAMENODE_PRINCIPAL" show="false" value="&quot;nn/_HOST@EXAMPLE.COM&quot;"/>
@@ -1148,7 +1148,7 @@
     <elementParameter field="CHECK" name="USE_MAPRTICKET" show="false" value="false"/>
     <elementParameter field="TEXT" name="USERNAME" show="false" value="&quot;anonymous&quot;"/>
     <elementParameter field="TEXT" name="GROUP" show="false" value="&quot;supergroup&quot;"/>
-    <elementParameter field="PASSWORD" name="MAPRTICKET_PASSWORD" show="false" value="enc:system.encryption.key.v1:UrRObMyw5siFCaIqw5JIl/tHdPmUAAViOs0x2PUl"/>
+    <elementParameter field="PASSWORD" name="MAPRTICKET_PASSWORD" show="false" value="enc:system.encryption.key.v1:+GEt0IRkNePDjE10dPMF+/gNDeIxs6NFgglYdg6y"/>
     <elementParameter field="TEXT" name="MAPRTICKET_CLUSTER" show="false" value="&quot;demo.mapr.com&quot;"/>
     <elementParameter field="TEXT" name="MAPRTICKET_DURATION" show="false" value="86400L"/>
     <elementParameter field="BOTH_HADOOP" name="FILENAME" value="&quot;/data/archive/sources/RF_MIS_NUMBER_RANGES/RF_MIS_NUMBER_RANGES.csv&quot;"/>
@@ -1269,8 +1269,8 @@
     <elementParameter field="TEXT" name="FS_DEFAULT_NAME" show="false" value="&quot;hdfs://localhost:9000/&quot;"/>
     <elementParameter field="TEXT" name="ADLS_FS_DEFAULT_NAME" show="false" value="&quot;adl://account.azuredatalakestore.net&quot;"/>
     <elementParameter field="TEXT" name="ADLS_CLIENT_ID" show="false" value="&quot;XXXX&quot;"/>
-    <elementParameter field="PASSWORD" name="ADLS_AUTH_TOKEN_ENDPOINT" show="false" value="enc:system.encryption.key.v1:wpr936ny91RZd8HrCStsQyZ/vAyLBiScygWnD9A5/bUl+nNTGZDBuVMH85GNve4oXJYsK82pboeybJd5QLh32v2ihFf7FlWb7nMvWX/aW/8="/>
-    <elementParameter field="PASSWORD" name="ADLS_CLIENT_KEY" show="false" value="enc:system.encryption.key.v1:yG/xCGk3pEF+/WfMXxP97OOzK7J2Sx3ZS8A+KggsTHjKfw=="/>
+    <elementParameter field="PASSWORD" name="ADLS_AUTH_TOKEN_ENDPOINT" show="false" value="enc:system.encryption.key.v1:kp0rx/nnBdePpYixjz/SDTLxvwsDM6F+OVc6p4WBqDlGCechxEjRE6P09cnvX4GW3E44jskeC3V3ackRPf7vCqK71eAVm6V4Su/95fTsUUw="/>
+    <elementParameter field="PASSWORD" name="ADLS_CLIENT_KEY" show="false" value="enc:system.encryption.key.v1:U+wORODmyRW6DTGBt9tjHLp3PWUHK+q9Vjh46mFH9nzRww=="/>
     <elementParameter field="CHECK" name="USE_DATANODE_HOSTNAME" show="false" value="true"/>
     <elementParameter field="CHECK" name="USE_KRB" show="false" value="false"/>
     <elementParameter field="TEXT" name="NAMENODE_PRINCIPAL" show="false" value="&quot;nn/_HOST@EXAMPLE.COM&quot;"/>
@@ -1280,7 +1280,7 @@
     <elementParameter field="CHECK" name="USE_MAPRTICKET" show="false" value="false"/>
     <elementParameter field="TEXT" name="USERNAME" show="false" value="&quot;anonymous&quot;"/>
     <elementParameter field="TEXT" name="GROUP" show="false" value="&quot;supergroup&quot;"/>
-    <elementParameter field="PASSWORD" name="MAPRTICKET_PASSWORD" show="false" value="enc:system.encryption.key.v1:uFH80zgKsAK9C92HMO6M3qvCZXWS/vJFVZ6zxEsY"/>
+    <elementParameter field="PASSWORD" name="MAPRTICKET_PASSWORD" show="false" value="enc:system.encryption.key.v1:5PJOSUzij4HAWHL6FoDDn3Oz9VFoyC0MpKHLRP1v"/>
     <elementParameter field="TEXT" name="MAPRTICKET_CLUSTER" show="false" value="&quot;demo.mapr.com&quot;"/>
     <elementParameter field="TEXT" name="MAPRTICKET_DURATION" show="false" value="86400L"/>
     <elementParameter field="BOTH_HADOOP" name="FILENAME" value="&quot;/data/archive/sources/RF_OSA_STATUS/RF_OSA_STATUS.csv&quot;"/>
@@ -1417,8 +1417,8 @@
     <elementParameter field="TEXT" name="FS_DEFAULT_NAME" show="false" value="&quot;hdfs://localhost:9000/&quot;"/>
     <elementParameter field="TEXT" name="ADLS_FS_DEFAULT_NAME" show="false" value="&quot;adl://account.azuredatalakestore.net&quot;"/>
     <elementParameter field="TEXT" name="ADLS_CLIENT_ID" show="false" value="&quot;XXXX&quot;"/>
-    <elementParameter field="PASSWORD" name="ADLS_AUTH_TOKEN_ENDPOINT" show="false" value="enc:system.encryption.key.v1:syZnP1bDMVOLTcgk1ZVzuyvOioqQXdDIQwGM/uA3bTV0nii61kV3oQvA5SghulF+bNQnWmq0kyrB56LJa2qJlSqEx6k0bc6VzjnMVzxyDCQ="/>
-    <elementParameter field="PASSWORD" name="ADLS_CLIENT_KEY" show="false" value="enc:system.encryption.key.v1:SI8qoSHJu4s7cOLqrDfNE+iiRtjJ8zQUfQTgMajedS5euA=="/>
+    <elementParameter field="PASSWORD" name="ADLS_AUTH_TOKEN_ENDPOINT" show="false" value="enc:system.encryption.key.v1:R1jA37ooVr1J76czcOcM/dp3wYyumpkYKSS/aKxVrExjhqkfIXjv3yI09aQ3HO/jysJJPDpVRO5Y0u4O25Jot45pFepVbLWGlJJCHUaFCW8="/>
+    <elementParameter field="PASSWORD" name="ADLS_CLIENT_KEY" show="false" value="enc:system.encryption.key.v1:1+Hilrjvjy/IYyZHa5IEdpvYE9IsGtBwCNabhh/yJTBiSA=="/>
     <elementParameter field="CHECK" name="USE_DATANODE_HOSTNAME" show="false" value="true"/>
     <elementParameter field="CHECK" name="USE_KRB" show="false" value="false"/>
     <elementParameter field="TEXT" name="NAMENODE_PRINCIPAL" show="false" value="&quot;nn/_HOST@EXAMPLE.COM&quot;"/>
@@ -1428,7 +1428,7 @@
     <elementParameter field="CHECK" name="USE_MAPRTICKET" show="false" value="false"/>
     <elementParameter field="TEXT" name="USERNAME" show="false" value="&quot;anonymous&quot;"/>
     <elementParameter field="TEXT" name="GROUP" show="false" value="&quot;supergroup&quot;"/>
-    <elementParameter field="PASSWORD" name="MAPRTICKET_PASSWORD" show="false" value="enc:system.encryption.key.v1:DMOSLgs0xi4rjrgvpBCrjGj5Nbhty0jNMZG+DIXL"/>
+    <elementParameter field="PASSWORD" name="MAPRTICKET_PASSWORD" show="false" value="enc:system.encryption.key.v1:EqaMpjxShZ6EmztzjDTJRQMRiWJmnwhLK1DAMnPr"/>
     <elementParameter field="TEXT" name="MAPRTICKET_CLUSTER" show="false" value="&quot;demo.mapr.com&quot;"/>
     <elementParameter field="TEXT" name="MAPRTICKET_DURATION" show="false" value="86400L"/>
     <elementParameter field="BOTH_HADOOP" name="FILENAME" value="&quot;/data/archive/sources/RF_PCA_STATUS_GRP/RF_PCA_STATUS_GRP.csv&quot;"/>
@@ -1551,8 +1551,8 @@
     <elementParameter field="TEXT" name="FS_DEFAULT_NAME" show="false" value="&quot;hdfs://localhost:9000/&quot;"/>
     <elementParameter field="TEXT" name="ADLS_FS_DEFAULT_NAME" show="false" value="&quot;adl://account.azuredatalakestore.net&quot;"/>
     <elementParameter field="TEXT" name="ADLS_CLIENT_ID" show="false" value="&quot;XXXX&quot;"/>
-    <elementParameter field="PASSWORD" name="ADLS_AUTH_TOKEN_ENDPOINT" show="false" value="enc:system.encryption.key.v1:zTwcEZsGIVj/3/8nW26NygaKWDnEaFQnDshLhL87u9Sg0HwyRj0xlr9sCzwVDKMSg9/oMbs11e3tEpixV25B07MOILZbN3cp9SS0tkbW938="/>
-    <elementParameter field="PASSWORD" name="ADLS_CLIENT_KEY" show="false" value="enc:system.encryption.key.v1:fwyHjmPKt7VRp7bib8fMfpmmLOQq9NN2pMpgyeQx8P+tiw=="/>
+    <elementParameter field="PASSWORD" name="ADLS_AUTH_TOKEN_ENDPOINT" show="false" value="enc:system.encryption.key.v1:VYYCJ3BaFuUtHWszXHdP7fncmOPEEtOhRj1oABiOhoYRVi3XdsJsqiknNckol+YZdv+jony73XXXWd3tgxUmmJ280BLENvgISaDPcuffpn8="/>
+    <elementParameter field="PASSWORD" name="ADLS_CLIENT_KEY" show="false" value="enc:system.encryption.key.v1:3xoWDze9v3YS8G2+QBAek+eJIg5KtGQD4gfuMwOl9CdbtQ=="/>
     <elementParameter field="CHECK" name="USE_DATANODE_HOSTNAME" show="false" value="true"/>
     <elementParameter field="CHECK" name="USE_KRB" show="false" value="false"/>
     <elementParameter field="TEXT" name="NAMENODE_PRINCIPAL" show="false" value="&quot;nn/_HOST@EXAMPLE.COM&quot;"/>
@@ -1562,7 +1562,7 @@
     <elementParameter field="CHECK" name="USE_MAPRTICKET" show="false" value="false"/>
     <elementParameter field="TEXT" name="USERNAME" show="false" value="&quot;anonymous&quot;"/>
     <elementParameter field="TEXT" name="GROUP" show="false" value="&quot;supergroup&quot;"/>
-    <elementParameter field="PASSWORD" name="MAPRTICKET_PASSWORD" show="false" value="enc:system.encryption.key.v1:CB8nHmFbhcgbi85KL2QsvcbBqNsIATfxbL/Vjeen"/>
+    <elementParameter field="PASSWORD" name="MAPRTICKET_PASSWORD" show="false" value="enc:system.encryption.key.v1:XgOx2me+vEyoDy5Ky3XHCoI2S7nKROsh0/kgyZtb"/>
     <elementParameter field="TEXT" name="MAPRTICKET_CLUSTER" show="false" value="&quot;demo.mapr.com&quot;"/>
     <elementParameter field="TEXT" name="MAPRTICKET_DURATION" show="false" value="86400L"/>
     <elementParameter field="BOTH_HADOOP" name="FILENAME" value="&quot;/data/archive/sources/RF_SA_APP_TYPE_GRP/RF_SA_APP_TYPE_GRP.csv&quot;"/>
@@ -1615,7 +1615,7 @@
     <elementParameter field="CHECK" name="USE_MAPRTICKET" show="false" value="false"/>
     <elementParameter field="TEXT" name="USERNAME" value="&quot;etl_dev2&quot;"/>
     <elementParameter field="TEXT" name="GROUP" show="false" value="&quot;supergroup&quot;"/>
-    <elementParameter field="PASSWORD" name="MAPRTICKET_PASSWORD" show="false" value="enc:system.encryption.key.v1:TakQZS4B17U1N2UpqaDscAMQ2qOGf6Uh11t8esMQ"/>
+    <elementParameter field="PASSWORD" name="MAPRTICKET_PASSWORD" show="false" value="enc:system.encryption.key.v1:8OlA8DUuPeCZSyGUnaGTWJhQJI/gIU6AQ8d2NQlF"/>
     <elementParameter field="TEXT" name="MAPRTICKET_CLUSTER" show="false" value="&quot;demo.mapr.com&quot;"/>
     <elementParameter field="TEXT" name="MAPRTICKET_DURATION" show="false" value=""/>
     <elementParameter field="TABLE" name="HADOOP_ADVANCED_PROPERTIES"/>
@@ -1624,8 +1624,8 @@
     <elementParameter field="TEXT" name="HDFS_ENCRYPTION_KEY_PROVIDER" show="false" value="&quot;kms://http@localhost:16000/kms&quot;"/>
     <elementParameter field="TEXT" name="ADLS_FS_DEFAULT_NAME" show="false" value="&quot;adl://account.azuredatalakestore.net&quot;"/>
     <elementParameter field="TEXT" name="ADLS_CLIENT_ID" show="false" value="&quot;XXXX&quot;"/>
-    <elementParameter field="PASSWORD" name="ADLS_AUTH_TOKEN_ENDPOINT" show="false" value="enc:system.encryption.key.v1:0XSrLkr8NNmps1lLrh9gcMIOZLESXWlC+2YBqr1ASEzAJjL00nlJQmx/hICe/FkgbOIrg1po/3Oa9CqQLSpt8sencaeCF1VkIZtM/mNDqUU="/>
-    <elementParameter field="PASSWORD" name="ADLS_CLIENT_KEY" show="false" value="enc:system.encryption.key.v1:OKqYIvyHcrpWHfVsTpeagZVa07yxmfLV6esK6lcuwMMt5w=="/>
+    <elementParameter field="PASSWORD" name="ADLS_AUTH_TOKEN_ENDPOINT" show="false" value="enc:system.encryption.key.v1:+KWJXJRY+JxjYN/pBLOsuA1sipQOJYi2Vmal0ezFqiH9lAgdoa/Y5OusV5MTtoD+2ZOKLWm1cm5f237M3py4ty3ZOg6fLi369ho3F6FPuvI="/>
+    <elementParameter field="PASSWORD" name="ADLS_CLIENT_KEY" show="false" value="enc:system.encryption.key.v1:JDOa9UKLgPtUzywLcSyhPPAifTLIv6aQ35FuWF2gBcx44g=="/>
     <elementParameter field="CHECK" name="SET_MAPR_HOME_DIR" show="false" value="false"/>
     <elementParameter field="TEXT" name="MAPR_HOME_DIR" show="false" value="&quot;/opt/mapr&quot;"/>
     <elementParameter field="CHECK" name="SET_HADOOP_LOGIN" show="false" value="false"/>
@@ -1720,13 +1720,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_22984635-f4c4-48cd-a21b-081417a7dadc"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>4SI7wbsAjiAy49rud/blXHxP6RPA6BXISJZlESZG6idkDYW/hvGJhhufCHdwzHiM2UzTJcf9NYpR
-h1v44T/5jQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_5d3b22c8-9f24-4e80-847a-fe2fe674ca12"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>6j8IoHKP9rW94OLtZQ0heMd+1wxGmUj/rd/GyQhDu9LEoinxcF86dcrdBw4hm4WHmKDWqQKMbf19
-g0v2TXeTqQ==</DigestValue></Reference></SignedInfo><SignatureValue>pmmHwxtffVuNq5loNafaW7TV+U+fELP2PxiFm6Aprb2ZNQhQYsdhoAyzHG6E/fGbE+TKOET3kpFV
-KRHR3WDF5+spQ/2Et9srUpa7Ufm9uofpCFZNhdWiaeRrOudgmSBOtK46HC4QFSi1sRmIYXkwo1tv
-RDvMh/zGAUfB1GJyS25oqgflbMNIZN9dnakPpOKQazy10UpzpUs1nvj8kPmCr+224180gdoeGmTo
-s0mX9Dw3SvCVux0NtnxaBdpCH2htHY4RQPC83cTHG5fQMNQoEdHii/2L6Ro3PjlzhkCD7JAF5k7k
-AHyK20R5PuZDu/hJIqRek9vSwi5MX8vK23ay8g==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_549db4ea-b67b-4977-9c9c-9bde6ec3c511"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>yicn9sbbdc5Awu6YZhTg9h3zMIqnWDtBUa92TZGMdnhDYwQt+b31cPD81aRZtLfDH0tyvvy070pD
+09qOT8gbeA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_44316b99-0c4a-4393-a2db-1e9a98ec8ff2"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>ipgPmDvxppgu23k7hjCyj5RsusVUl594sh7omjA5LhHwv9GbeuW9OawqmK2qsPDjAMqrSDMs1hyp
+/jcdizHIdQ==</DigestValue></Reference></SignedInfo><SignatureValue>JVRw1aGnCwY+9nqGwzAQ2O9vFiiWASBzi6BDQ9tCYaiqo6TsW+PGarhbxfJZUD3OLa8qEyGrz0au
+5yFJmirEtceVP8ahLw/xvDTNinTU3mVMxeegI+QTf69ax1rxmZtTDZSprjrTionz1qFKUnlZm44p
+7MNuG3SrREKfeQsq+C/tfmZFg/gVF/cw9p0t8ABRSgX1tSh7Cff6tGCYTCUbtCgyzLRzsPknmL/+
+vIEGNtWq7KHOtPCGziYlAzMjrnOFP3yh+oH02tD+U6WVpEoyOU36Uda0Qj6oSK4zSo1hJMEnkD0W
+ZuDuA8Z498BHlHKquhgnndnTK4zk4mEaYpx6Hg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U
@@ -1748,4 +1748,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_5d3b22c8-9f24-4e80-847a-fe2fe674ca12" Target="#_22984635-f4c4-48cd-a21b-081417a7dadc"><Timestamp>2020-03-20 10:05:56</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_44316b99-0c4a-4393-a2db-1e9a98ec8ff2" Target="#_549db4ea-b67b-4977-9c9c-9bde6ec3c511"><Timestamp>2020-03-20 10:10:25</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
