@@ -159,5 +159,11 @@ public class BusinessRules {
 			return "None";
 	}
 	
-	project 
+	project String pendingWithMeralcoTag() {
+		
+	
+	if (match) {
+		return recordtype.equals("OSA")? isNotNull(pendingtag)? "Unknown": generalstatus.equals("PIPELINE") ? "Pending with " + responsible : "Completed";
+	}
+	}
 }
