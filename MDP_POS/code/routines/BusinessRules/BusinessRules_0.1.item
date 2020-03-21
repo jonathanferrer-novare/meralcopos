@@ -187,7 +187,7 @@ public class BusinessRules {
 		
 	}
 	
-	public static float FMo_EST_BILLED_REV(String CRS_ORG_LEVEL_2, String APPLIED_LOAD, String KWH){
+	public static float FMo_EST_BILLED_REV(Object CRS_ORG_LEVEL_2, Object APPLIED_LOAD, Object KWH){
 		boolean match =  isNotNull(CRS_ORG_LEVEL_2) && isNotNull(APPLIED_LOAD) && isNotNull(KWH);
 		
 		if (match) {
@@ -195,24 +195,25 @@ public class BusinessRules {
 			double kwh_float = Float.parseFloat(KWH);
 			float APPLIED_LOAD_int = Float.parseFloat(APPLIED_LOAD);
 			double a;
-			
+			float val = Integer.valueOf("0").floatValue();
 			if (CRS_ORG_LEVEL_2 == "BIZ" || CRS_ORG_LEVEL_2 == "CBG"){
 				if (APPLIED_LOAD_int * 0.7 >= 500) {
 					a = kwh_float * 30 * 7.42;
 					String.valueOf(a);
-					return (float)a;
+					val = (float)a;
 				}
 				else if (APPLIED_LOAD_int * 0.7 >= 40) {
-//					return (float)kwh_float * 30 * 9.75;
+					val = (float)kwh_float * 30 * 9.75;
 				}
 				else if (APPLIED_LOAD_int * 0.7 < 40) {
-//					return (float)kwh_float * 30 * 10.08;
+					val = (float)kwh_float * 30 * 10.08;
 				}
 			}
 			
 			else {
-//				return (float)kwh_float * 30 * 10.50;
-			}	
+				val = (float)kwh_float * 30 * 10.50;
+			}
+			return val;
 		}
 		
 		else {
