@@ -66,10 +66,10 @@ public class BusinessRules {
         
 		boolean date1_null = isNotNull(date1);
 		boolean date2_null = isNotNull(date2);
-		boolean date1_Format = isDate(date1);
-		boolean date2_Format = isDate(date2);
-        
+		
 		if(date1_null && date2_null) {
+			boolean date1_Format = isDate(date1);
+			boolean date2_Format = isDate(date2);
         	return (date1_Format && date2_Format);
 		} else {
         	return false;
