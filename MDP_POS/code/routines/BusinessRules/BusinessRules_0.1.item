@@ -78,4 +78,24 @@ public class BusinessRules {
 
     }
 	
+	public static boolean isCCRCompleteAndValid(String date1, String date2, String date3, String date4) {
+        
+		boolean date1_null = isNotNull(date1);
+		boolean date2_null = isNotNull(date2);
+		boolean date3_null = isNotNull(date3);
+		boolean date4_null = isNotNull(date4);
+		boolean date1_Format = isDate(date1);
+		boolean date2_Format = isDate(date2);
+		boolean date3_Format = isDate(date3);
+		boolean date4_Format = isDate(date4);
+        
+		if(date1_null && date2_null && date3_null && date4_null && date1_Format && date2_Format && date3_Format && date4_Format) {
+        	return true;
+        
+		} else {
+        	return false;
+        }
+
+    }
+
 }
