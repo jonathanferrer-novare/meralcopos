@@ -199,10 +199,10 @@ public class BusinessRules {
 				if (Integer.valueOf(APPLIED_LOAD_STRING).floatValue()* (float)0.7 >= (float)500) {
 					val = Integer.valueOf(KWH_STRING).floatValue() * (float)30 * (float)7.42;
 				}
-				else if (APPLIED_LOAD_int * 0.7 >= 40) {
+				else if (Integer.valueOf(APPLIED_LOAD_STRING) * 0.7 >= 40) {
 					val = Integer.valueOf(KWH_STRING).floatValue() * (float)30 * (float)9.75;
 				}
-				else if (APPLIED_LOAD_int * 0.7 < 40) {
+				else if (Integer.valueOf(APPLIED_LOAD_STRING) * 0.7 < 40) {
 					val = Integer.valueOf(KWH_STRING).floatValue() * (float)30 * (float)10.08;
 				}
 			}
