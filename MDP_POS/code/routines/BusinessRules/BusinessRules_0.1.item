@@ -113,6 +113,6 @@ public class BusinessRules {
 	}
 	
 	public static Date parseDate(String date) {
-		return routines.BusinessRules.isDate(date)?TalendDate.parseDate("yyyy-MM-dd HH:mm:ss",date):TalendDate.getCurrentDate();
+		return isDate(date)?TalendDate.parseDate("yyyy-MM-dd HH:mm:ss",date):TalendDate.getCurrentDate();
 	}
 }
