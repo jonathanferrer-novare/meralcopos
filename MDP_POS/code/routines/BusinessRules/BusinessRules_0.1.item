@@ -224,23 +224,23 @@ public class BusinessRules {
 		if (match) {
 			String CRS_ORG_LEVEL_2_STRING = CRS_ORG_LEVEL_2.toString();
 			Double APPLIED_LOAD_STRING = Double.valueOf(APPLIED_LOAD.toString());
-			float kwh_float = Float.parseFloat(kwhString);
-			int APPLIED_LOAD_int = Integer.parseInt(APPLIED_LOAD_STRING);
+			Double kwh_float = Double.valueOf(kwh.toString());
+			
 			float val = Integer.valueOf("0").floatValue();
 			if (CRS_ORG_LEVEL_2_STRING == "BIZ" || CRS_ORG_LEVEL_2_STRING == "CBG"){
-				if (APPLIED_LOAD_int * 0.7 >= 500) {
-					val = ((kwh_float * (float)30 * (float)7.42) * (float)0.08);
+				if (APPLIED_LOAD_STRING * 0.7 >= 500) {
+					val = ((kwh_float.floatValue() * (float)30 * (float)7.42) * (float)0.08);
 				}
-				else if (APPLIED_LOAD_int * 0.7 >= 40) {
-					val = ((kwh_float * (float)30 * (float)9.75) * (float)0.16);
+				else if (APPLIED_LOAD_STRING * 0.7 >= 40) {
+					val = ((kwh_float.floatValue() * (float)30 * (float)9.75) * (float)0.16);
 				}
-				else if (APPLIED_LOAD_int * 0.7 < 40) {
-					val = ((kwh_float * (float)30 * (float)10.08) * (float)0.21);
+				else if (APPLIED_LOAD_STRING * 0.7 < 40) {
+					val = ((kwh_float.floatValue() * (float)30 * (float)10.08) * (float)0.21);
 				}
 			}
 			
 			else {
-			val = (kwh_float * (float)30 * (float)2.5);
+			val = (kwh_float.floatValue() * (float)30 * (float)2.5);
 			}
 			return val;
 		}
