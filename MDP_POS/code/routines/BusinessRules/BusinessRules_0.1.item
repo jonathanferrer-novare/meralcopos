@@ -125,7 +125,14 @@ public class BusinessRules {
 		
 	}
 	public static Date parseDateFormat(Object date) {
-		date = 
-		return isDate(date)&& isNotNull(date)?TalendDate.parseDate("yyyyMMdd",date):TalendDate.getCurrentDate();
+		boolean match =  isNotNull(date);
+		String date1 = date.toString();
+		if (match) {
+			return isDate(date1)?TalendDate.parseDate("yyyyMMdd",date1):TalendDate.getCurrentDate();
+		}
+		else
+		{
+			return TalendDate.getCurrentDate();
+		}
 	}
 }
