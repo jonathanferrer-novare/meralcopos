@@ -147,11 +147,27 @@ public class BusinessRules {
 			return "None";
 	}
 	
-	project String pendingWithMeralcoTag() {
-		
-	
+	public static String pendingWithMeralcoTag(Object recordtype, Object pendingtag, Object generalstatus, Object responsible) {
+	boolean match = isNotNull(recordtype) && isNotNull(pendingtag) && isNotNull(generalstatus) && isNotNull(responsible);
 	if (match) {
-		return recordtype.equals("OSA")? isNotNull(pendingtag)? "Unknown": generalstatus.equals("PIPELINE") ? "Pending with " + responsible : "Completed";
-	}
+		String recordtypeString = recordtype.toString();
+		String pendingtagString = pendingtag.toString();
+		String generalstatusString = generalstatus.toString();
+		String responsibleString = responsible.toString();
+		if (recordtypeString.equals("OSA")){
+			boolean pendingTagIsNull = !isNotNull(pendingtag);
+			if(pendingTagIsNull) {
+				return "Unknown";
+			}
+		}else {
+			boolean generatstatusispipeline = generalstatusString.equals("PIPELINE");
+			if(generatstatusispipeline) {
+				return "Pending with".concat(responsibleString);
+			}
+			else {
+				return "Completed";
+			}
+		}
+	}	
 	}
 }
