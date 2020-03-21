@@ -223,7 +223,7 @@ public class BusinessRules {
 		
 		if (match) {
 			String kwhString = kwh.toString();
-			String APPLIED_LOAD_STRING = APPLIED_LOAD.toString();
+			Double APPLIED_LOAD_STRING = Double.valueOf(APPLIED_LOAD.toString());
 			float kwh_float = Float.parseFloat(kwhString);
 			int APPLIED_LOAD_int = Integer.parseInt(APPLIED_LOAD_STRING);
 			float val = Integer.valueOf("0").floatValue();
