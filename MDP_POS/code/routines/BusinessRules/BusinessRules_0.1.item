@@ -250,8 +250,8 @@ public class BusinessRules {
 		
 	}
 	
-	public static float FMo_EST_BILLED_REV(Object CRS_ORG_LEVEL_2, Object APPLIED_LOAD, Object kwh){
-		boolean match =  isNotNull(CRS_ORG_LEVEL_2) && isNotNull(APPLIED_LOAD) && isNotNull(kwh);
+	public static float EST_BILLED_REV_YE_TGT(Object CRS_ORG_LEVEL_2, Object APPLIED_LOAD, Object kwh, Object PROJECTED_DAYS_DELAY_TGT){
+		boolean match =  isNotNull(CRS_ORG_LEVEL_2) && isNotNull(APPLIED_LOAD) && isNotNull(kwh) && isNotNull(PROJECTED_DAYS_DELAY_TGT);
 		
 		if (match) {
 			String CRS_ORG_LEVEL_2_STRING = CRS_ORG_LEVEL_2.toString();
