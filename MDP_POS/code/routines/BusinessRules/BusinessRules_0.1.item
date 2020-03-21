@@ -28,4 +28,21 @@ public class BusinessRules {
 	    return isNotNull;
 	}
 	
+	public static boolean isNumeric(String arg){
+	    
+		boolean valid = true;
+		valid = isNotNull(arg);
+	    
+	    try {
+	        double d = Double.parseDouble(arg);
+	    
+	    }catch (NumberFormatException nfe) {
+	        return false;
+	    }
+	    
+	    return valid;
+	    
+	    
+	}
+	
 }
