@@ -48,6 +48,15 @@ public class BusinessRules {
 	    return valid;
 	    
 	}
+	public static int setDefault(Object number) {
+		boolean notNull = isNotNull(number);
+		if(notNull) {
+			int num = Integer.valueOf(number.toString());
+			return num;
+		}
+		else
+			return 0;
+	}
 	
 	public static boolean isDate(String dateStr) {
         DateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
