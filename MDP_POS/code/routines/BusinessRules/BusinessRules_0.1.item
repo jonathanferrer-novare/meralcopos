@@ -155,7 +155,7 @@ public class BusinessRules {
 		String generalstatusString = generalstatus.toString();
 		String responsibleString = responsible.toString();
 		if (recordtypeString.equals("OSA")){
-			boolean pendingTagIsNull = !isNotNull(pendingtag);
+			boolean pendingTagIsNull = !isNotNull(pendingtagString);
 			if(pendingTagIsNull) {
 				return "Unknown";
 			}
@@ -168,6 +168,7 @@ public class BusinessRules {
 				return "Completed";
 			}
 		}
-	}	
+	}
+	return "Unknown";	
 	}
 }
