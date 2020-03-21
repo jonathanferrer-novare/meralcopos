@@ -95,5 +95,9 @@ public class BusinessRules {
         }
 
     }
-
+	
+	public static int CCR_DAYS_BR(String dcomp, String proj_charges_settled, String app_ready_con) {
+		DATEDIFF(DAY, [DCOMP], MAX([PROJ_CHARGES_SETTLED], [APP_READY_CON]))
+		
+	}
 }
