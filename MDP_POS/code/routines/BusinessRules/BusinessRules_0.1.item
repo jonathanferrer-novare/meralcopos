@@ -249,4 +249,36 @@ public class BusinessRules {
 		}
 		
 	}
+	
+	public static float FMo_EST_BILLED_REV(Object CRS_ORG_LEVEL_2, Object APPLIED_LOAD, Object kwh){
+		boolean match =  isNotNull(CRS_ORG_LEVEL_2) && isNotNull(APPLIED_LOAD) && isNotNull(kwh);
+		
+		if (match) {
+			String CRS_ORG_LEVEL_2_STRING = CRS_ORG_LEVEL_2.toString();
+			Double APPLIED_LOAD_STRING = Double.valueOf(APPLIED_LOAD.toString());
+			Double kwh_float = Double.valueOf(kwh.toString());
+			
+			float val = Integer.valueOf("0").floatValue();
+			if (CRS_ORG_LEVEL_2_STRING == "BIZ" || CRS_ORG_LEVEL_2_STRING == "CBG"){
+				if (APPLIED_LOAD_STRING * 0.7 >= 500) {
+					val = ((kwh_float.floatValue() * (float)30 * (float)7.42) * (float)0.08);
+				}
+				else if (APPLIED_LOAD_STRING * 0.7 >= 40) {
+					val = ((kwh_float.floatValue() * (float)30 * (float)9.75) * (float)0.16);
+				}
+				else if (APPLIED_LOAD_STRING * 0.7 < 40) {
+					val = ((kwh_float.floatValue() * (float)30 * (float)10.08) * (float)0.21);
+				}
+			}
+			
+			else {
+			val = (kwh_float.floatValue() * (float)30 * (float)2.5);
+			}
+			return val;
+		}
+		else {
+			return Float.parseFloat("0");
+		}
+		}
+	}
 }
