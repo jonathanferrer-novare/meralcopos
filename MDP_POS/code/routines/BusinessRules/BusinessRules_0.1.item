@@ -312,4 +312,35 @@ public class BusinessRules {
 		}
 	}
 	
+	public static float EST_BILLED_REV(Object CRS_ORG_LEVEL_2, Object APPLIED_LOAD, Object kwh, Object PROJECTED_DAYS_DELAY){
+		boolean match =  isNotNull(CRS_ORG_LEVEL_2) && isNotNull(APPLIED_LOAD) && isNotNull(kwh) && isNotNull(PROJECTED_DAYS_DELAY);
+		
+		if (match) {
+			String CRS_ORG_LEVEL_2_STRING = CRS_ORG_LEVEL_2.toString();
+			Double APPLIED_LOAD_STRING = Double.valueOf(APPLIED_LOAD.toString());
+			Double kwh_float = Double.valueOf(kwh.toString());
+			Integer PROJECTED_DAYS_DELAY_INT = Integer.valueOf(PROJECTED_DAYS_DELAY.toString());
+			float val = Integer.valueOf("0").floatValue();
+			if (CRS_ORG_LEVEL_2_STRING == "BIZ" || CRS_ORG_LEVEL_2_STRING == "CBG"){
+				if (APPLIED_LOAD_STRING * 0.7 >= 500) {
+					val = ((kwh_float.floatValue() * PROJECTED_DAYS_DELAY_INT.floatValue() * (float)7.42));
+				}
+				else if (APPLIED_LOAD_STRING * 0.7 >= 40) {
+					val = ((kwh_float.floatValue() * PROJECTED_DAYS_DELAY_INT.floatValue() * (float)9.75));
+				}
+				else if (APPLIED_LOAD_STRING * 0.7 < 40) {
+					val = ((kwh_float.floatValue() *  PROJECTED_DAYS_DELAY_INT.floatValue() * (float)10.08));
+				}
+			}
+			
+			else {
+			val = (kwh_float.floatValue() * PROJECTED_DAYS_DELAY_INT.floatValue() * (float)10.5);
+			}
+			return val;
+		}
+		else {
+			return Float.parseFloat("0");
+		}
+	}
+	
 }
