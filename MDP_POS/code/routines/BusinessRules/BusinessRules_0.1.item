@@ -20,14 +20,8 @@ package routines;
  */
 public class BusinessRules {
     
-	public static void isNull(String message) {
-        if (message == null) {
-            message = "World"; //$NON-NLS-1$
-        }
-        System.out.println("Hello " + message + " !"); //$NON-NLS-1$ //$NON-NLS-2$
-    }
 	
-	public static boolean IsNull(Object arg){
+	public static boolean IsNotNull(Object arg){
 	    boolean isNotNull = (arg != null && !arg.equals("null")) ;
 	    if (isNotNull)
 	        isNotNull &= (arg.toString().trim().length() != 0);
