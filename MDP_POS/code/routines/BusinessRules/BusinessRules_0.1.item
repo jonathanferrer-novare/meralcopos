@@ -3,7 +3,7 @@ package routines;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-
+import java.util.Date;
 /*
  * user specification: the function's comment should contain keys as follows: 1. write about the function's comment.but
  * it must be before the "{talendTypes}" key.
@@ -97,7 +97,10 @@ public class BusinessRules {
     }
 	
 	public static int CCR_DAYS_BR(String dcomp, String proj_charges_settled, String app_ready_con) {
-		DATEDIFF(DAY, [DCOMP], MAX([PROJ_CHARGES_SETTLED], [APP_READY_CON]))
-		
+		Date proj_charges_settled_date = TalendDate.parseDate("yyyy-MM-dd", proj_charges_settled);
+		Date app_ready_con_date = TalendDate.parseDate("yyyy-MM-dd", app_ready_con);
+		Date dcomp_date = TalendDate.parseDate("yyyy-MM-dd", dcomp);
+		Date max = (int)TalendDate.diffDate(proj_charges_settled_date, app_ready_con_date, "dd") >= 0 ? proj_charges_settled_date:app_ready_con_date;
+		return (int)TalendDate.diffDateFloor(dcomp_date, max, "dd");
 	}
 }
