@@ -112,10 +112,20 @@ public class BusinessRules {
 		return (int)TalendDate.diffDateFloor(max, authzd_date, "dd");
 	}
 	
-	public static Date parseDate(String date) {
-		return isDate(date)?TalendDate.parseDate("yyyy-MM-dd",date):TalendDate.getCurrentDate();
+	public static Date parseDate(Object date) {
+		boolean match =  isNotNull(date);
+		String date1 = date.toString();
+		if (match) {
+			return isDate(date1)?TalendDate.parseDate("yyyy-MM-dd",date1):TalendDate.getCurrentDate();
+		}
+		else
+		{
+			return TalendDate.getCurrentDate();
+		}
+		
 	}
-	public static Date parseDateFormat(String date) {
-		return isDate(date)?TalendDate.parseDate("yyyyMMdd",date):TalendDate.getCurrentDate();
+	public static Date parseDateFormat(Object date) {
+		date = 
+		return isDate(date)&& isNotNull(date)?TalendDate.parseDate("yyyyMMdd",date):TalendDate.getCurrentDate();
 	}
 }
