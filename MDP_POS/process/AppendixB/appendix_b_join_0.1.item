@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><talendfile:ProcessType xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmlns:TalendMapper="http://www.talend.org/mapper" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" defaultContext="Default" jobType="Standard" xmi:version="2.0">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><talendfile:ProcessType xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmlns:xmi="http://www.omg.org/XMI" defaultContext="Default" jobType="Standard" xmi:version="2.0">
   <context confirmationNeeded="false" name="Default">
     <contextParameter comment="" name="HiveDB" prompt="HiveDB?" promptNeeded="false" repositoryContextId="_zbXOgGmREeqlv4K96N_cYA" type="id_String" value="&quot;datahub&quot;"/>
     <contextParameter comment="" name="Host" prompt="Host?" promptNeeded="false" repositoryContextId="_zbXOgGmREeqlv4K96N_cYA" type="id_String" value="&quot;10.0.0.174&quot;"/>
@@ -30,7 +30,7 @@
     <elementParameter field="TEXT" name="OOZIE_END_POINT" show="false" value=""/>
     <elementParameter field="CHECK" name="IMPLICITCONTEXT_USE_PROJECT_SETTINGS" show="false" value="true"/>
     <elementParameter field="CHECK" name="STATANDLOG_USE_PROJECT_SETTINGS" show="false" value="true"/>
-    <elementParameter field="CHECK" name="MULTI_THREAD_EXECATION" value="false"/>
+    <elementParameter field="CHECK" name="MULTI_THREAD_EXECATION" value="true"/>
     <elementParameter field="TEXT" name="PARALLELIZE_UNIT_SIZE" value="25000"/>
     <elementParameter field="CHECK" name="IMPLICIT_TCONTEXTLOAD" value="false"/>
     <elementParameter field="RADIO" name="FROM_FILE_FLAG_IMPLICIT_CONTEXT" show="false" value="false"/>
@@ -52,7 +52,7 @@
     <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" show="false" value="enc:system.encryption.key.v1:n4rytFPZ3/5jSGna031wsBv30ZK164NKxcQyXS8v"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" show="false" value="enc:system.encryption.key.v1:tkMTn2ZVtsyTzlGYDY8VqU2MVXUHddzJN1DSE+Wh"/>
     <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
@@ -87,7 +87,7 @@
     <elementParameter field="TEXT" name="PROPERTIES" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:X4f9zliBWOPXLPXazL5L/HsqdJUM/RxHsBetvdMI"/>
+    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:x0ywhDWQXhnLFQmFWBXV4igy8Dkv52XpX52BIJQX"/>
     <elementParameter field="FILE" name="DBFILE" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE_STATS" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE_LOGS" show="false" value="&quot;&quot;"/>
@@ -122,7 +122,7 @@
     <routinesParameter id="_4FbJMGg5EeqhzLDDDK0fuA" name="TalendStringUtil"/>
     <routinesParameter id="_4FD80Gg5EeqhzLDDDK0fuA" name="TalendString"/>
   </parameters>
-  <node componentName="tHashInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="128" posY="320">
+  <node componentName="tHashInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="128" posY="1024">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tHashInput_1"/>
     <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="CHECK" name="LINK_WITH" value="true"/>
@@ -141,7 +141,7 @@
       <column comment="" key="false" length="-1" name="frequency_group" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tAggregateRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="352" posY="320">
+  <node componentName="tAggregateRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="352" posY="1024">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tAggregateRow_2"/>
     <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="TABLE" name="GROUPBYS">
@@ -171,7 +171,7 @@
       <column comment="" key="false" length="-1" name="frequency_group" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tHashInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="128" posY="416">
+  <node componentName="tHashInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="128" posY="1120">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tHashInput_2"/>
     <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="CHECK" name="LINK_WITH" value="true"/>
@@ -190,7 +190,7 @@
       <column comment="" key="false" length="-1" name="frequency_group" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tAggregateRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="352" posY="416">
+  <node componentName="tAggregateRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="352" posY="1120">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tAggregateRow_3"/>
     <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="TABLE" name="GROUPBYS">
@@ -220,7 +220,7 @@
       <column comment="" key="false" length="-1" name="frequency_group" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tHashInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="128" posY="512">
+  <node componentName="tHashInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="128" posY="1216">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tHashInput_3"/>
     <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="CHECK" name="LINK_WITH" value="true"/>
@@ -239,7 +239,7 @@
       <column comment="" key="false" length="-1" name="frequency_group" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tAggregateRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="352" posY="512">
+  <node componentName="tAggregateRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="352" posY="1216">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tAggregateRow_4"/>
     <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="TABLE" name="GROUPBYS">
@@ -271,7 +271,7 @@
       <column comment="" key="false" length="-1" name="frequency_group" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tHashInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="128" posY="608">
+  <node componentName="tHashInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="128" posY="1312">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tHashInput_4"/>
     <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="CHECK" name="LINK_WITH" value="true"/>
@@ -290,7 +290,7 @@
       <column comment="" key="false" length="-1" name="frequency_group" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tAggregateRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="352" posY="608">
+  <node componentName="tAggregateRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="352" posY="1312">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tAggregateRow_5"/>
     <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="TABLE" name="GROUPBYS">
@@ -333,7 +333,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="&quot;dwh_db&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;public&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;green_plum&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:dxMI2roZLQ5qlKP3fSv3SpvVlbxXgU+3H2/QQ3+9hOQi+QdWdfSU+A=="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:iVXMkBo/Ho3YQ9kDyZku0R6vb08Df4L/roHQ9FZKtZJHt55GU8FVKQ=="/>
     <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="&quot;ISO-8859-15&quot;"/>
     <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
     <elementParameter field="CHECK" name="USE_SHARED_CONNECTION" value="false"/>
@@ -366,7 +366,7 @@
     <elementParameter field="CHECK" name="USE_MAPRTICKET" show="false" value="false"/>
     <elementParameter field="TEXT" name="USERNAME" value="context.Username"/>
     <elementParameter field="TEXT" name="GROUP" show="false" value="&quot;supergroup&quot;"/>
-    <elementParameter field="PASSWORD" name="MAPRTICKET_PASSWORD" show="false" value="enc:system.encryption.key.v1:NqybETWDNadkT9F8FHFzBvutMBpsHprMaK/9FXxu"/>
+    <elementParameter field="PASSWORD" name="MAPRTICKET_PASSWORD" show="false" value="enc:system.encryption.key.v1:o9mufRU6k4QNZWcV+WR/86KYz7HRESaYq2Xsf+FG"/>
     <elementParameter field="TEXT" name="MAPRTICKET_CLUSTER" show="false" value="&quot;demo.mapr.com&quot;"/>
     <elementParameter field="TEXT" name="MAPRTICKET_DURATION" show="false" value="86400L"/>
     <elementParameter field="TABLE" name="HADOOP_ADVANCED_PROPERTIES"/>
@@ -375,8 +375,8 @@
     <elementParameter field="TEXT" name="HDFS_ENCRYPTION_KEY_PROVIDER" show="false" value="&quot;kms://http@localhost:16000/kms&quot;"/>
     <elementParameter field="TEXT" name="ADLS_FS_DEFAULT_NAME" show="false" value="&quot;adl://account.azuredatalakestore.net&quot;"/>
     <elementParameter field="TEXT" name="ADLS_CLIENT_ID" show="false" value="&quot;XXXX&quot;"/>
-    <elementParameter field="PASSWORD" name="ADLS_AUTH_TOKEN_ENDPOINT" show="false" value="enc:system.encryption.key.v1:toZ3VK32dZXztK8GZK4dbR4yA0zT4K0F0j98326Q8l+qDDOPAoiFxVr6pCianLtnrLcg7suisEtvSY21VMEVQaO7bckPPAqa4W50L22tBFM="/>
-    <elementParameter field="PASSWORD" name="ADLS_CLIENT_KEY" show="false" value="enc:system.encryption.key.v1:AfA5xQvFgw8sUKi0tOb4kHTCKoDzDbishito77ZpNb/wRg=="/>
+    <elementParameter field="PASSWORD" name="ADLS_AUTH_TOKEN_ENDPOINT" show="false" value="enc:system.encryption.key.v1:QHad/J+Uu76phZdz6dGxOwIZljnzUA4NCQm1UZJ43OVElJjZbQQABoXadYZRcUmjYKe1oZqXA6BOGcvfSv2jWQBlLFZDP7kHxZmCCu/jr3s="/>
+    <elementParameter field="PASSWORD" name="ADLS_CLIENT_KEY" show="false" value="enc:system.encryption.key.v1:LSN5GWBnb8DJpJNeiH2F60b5qJ4BxOfeMdlpSy/bCTMD2g=="/>
     <elementParameter field="CHECK" name="SET_MAPR_HOME_DIR" show="false" value="false"/>
     <elementParameter field="TEXT" name="MAPR_HOME_DIR" show="false" value="&quot;/opt/mapr&quot;"/>
     <elementParameter field="CHECK" name="SET_HADOOP_LOGIN" show="false" value="false"/>
@@ -399,7 +399,7 @@
     <elementParameter field="TEXT" name="PORT" value="context.Port"/>
     <elementParameter field="TEXT" name="DBNAME" value="context.HiveDB"/>
     <elementParameter field="TEXT" name="USER" value="context.Username"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:Md+/f3QOVRBgOMs52OIJte+uR2TB4SJCUmHQMTUiW4ptz++hPrQ="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:RYUooW/u7pvj9zy3W43KOVdwGhgMRq5mvbwPUaM9aOvj0nrLYL4="/>
     <elementParameter field="TEXT" name="HIVE_ADDITIONAL_JDBC" value="&quot;&quot;"/>
     <elementParameter field="CHECK" name="CONFIGURATIONS_FROM_CLASSPATH" value="false"/>
     <elementParameter field="CHECK" name="USE_KRB" value="false"/>
@@ -412,18 +412,18 @@
     <elementParameter field="TEXT" name="METASTORE_JDBC_URL" show="false" value="&quot;jdbc:mysql://&quot;"/>
     <elementParameter field="TEXT" name="METASTORE_CLASSNAME" show="false" value="&quot;com.mysql.jdbc.Driver&quot;"/>
     <elementParameter field="TEXT" name="METASTORE_USERNAME" show="false" value="&quot;hive&quot;"/>
-    <elementParameter field="PASSWORD" name="METASTORE_PASSWORD" show="false" value="enc:system.encryption.key.v1:5ohTQGjgZvi/5dnknVU9XY4fo8j/GqrFqQpouBEBlyLknQ=="/>
+    <elementParameter field="PASSWORD" name="METASTORE_PASSWORD" show="false" value="enc:system.encryption.key.v1:iwhUQJ8vnc3ppP1zM9OGJ5wW1aeso8cn6YUr0MoEzUNjmg=="/>
     <elementParameter field="CHECK" name="USE_KEYTAB" show="false" value="false"/>
     <elementParameter field="TEXT" name="PRINCIPAL" show="false" value="&quot;hive&quot;"/>
     <elementParameter field="FILE" name="KEYTAB_PATH" show="false" value="&quot;/tmp/hive.keytab&quot;"/>
     <elementParameter field="CHECK" name="USE_MAPRTICKET" show="false" value="false"/>
     <elementParameter field="TEXT" name="MAPRTICKET_USERNAME" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="MAPRTICKET_PASSWORD" show="false" value="enc:system.encryption.key.v1:T6c2c4g9Vk7K6UXFJ+e8xU1YnhSPQuet20VLxXkj"/>
+    <elementParameter field="PASSWORD" name="MAPRTICKET_PASSWORD" show="false" value="enc:system.encryption.key.v1:zXETxw6k5ZiD/XAsMaPrip/9G0w632ICkDU1Na3J"/>
     <elementParameter field="TEXT" name="MAPRTICKET_CLUSTER" show="false" value="&quot;demo.mapr.com&quot;"/>
     <elementParameter field="TEXT" name="MAPRTICKET_DURATION" show="false" value="86400L"/>
     <elementParameter field="CHECK" name="USE_SSL" value="false"/>
     <elementParameter field="FILE" name="SSL_TRUST_STORE" show="false" value="&quot;/home/usr1/ssl/trust_store.jks&quot;"/>
-    <elementParameter field="PASSWORD" name="SSL_TRUST_STORE_PASSWORD" show="false" value="enc:system.encryption.key.v1:XH7taxpCXhs0aIHdmKhaIuD/zK4oAGGGACeqGYchu78eQ1sABEE="/>
+    <elementParameter field="PASSWORD" name="SSL_TRUST_STORE_PASSWORD" show="false" value="enc:system.encryption.key.v1:B6vLG4rgvP8JHmRVZstTO/4hN3JxdVoD8Ovhnu4WWPhCd8qZKwo="/>
     <elementParameter field="CHECK" name="SET_MAPRED_JT" show="false" value="true"/>
     <elementParameter field="TEXT" name="MAPRED_JT" show="false" value="&quot;localhost:50300&quot;"/>
     <elementParameter field="CHECK" name="SET_RESOURCE_MANAGER" value="false"/>
@@ -442,11 +442,11 @@
     <elementParameter field="TEXT" name="WEBHCAT_USERNAME" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="STATUSDIR" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="HDINSIGHT_USERNAME" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="HDINSIGHT_PASSWORD" show="false" value="enc:system.encryption.key.v1:gbYmAm2yYZVUEY0SfSRqxdh44Ae39OArGVYLdjfg"/>
+    <elementParameter field="PASSWORD" name="HDINSIGHT_PASSWORD" show="false" value="enc:system.encryption.key.v1:Z6W88BO7Q7m5wxINV/laRPu8t+FjyA2cDcUJpGuh"/>
     <elementParameter field="TEXT" name="WASB_HOST" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="WASB_CONTAINER" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="WASB_USERNAME" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="WASB_PASSWORD" show="false" value="enc:system.encryption.key.v1:6eEaKscQXlXZTcTHjZrs9LNt5P4EAcFnL/AXZpgV"/>
+    <elementParameter field="PASSWORD" name="WASB_PASSWORD" show="false" value="enc:system.encryption.key.v1:QNixtpNMwKL8Z9eCED1aX4qNMvD5WQpNJ4FMphYg"/>
     <elementParameter field="TEXT" name="REMOTE_FOLDER" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="GOOGLE_PROJECT_ID" show="false" value="&quot;my-google-project&quot;"/>
     <elementParameter field="TEXT" name="GOOGLE_CLUSTER_ID" show="false" value="&quot;my-cluster-id&quot;"/>
@@ -467,7 +467,7 @@
     <elementParameter field="CHECK" name="DEFINE_REGISTER_JAR" show="false" value="false"/>
     <elementParameter field="LABEL" name="REGISTER_JAR_NOTE" show="false" value="When filling in the Jar path information below, make sure that the JAR files are available on the server."/>
     <elementParameter field="TABLE" name="REGISTER_JAR" show="false"/>
-    <elementParameter field="PASSWORD" name="QUBOLE_API_TOKEN" show="false" value="enc:system.encryption.key.v1:uSIbgtV103rlgXpPiHgvXcbyocsno15jmV5tqRNV"/>
+    <elementParameter field="PASSWORD" name="QUBOLE_API_TOKEN" show="false" value="enc:system.encryption.key.v1:IY/FuP3iXKYNn9OolKQZU6SxmGqe4P6JAu0hXrZo"/>
     <elementParameter field="CHECK" name="QUBOLE_CLUSTER" show="false" value="false"/>
     <elementParameter field="TEXT" name="QUBOLE_CLUSTER_LABEL" show="false" value="&quot;&quot;"/>
     <elementParameter field="CHECK" name="QUBOLE_ENDPOINT" show="false" value="false"/>
@@ -518,7 +518,7 @@
     <elementParameter field="TEXT" name="DBNAME" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="TYPE" show="false" value="Hive"/>
     <elementParameter field="TEXT" name="USER" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:UeK4xAakbPyV1Qof4q7O2lZR6VKM7wPQwkJywaWK"/>
+    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:JI8wLpFn+LMdwUb7iw5CbWDrzthow+gN4OMltVMa"/>
     <elementParameter field="TEXT" name="HIVE_ADDITIONAL_JDBC" show="false" value="&quot;&quot;"/>
     <elementParameter field="CHECK" name="USE_KRB" show="false" value="false"/>
     <elementParameter field="TEXT" name="HIVE_PRINCIPAL" show="false" value="&quot;hive/_HOST@EXAMPLE.COM&quot;"/>
@@ -530,18 +530,18 @@
     <elementParameter field="TEXT" name="METASTORE_JDBC_URL" show="false" value="&quot;jdbc:mysql://&quot;"/>
     <elementParameter field="TEXT" name="METASTORE_CLASSNAME" show="false" value="&quot;com.mysql.jdbc.Driver&quot;"/>
     <elementParameter field="TEXT" name="METASTORE_USERNAME" show="false" value="&quot;hive&quot;"/>
-    <elementParameter field="PASSWORD" name="METASTORE_PASSWORD" show="false" value="enc:system.encryption.key.v1:9SO1VgcjAU5FZrTbeagaCj1vMd3NJNchbwOzyjo6+iEmJQ=="/>
+    <elementParameter field="PASSWORD" name="METASTORE_PASSWORD" show="false" value="enc:system.encryption.key.v1:/c0levs9s7NyNJHrRqlc5VrcQ1cyC3/+4uYBlMony73/HA=="/>
     <elementParameter field="CHECK" name="USE_KEYTAB" show="false" value="false"/>
     <elementParameter field="TEXT" name="PRINCIPAL" show="false" value="&quot;hive&quot;"/>
     <elementParameter field="FILE" name="KEYTAB_PATH" show="false" value="&quot;/tmp/hive.keytab&quot;"/>
     <elementParameter field="CHECK" name="USE_MAPRTICKET" show="false" value="false"/>
     <elementParameter field="TEXT" name="MAPRTICKET_USERNAME" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="MAPRTICKET_PASSWORD" show="false" value="enc:system.encryption.key.v1:vo5XZFTFbgRSEcV1BbV2O+eLl9hOmeDMVfYhI+Tz"/>
+    <elementParameter field="PASSWORD" name="MAPRTICKET_PASSWORD" show="false" value="enc:system.encryption.key.v1:rOUjqUXS60b929RfOgm52f+y2M/6QL1KwM7ckn+W"/>
     <elementParameter field="TEXT" name="MAPRTICKET_CLUSTER" show="false" value="&quot;demo.mapr.com&quot;"/>
     <elementParameter field="TEXT" name="MAPRTICKET_DURATION" show="false" value="86400L"/>
     <elementParameter field="CHECK" name="USE_SSL" show="false" value="false"/>
     <elementParameter field="FILE" name="SSL_TRUST_STORE" show="false" value="&quot;/home/usr1/ssl/trust_store.jks&quot;"/>
-    <elementParameter field="PASSWORD" name="SSL_TRUST_STORE_PASSWORD" show="false" value="enc:system.encryption.key.v1:mKOZ5XvPsHW6ssmNGtjHEdi28yh6s8hrN0iHph/xUFrtVQCqXPU="/>
+    <elementParameter field="PASSWORD" name="SSL_TRUST_STORE_PASSWORD" show="false" value="enc:system.encryption.key.v1:ayaN0LXYDgKGdBRih5uunwc/13/Ooao1DNKoV1VLlJhrvU3kDog="/>
     <elementParameter field="CHECK" name="SET_MAPRED_JT" show="false" value="false"/>
     <elementParameter field="TEXT" name="MAPRED_JT" show="false" value="&quot;localhost:50300&quot;"/>
     <elementParameter field="CHECK" name="SET_RESOURCE_MANAGER" show="false" value="false"/>
@@ -561,21 +561,21 @@
     <elementParameter field="TEXT" name="WEBHCAT_USERNAME" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="STATUSDIR" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="HDINSIGHT_USERNAME" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="HDINSIGHT_PASSWORD" show="false" value="enc:system.encryption.key.v1:8Dp5oiLIaKDDwG4lSdMvgh2Z/RoEpDVTxcYs6nfc"/>
+    <elementParameter field="PASSWORD" name="HDINSIGHT_PASSWORD" show="false" value="enc:system.encryption.key.v1:ek865jOMZINBTbKYDq8xLo6FypQY8xYKsigAmUjy"/>
     <elementParameter field="TEXT" name="WASB_HOST" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="WASB_CONTAINER" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="WASB_USERNAME" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="WASB_PASSWORD" show="false" value="enc:system.encryption.key.v1:fi+S/g7AK8X35DmL+HKPLdjN/5FOiH3r0L0reZq5"/>
+    <elementParameter field="PASSWORD" name="WASB_PASSWORD" show="false" value="enc:system.encryption.key.v1:LVm9ltxNUiwhDs1dHR2jy9ulbfL2qs4wwk7ib8lK"/>
     <elementParameter field="TEXT" name="REMOTE_FOLDER" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="GOOGLE_PROJECT_ID" show="false" value="&quot;my-google-project&quot;"/>
     <elementParameter field="TEXT" name="GOOGLE_CLUSTER_ID" show="false" value="&quot;my-cluster-id&quot;"/>
     <elementParameter field="TEXT" name="GOOGLE_REGION" show="false" value="&quot;global&quot;"/>
     <elementParameter field="TEXT" name="GOOGLE_JARS_BUCKET" show="false" value="&quot;gs://my-bucket/talend/jars&quot;"/>
     <elementParameter field="TEXT" name="ACCESS_KEY" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="SECRET_KEY" show="false" value="enc:system.encryption.key.v1:BGIho2sZRIToh5ndvwfeYv9xAVWGu7s+j09B3OzA"/>
+    <elementParameter field="PASSWORD" name="SECRET_KEY" show="false" value="enc:system.encryption.key.v1:H0vA7A3A0xrCZyjNDjLqZDUPNGbL0vIPPCdGA8vn"/>
     <elementParameter field="CHECK" name="DEFINE_PATH_TO_GOOGLE_CREDENTIALS" show="false" value="false"/>
     <elementParameter field="TEXT" name="PATH_TO_GOOGLE_CREDENTIALS" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="QUBOLE_API_TOKEN" show="false" value="enc:system.encryption.key.v1:Iw8yyrHBZ+gpENMawe4zvluFAaCZdDkwqZq6d+Vx"/>
+    <elementParameter field="PASSWORD" name="QUBOLE_API_TOKEN" show="false" value="enc:system.encryption.key.v1:rc3io1wvnVyrpaMb4oCBSNtxgMKgFvp8T1zGxE/0"/>
     <elementParameter field="CHECK" name="QUBOLE_CLUSTER" show="false" value="false"/>
     <elementParameter field="TEXT" name="QUBOLE_CLUSTER_LABEL" show="false" value="&quot;&quot;"/>
     <elementParameter field="CHECK" name="QUBOLE_ENDPOINT" show="false" value="false"/>
@@ -654,250 +654,24 @@
       <column comment="" key="false" length="27" name="Restoration_time" nullable="true" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="0" type="id_Date" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="384" posY="96">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_1"/>
-    <elementParameter field="EXTERNAL" name="MAP" value=""/>
-    <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
-    <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value="&quot;C:/Users/etl_dev1/Documents/temp&quot;"/>
-    <elementParameter field="IMAGE" name="PREVIEW" value="_iWPIkGjsEeqqEqrV7GF_qw-tMap_1-PREVIEW.bmp"/>
-    <elementParameter field="CHECK" name="DIE_ON_ERROR" show="false" value="true"/>
-    <elementParameter field="CHECK" name="LKUP_PARALLELIZE" show="false" value="false"/>
-    <elementParameter field="TEXT" name="LEVENSHTEIN" show="false" value="0"/>
-    <elementParameter field="TEXT" name="JACCARD" show="false" value="0"/>
-    <elementParameter field="CHECK" name="ENABLE_AUTO_CONVERT_TYPE" show="false" value="false"/>
-    <elementParameter field="TEXT" name="ROWS_BUFFER_SIZE" value="2000000"/>
-    <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
+  <node componentName="tPartitioner" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="288" posY="96">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tPartitioner_1"/>
+    <elementParameter field="TEXT" name="NUM_PARTITIONS" value="5"/>
+    <elementParameter field="TEXT" name="QUEUE_SIZE" value="10000"/>
+    <elementParameter field="CHECK" name="HASH_PARTITION" value="false"/>
+    <elementParameter field="TABLE" name="HASH_KEYS" show="false"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="out1">
+    <metadata connector="FLOW" label="metadata" name="tPartitioner_1">
       <column comment="" key="false" length="80" name="SDP_GID_H" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="80" name="SIN_H" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="SECTOR_H" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="80" name="TLN_H" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="15" name="Incident_ID" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="5" name="Interruption_Duration__sec_" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
       <column comment="" key="false" length="27" name="Interruption_time" nullable="true" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="0" type="id_Date" usefulColumn="true"/>
       <column comment="" key="false" length="27" name="Restoration_time" nullable="true" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="0" type="id_Date" usefulColumn="true"/>
     </metadata>
-    <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
-      <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
-      <outputTables name="out1" sizeState="INTERMEDIATE">
-        <mapperTableEntries expression="row1.SDP_GID_H " name="SDP_GID_H" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row1.SIN_H " name="SIN_H" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row1.SECTOR_H " name="SECTOR_H" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row2.TLN_H " name="TLN_H" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row1.Incident_ID " name="Incident_ID" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row1.Interruption_Duration__sec_ " name="Interruption_Duration__sec_" nullable="true" type="id_Integer"/>
-        <mapperTableEntries expression="row1.Interruption_time " name="Interruption_time" nullable="true" type="id_Date"/>
-        <mapperTableEntries expression="row1.Restoration_time " name="Restoration_time" nullable="true" type="id_Date"/>
-      </outputTables>
-      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row1" sizeState="INTERMEDIATE">
-        <mapperTableEntries name="SDP_GID_H" nullable="true" type="id_String"/>
-        <mapperTableEntries name="SIN_H" nullable="true" type="id_String"/>
-        <mapperTableEntries name="SECTOR_H" nullable="true" type="id_String"/>
-        <mapperTableEntries name="Incident_ID" nullable="true" type="id_String"/>
-        <mapperTableEntries name="Interruption_Duration__sec_" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="Interruption_time" nullable="true" type="id_Date"/>
-        <mapperTableEntries name="Restoration_time" nullable="true" type="id_Date"/>
-      </inputTables>
-      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row2" sizeState="INTERMEDIATE">
-        <mapperTableEntries expression="row1.SDP_GID_H " name="SDP_GID_H" nullable="true" operator="=" type="id_String"/>
-        <mapperTableEntries name="TLN_H" nullable="true" type="id_String"/>
-      </inputTables>
-    </nodeData>
   </node>
-  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="512" posY="96">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_2"/>
-    <elementParameter field="EXTERNAL" name="MAP" value=""/>
-    <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
-    <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value="&quot;C:/Users/etl_dev1/Documents/temp&quot;"/>
-    <elementParameter field="IMAGE" name="PREVIEW" value="_iWPIkGjsEeqqEqrV7GF_qw-tMap_2-PREVIEW.bmp"/>
-    <elementParameter field="CHECK" name="DIE_ON_ERROR" show="false" value="true"/>
-    <elementParameter field="CHECK" name="LKUP_PARALLELIZE" show="false" value="false"/>
-    <elementParameter field="TEXT" name="LEVENSHTEIN" show="false" value="0"/>
-    <elementParameter field="TEXT" name="JACCARD" show="false" value="0"/>
-    <elementParameter field="CHECK" name="ENABLE_AUTO_CONVERT_TYPE" show="false" value="false"/>
-    <elementParameter field="TEXT" name="ROWS_BUFFER_SIZE" value="2000000"/>
-    <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="out2">
-      <column comment="" key="false" length="80" name="SDP_GID_H" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="80" name="SIN_H" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="SECTOR_H" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="80" name="TLN_H" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="15" name="Incident_ID" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="5" name="Interruption_Duration__sec_" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="27" name="Interruption_time" nullable="true" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="0" type="id_Date" usefulColumn="true"/>
-      <column comment="" key="false" length="27" name="Restoration_time" nullable="true" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="0" type="id_Date" usefulColumn="true"/>
-    </metadata>
-    <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
-      <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
-      <outputTables name="out2" sizeState="INTERMEDIATE">
-        <mapperTableEntries expression="out1.SDP_GID_H " name="SDP_GID_H" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="out1.SIN_H " name="SIN_H" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="Relational.ISNULL(out1.SECTOR_H) ? row3.SECTOR_H : out1.SECTOR_H " name="SECTOR_H" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="out1.TLN_H " name="TLN_H" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="out1.Incident_ID " name="Incident_ID" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="out1.Interruption_Duration__sec_ " name="Interruption_Duration__sec_" nullable="true" type="id_Integer"/>
-        <mapperTableEntries expression="out1.Interruption_time " name="Interruption_time" nullable="true" type="id_Date"/>
-        <mapperTableEntries expression="out1.Restoration_time " name="Restoration_time" nullable="true" type="id_Date"/>
-      </outputTables>
-      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="out1" sizeState="INTERMEDIATE">
-        <mapperTableEntries name="SDP_GID_H" nullable="true" type="id_String"/>
-        <mapperTableEntries name="SIN_H" nullable="true" type="id_String"/>
-        <mapperTableEntries name="SECTOR_H" nullable="true" type="id_String"/>
-        <mapperTableEntries name="TLN_H" nullable="true" type="id_String"/>
-        <mapperTableEntries name="Incident_ID" nullable="true" type="id_String"/>
-        <mapperTableEntries name="Interruption_Duration__sec_" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="Interruption_time" nullable="true" type="id_Date"/>
-        <mapperTableEntries name="Restoration_time" nullable="true" type="id_Date"/>
-      </inputTables>
-      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row3" sizeState="INTERMEDIATE">
-        <mapperTableEntries expression="out1.SIN_H " name="SIN_H" nullable="true" operator="=" type="id_String"/>
-        <mapperTableEntries name="TLN_H" nullable="true" type="id_String"/>
-        <mapperTableEntries name="SECTOR_H" nullable="true" type="id_String"/>
-      </inputTables>
-    </nodeData>
-  </node>
-  <node componentName="tAggregateRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="672" posY="96">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tAggregateRow_1"/>
-    <elementParameter field="TABLE" name="GROUPBYS">
-      <elementValue elementRef="OUTPUT_COLUMN" value="SIN_H"/>
-      <elementValue elementRef="INPUT_COLUMN" value="SIN_H"/>
-      <elementValue elementRef="OUTPUT_COLUMN" value="SECTOR_H"/>
-      <elementValue elementRef="INPUT_COLUMN" value="SECTOR_H"/>
-      <elementValue elementRef="OUTPUT_COLUMN" value="TLN_H"/>
-      <elementValue elementRef="INPUT_COLUMN" value="TLN_H"/>
-    </elementParameter>
-    <elementParameter field="TABLE" name="OPERATIONS">
-      <elementValue elementRef="OUTPUT_COLUMN" value="sum_duration"/>
-      <elementValue elementRef="FUNCTION" value="sum"/>
-      <elementValue elementRef="INPUT_COLUMN" value="Interruption_Duration__sec_"/>
-      <elementValue elementRef="IGNORE_NULL" value="false"/>
-      <elementValue elementRef="OUTPUT_COLUMN" value="count_Incident_ID"/>
-      <elementValue elementRef="FUNCTION" value="count"/>
-      <elementValue elementRef="INPUT_COLUMN" value="Incident_ID"/>
-      <elementValue elementRef="IGNORE_NULL" value="false"/>
-    </elementParameter>
-    <elementParameter field="TEXT" name="LIST_DELIMITER" value="&quot;,&quot;"/>
-    <elementParameter field="CHECK" name="USE_FINANCIAL_PRECISION" value="true"/>
-    <elementParameter field="CHECK" name="CHECK_TYPE_OVERFLOW" value="false"/>
-    <elementParameter field="CHECK" name="CHECK_ULP" value="false"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tAggregateRow_1">
-      <column comment="" key="false" length="80" name="SIN_H" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="SECTOR_H" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="80" name="TLN_H" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="sum_duration" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="count_Incident_ID" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
-    </metadata>
-  </node>
-  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="800" posY="96">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_3"/>
-    <elementParameter field="EXTERNAL" name="MAP" value=""/>
-    <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
-    <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
-    <elementParameter field="IMAGE" name="PREVIEW" value="_iWPIkGjsEeqqEqrV7GF_qw-tMap_3-PREVIEW.bmp"/>
-    <elementParameter field="CHECK" name="DIE_ON_ERROR" show="false" value="true"/>
-    <elementParameter field="CHECK" name="LKUP_PARALLELIZE" show="false" value="false"/>
-    <elementParameter field="TEXT" name="LEVENSHTEIN" show="false" value="0"/>
-    <elementParameter field="TEXT" name="JACCARD" show="false" value="0"/>
-    <elementParameter field="CHECK" name="ENABLE_AUTO_CONVERT_TYPE" show="false" value="false"/>
-    <elementParameter field="TEXT" name="ROWS_BUFFER_SIZE" value="2000000"/>
-    <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="out3">
-      <column comment="" key="false" length="80" name="SIN_H" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="SECTOR_H" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="80" name="TLN_H" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="sum_duration" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="count_Incident_ID" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="duration_group" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="frequency_group" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-    </metadata>
-    <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
-      <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
-      <outputTables name="out3" sizeState="INTERMEDIATE">
-        <mapperTableEntries expression="row4.SIN_H " name="SIN_H" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row4.SECTOR_H " name="SECTOR_H" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row4.TLN_H " name="TLN_H" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row4.sum_duration " name="sum_duration" nullable="true" type="id_Integer"/>
-        <mapperTableEntries expression="row4.count_Incident_ID " name="count_Incident_ID" nullable="true" type="id_Integer"/>
-        <mapperTableEntries expression="row4.sum_duration &gt; 35 ? &quot;&gt; 35 HOURS&quot; &#13;&#10;: row4.sum_duration &gt; 30 ? &quot;&gt; 30 HOURS&quot;&#13;&#10;: row4.sum_duration &gt; 25 ? &quot;&gt; 25 HOURS&quot;&#13;&#10;: row4.sum_duration &gt; 20 ? &quot;&gt; 20 HOURS&quot;&#13;&#10;: row4.sum_duration &gt; 15 ? &quot;&gt; 15 HOURS&quot;&#13;&#10;: row4.sum_duration &gt; 10 ? &quot;&gt; 10 HOURS&quot;&#13;&#10;: row4.sum_duration &gt; 5 ? &quot;&gt; 5 HOURS&quot; : &quot;&gt; 5 HOURS&quot; " name="duration_group" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row4.count_Incident_ID &gt; 25 ? &quot;&gt; 25 TIMES&quot;&#13;&#10;: row4.count_Incident_ID &gt; 20 ? &quot;&gt; 20 TIMES&quot;&#13;&#10;: row4.count_Incident_ID &gt; 15 ? &quot;&gt; 15 TIMES&quot;&#13;&#10;: row4.count_Incident_ID &gt; 10 ? &quot;&gt; 10 TIMES&quot;&#13;&#10;: row4.count_Incident_ID &lt;= 10 ? &quot;&lt;= 10 TIMES&quot; : &quot;&lt;= 10 TIMES&quot; " name="frequency_group" nullable="true" type="id_String"/>
-      </outputTables>
-      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row4" sizeState="INTERMEDIATE">
-        <mapperTableEntries name="SIN_H" nullable="true" type="id_String"/>
-        <mapperTableEntries name="SECTOR_H" nullable="true" type="id_String"/>
-        <mapperTableEntries name="TLN_H" nullable="true" type="id_String"/>
-        <mapperTableEntries name="sum_duration" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="count_Incident_ID" nullable="true" type="id_Integer"/>
-      </inputTables>
-    </nodeData>
-  </node>
-  <node componentName="tHDFSOutput" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="928" posY="96">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tHDFSOutput_1"/>
-    <elementParameter field="HADOOP_LIBRARIES" name="HDFS" show="false" value=""/>
-    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
-    <elementParameter field="TEXT" name="DESTINATION" show="false" value=""/>
-    <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tHDFSConnection_1"/>
-    <elementParameter field="CLOSED_LIST" name="DB_VERSION" show="false" value="EMR_5_15_0"/>
-    <elementParameter field="HADOOP_DISTRIBUTION" name="HDFS" show="false" value=""/>
-    <elementParameter field="HADOOP_JARS_DIALOG" name="HADOOP_CUSTOM_JARS" show="false" value=""/>
-    <elementParameter field="CLOSED_LIST" name="SCHEME" show="false" value="HDFS"/>
-    <elementParameter field="CLOSED_LIST" name="AUTHENTICATION_MODE" show="false" value="USERNAME"/>
-    <elementParameter field="TEXT" name="FS_DEFAULT_NAME" show="false" value="&quot;hdfs://localhost:9000/&quot;"/>
-    <elementParameter field="TEXT" name="ADLS_FS_DEFAULT_NAME" show="false" value="&quot;adl://account.azuredatalakestore.net&quot;"/>
-    <elementParameter field="TEXT" name="ADLS_CLIENT_ID" show="false" value="&quot;XXXX&quot;"/>
-    <elementParameter field="PASSWORD" name="ADLS_AUTH_TOKEN_ENDPOINT" show="false" value="enc:system.encryption.key.v1:9v1nPstpsdLKkqzM5as2Q350xyqkxf7m9KN745DDdBttjqTTRC0kO1CfZiBLcjRh4XScVIHM+4cqVPYusTy94VSpCUH/Qm3hi9thy49WEm4="/>
-    <elementParameter field="PASSWORD" name="ADLS_CLIENT_KEY" show="false" value="enc:system.encryption.key.v1:6vVYlueNoO652q6GsfDWQzK2WfbxlnjrmbhvMhO7EWlHNQ=="/>
-    <elementParameter field="CHECK" name="USE_DATANODE_HOSTNAME" show="false" value="true"/>
-    <elementParameter field="CHECK" name="USE_KRB" show="false" value="false"/>
-    <elementParameter field="TEXT" name="NAMENODE_PRINCIPAL" show="false" value="&quot;nn/_HOST@EXAMPLE.COM&quot;"/>
-    <elementParameter field="CHECK" name="USE_KEYTAB" show="false" value="false"/>
-    <elementParameter field="TEXT" name="PRINCIPAL" show="false" value="&quot;hdfs&quot;"/>
-    <elementParameter field="FILE" name="KEYTAB_PATH" show="false" value="&quot;/tmp/hdfs.headless.keytab&quot;"/>
-    <elementParameter field="CHECK" name="USE_MAPRTICKET" show="false" value="false"/>
-    <elementParameter field="TEXT" name="USERNAME" show="false" value="&quot;anonymous&quot;"/>
-    <elementParameter field="TEXT" name="GROUP" show="false" value="&quot;supergroup&quot;"/>
-    <elementParameter field="PASSWORD" name="MAPRTICKET_PASSWORD" show="false" value="enc:system.encryption.key.v1:h/Lokqc8dv/giBwARhlmdRjLSCZSoJomTWSBHyvV"/>
-    <elementParameter field="TEXT" name="MAPRTICKET_CLUSTER" show="false" value="&quot;demo.mapr.com&quot;"/>
-    <elementParameter field="TEXT" name="MAPRTICKET_DURATION" show="false" value="86400L"/>
-    <elementParameter field="BOTH_HADOOP" name="FILENAME" value="&quot;/data/hub/networks/GSL/GSL_join.csv&quot;"/>
-    <elementParameter field="CLOSED_LIST" name="TYPEFILE" value="TEXT"/>
-    <elementParameter field="CLOSED_LIST" name="FILE_ACTION" value="CREATE"/>
-    <elementParameter field="TEXT" name="ROWSEPARATOR" value="&quot;\n&quot;"/>
-    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;|&quot;"/>
-    <elementParameter field="CHECK" name="CUSTOM_ENCODING" value="false"/>
-    <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="&quot;ISO-8859-15&quot;"/>
-    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" show="false" value="ISO-8859-15"/>
-    <elementParameter field="COLUMN_LIST" name="KEYCOLUMN" show="false" value="SIN_H"/>
-    <elementParameter field="COLUMN_LIST" name="VALUECOLUMN" show="false" value="SIN_H"/>
-    <elementParameter field="LABEL" name="NOTE" show="false" value="NOTE : Only boolean, byte, byte[], double, float, integer,&#10;&#9;&#9;&#9;&#9;long, short, string are currently supported for key class and value&#10;&#9;&#9;&#9;&#9;columns fields&#10;&#9;&#9;&#9;"/>
-    <elementParameter field="CHECK" name="COMPRESS" value="false"/>
-    <elementParameter field="CLOSED_LIST" name="COMPRESSION" show="false" value="GZIP"/>
-    <elementParameter field="LABEL" name="COMPRESS_NOTE" show="false" value="NOTE : Only support Linux client and hadoop native code is&#10;&#9;&#9;&#9;&#9;necessary, also need to add the native code path to&#10;&#9;&#9;&#9;&#9;$java.library.path&#10;&#9;&#9;&#9;"/>
-    <elementParameter field="CHECK" name="INCLUDEHEADER" value="false"/>
-    <elementParameter field="TABLE" name="HADOOP_ADVANCED_PROPERTIES" show="false"/>
-    <elementParameter field="CHECK" name="SET_MAPR_HOME_DIR" show="false" value="false"/>
-    <elementParameter field="TEXT" name="MAPR_HOME_DIR" show="false" value="&quot;/opt/mapr&quot;"/>
-    <elementParameter field="CHECK" name="SET_HADOOP_LOGIN" show="false" value="false"/>
-    <elementParameter field="TEXT" name="HADOOP_LOGIN" show="false" value="&quot;kerberos&quot;"/>
-    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="100"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tHDFSOutput_1">
-      <column comment="" key="false" length="80" name="SIN_H" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="SECTOR_H" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="80" name="TLN_H" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="sum_duration" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="count_Incident_ID" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="duration_group" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="frequency_group" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-    </metadata>
-  </node>
-  <node componentName="tHiveInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="128" posY="224">
+  <node componentName="tHiveInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="128" posY="352">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tHiveInput_2"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tHiveConnection_1"/>
@@ -913,7 +687,7 @@
     <elementParameter field="TEXT" name="DBNAME" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="TYPE" show="false" value="Hive"/>
     <elementParameter field="TEXT" name="USER" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:SYNzdvZcCEfCYa3ntr3DSycl503lhgcLRYk1+54+"/>
+    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:xZafQtPQ0nP5WpAdXow9mTrNDd9HFm2AY1dloXbb"/>
     <elementParameter field="TEXT" name="HIVE_ADDITIONAL_JDBC" show="false" value="&quot;&quot;"/>
     <elementParameter field="CHECK" name="USE_KRB" show="false" value="false"/>
     <elementParameter field="TEXT" name="HIVE_PRINCIPAL" show="false" value="&quot;hive/_HOST@EXAMPLE.COM&quot;"/>
@@ -925,18 +699,18 @@
     <elementParameter field="TEXT" name="METASTORE_JDBC_URL" show="false" value="&quot;jdbc:mysql://&quot;"/>
     <elementParameter field="TEXT" name="METASTORE_CLASSNAME" show="false" value="&quot;com.mysql.jdbc.Driver&quot;"/>
     <elementParameter field="TEXT" name="METASTORE_USERNAME" show="false" value="&quot;hive&quot;"/>
-    <elementParameter field="PASSWORD" name="METASTORE_PASSWORD" show="false" value="enc:system.encryption.key.v1:qpOG5mrYDFZ2B0YEQncR5Mcnvc9if6AsO4ZUJgUCNAyXnw=="/>
+    <elementParameter field="PASSWORD" name="METASTORE_PASSWORD" show="false" value="enc:system.encryption.key.v1:D7zIv3bxoqZT8xkpSXj4VY/1VYbHpfctg7u2OZ9n3RZKcQ=="/>
     <elementParameter field="CHECK" name="USE_KEYTAB" show="false" value="false"/>
     <elementParameter field="TEXT" name="PRINCIPAL" show="false" value="&quot;hive&quot;"/>
     <elementParameter field="FILE" name="KEYTAB_PATH" show="false" value="&quot;/tmp/hive.keytab&quot;"/>
     <elementParameter field="CHECK" name="USE_MAPRTICKET" show="false" value="false"/>
     <elementParameter field="TEXT" name="MAPRTICKET_USERNAME" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="MAPRTICKET_PASSWORD" show="false" value="enc:system.encryption.key.v1:vNHtL+5z1D6e1WO3ycti0jJwvdNX9Bgh9ZgwiSbl"/>
+    <elementParameter field="PASSWORD" name="MAPRTICKET_PASSWORD" show="false" value="enc:system.encryption.key.v1:b73urx0Eub3af2lSD3nNSrmhsRXPTKCu5hCyscv/"/>
     <elementParameter field="TEXT" name="MAPRTICKET_CLUSTER" show="false" value="&quot;demo.mapr.com&quot;"/>
     <elementParameter field="TEXT" name="MAPRTICKET_DURATION" show="false" value="86400L"/>
     <elementParameter field="CHECK" name="USE_SSL" show="false" value="false"/>
     <elementParameter field="FILE" name="SSL_TRUST_STORE" show="false" value="&quot;/home/usr1/ssl/trust_store.jks&quot;"/>
-    <elementParameter field="PASSWORD" name="SSL_TRUST_STORE_PASSWORD" show="false" value="enc:system.encryption.key.v1:Y4gv5GjfmwNy42SVSt1EFH8KX+seJbArCT2lJ2rlY+d0RAX1Wag="/>
+    <elementParameter field="PASSWORD" name="SSL_TRUST_STORE_PASSWORD" show="false" value="enc:system.encryption.key.v1:ksdLH6KbXGUnJXSPDMYn0jd4pknZ3hD+KWUtLEN6rjChnkVj4is="/>
     <elementParameter field="CHECK" name="SET_MAPRED_JT" show="false" value="false"/>
     <elementParameter field="TEXT" name="MAPRED_JT" show="false" value="&quot;localhost:50300&quot;"/>
     <elementParameter field="CHECK" name="SET_RESOURCE_MANAGER" show="false" value="false"/>
@@ -956,21 +730,21 @@
     <elementParameter field="TEXT" name="WEBHCAT_USERNAME" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="STATUSDIR" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="HDINSIGHT_USERNAME" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="HDINSIGHT_PASSWORD" show="false" value="enc:system.encryption.key.v1:/9kvzww10nLu1ew3X0nGFJPswM1JNr7AdUBhXxnk"/>
+    <elementParameter field="PASSWORD" name="HDINSIGHT_PASSWORD" show="false" value="enc:system.encryption.key.v1:8rv/pWCYWiU2cneD5FJ/JbCTHY1KeH7UnlKeo7jU"/>
     <elementParameter field="TEXT" name="WASB_HOST" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="WASB_CONTAINER" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="WASB_USERNAME" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="WASB_PASSWORD" show="false" value="enc:system.encryption.key.v1:nq/6RQQQtNFctHZKWmHKQSsCxpeXnJ1/uyrL/xpD"/>
+    <elementParameter field="PASSWORD" name="WASB_PASSWORD" show="false" value="enc:system.encryption.key.v1:YrNu9LUYIk9h9HhPhVfDaSc9a54dCpFMPQ8GqKOR"/>
     <elementParameter field="TEXT" name="REMOTE_FOLDER" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="GOOGLE_PROJECT_ID" show="false" value="&quot;my-google-project&quot;"/>
     <elementParameter field="TEXT" name="GOOGLE_CLUSTER_ID" show="false" value="&quot;my-cluster-id&quot;"/>
     <elementParameter field="TEXT" name="GOOGLE_REGION" show="false" value="&quot;global&quot;"/>
     <elementParameter field="TEXT" name="GOOGLE_JARS_BUCKET" show="false" value="&quot;gs://my-bucket/talend/jars&quot;"/>
     <elementParameter field="TEXT" name="ACCESS_KEY" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="SECRET_KEY" show="false" value="enc:system.encryption.key.v1:Lded37J+q/uZI/bR1Lq+fPpLpB9FX8DZMV345YDt"/>
+    <elementParameter field="PASSWORD" name="SECRET_KEY" show="false" value="enc:system.encryption.key.v1:wfmghNiL+BXmh0fYj+hPQh0y62A1en0yP7uHSZsG"/>
     <elementParameter field="CHECK" name="DEFINE_PATH_TO_GOOGLE_CREDENTIALS" show="false" value="false"/>
     <elementParameter field="TEXT" name="PATH_TO_GOOGLE_CREDENTIALS" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="QUBOLE_API_TOKEN" show="false" value="enc:system.encryption.key.v1:N2T0US1aL5gvubnRXw+4XvaZ1pcJ54K6llsFQct9"/>
+    <elementParameter field="PASSWORD" name="QUBOLE_API_TOKEN" show="false" value="enc:system.encryption.key.v1:xlnBxiFaCAbPbDaUWIpIOKD522OfLFu/ymcvA0/0"/>
     <elementParameter field="CHECK" name="QUBOLE_CLUSTER" show="false" value="false"/>
     <elementParameter field="TEXT" name="QUBOLE_CLUSTER_LABEL" show="false" value="&quot;&quot;"/>
     <elementParameter field="CHECK" name="QUBOLE_ENDPOINT" show="false" value="false"/>
@@ -1034,7 +808,19 @@
       <column comment="" key="false" length="80" name="TLN_H" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tHiveInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="512" posY="224">
+  <node componentName="tPartitioner" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="288" posY="352">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tPartitioner_2"/>
+    <elementParameter field="TEXT" name="NUM_PARTITIONS" value="5"/>
+    <elementParameter field="TEXT" name="QUEUE_SIZE" value="10000"/>
+    <elementParameter field="CHECK" name="HASH_PARTITION" value="false"/>
+    <elementParameter field="TABLE" name="HASH_KEYS" show="false"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" label="metadata" name="tPartitioner_2">
+      <column comment="" key="false" length="80" name="SDP_GID_H" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="80" name="TLN_H" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tHiveInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="544" posY="448">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tHiveInput_3"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tHiveConnection_1"/>
@@ -1050,7 +836,7 @@
     <elementParameter field="TEXT" name="DBNAME" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="TYPE" show="false" value="Hive"/>
     <elementParameter field="TEXT" name="USER" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:5i6UyPUH/mxGCPkQ5FGzBo1id7P3ZbxOfBXZ+gD2"/>
+    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:wxxxj+pS1+sw3mVKt7DCex7U/rHRfbsi0q0cHMFJ"/>
     <elementParameter field="TEXT" name="HIVE_ADDITIONAL_JDBC" show="false" value="&quot;&quot;"/>
     <elementParameter field="CHECK" name="USE_KRB" show="false" value="false"/>
     <elementParameter field="TEXT" name="HIVE_PRINCIPAL" show="false" value="&quot;hive/_HOST@EXAMPLE.COM&quot;"/>
@@ -1062,18 +848,18 @@
     <elementParameter field="TEXT" name="METASTORE_JDBC_URL" show="false" value="&quot;jdbc:mysql://&quot;"/>
     <elementParameter field="TEXT" name="METASTORE_CLASSNAME" show="false" value="&quot;com.mysql.jdbc.Driver&quot;"/>
     <elementParameter field="TEXT" name="METASTORE_USERNAME" show="false" value="&quot;hive&quot;"/>
-    <elementParameter field="PASSWORD" name="METASTORE_PASSWORD" show="false" value="enc:system.encryption.key.v1:flzPgGbSOWPNfWI36nh/3e9QE59IXXBgESL93KgV87PCDQ=="/>
+    <elementParameter field="PASSWORD" name="METASTORE_PASSWORD" show="false" value="enc:system.encryption.key.v1:aqy+ZmtmtipRfgNACjXplF5K68JOz7hcCwYuHmAnE30ITQ=="/>
     <elementParameter field="CHECK" name="USE_KEYTAB" show="false" value="false"/>
     <elementParameter field="TEXT" name="PRINCIPAL" show="false" value="&quot;hive&quot;"/>
     <elementParameter field="FILE" name="KEYTAB_PATH" show="false" value="&quot;/tmp/hive.keytab&quot;"/>
     <elementParameter field="CHECK" name="USE_MAPRTICKET" show="false" value="false"/>
     <elementParameter field="TEXT" name="MAPRTICKET_USERNAME" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="MAPRTICKET_PASSWORD" show="false" value="enc:system.encryption.key.v1:X8OPRmxLBHde2dL/PNeHeIFO0oDSUel22un8q14f"/>
+    <elementParameter field="PASSWORD" name="MAPRTICKET_PASSWORD" show="false" value="enc:system.encryption.key.v1:XpH3IKpRgXNEVZJDRx/IvCnHE+MAZXjc5AhDdbny"/>
     <elementParameter field="TEXT" name="MAPRTICKET_CLUSTER" show="false" value="&quot;demo.mapr.com&quot;"/>
     <elementParameter field="TEXT" name="MAPRTICKET_DURATION" show="false" value="86400L"/>
     <elementParameter field="CHECK" name="USE_SSL" show="false" value="false"/>
     <elementParameter field="FILE" name="SSL_TRUST_STORE" show="false" value="&quot;/home/usr1/ssl/trust_store.jks&quot;"/>
-    <elementParameter field="PASSWORD" name="SSL_TRUST_STORE_PASSWORD" show="false" value="enc:system.encryption.key.v1:/arDNvxuVlNWGmL0qSwSeXxvmxUPh6zOnhhgATx6iFepRs2zAsA="/>
+    <elementParameter field="PASSWORD" name="SSL_TRUST_STORE_PASSWORD" show="false" value="enc:system.encryption.key.v1:ISRqjm31fwySsoc+MFGsurS7UDCBjndrKHlSFxKI9OgZfLOzbzU="/>
     <elementParameter field="CHECK" name="SET_MAPRED_JT" show="false" value="false"/>
     <elementParameter field="TEXT" name="MAPRED_JT" show="false" value="&quot;localhost:50300&quot;"/>
     <elementParameter field="CHECK" name="SET_RESOURCE_MANAGER" show="false" value="false"/>
@@ -1093,21 +879,21 @@
     <elementParameter field="TEXT" name="WEBHCAT_USERNAME" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="STATUSDIR" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="HDINSIGHT_USERNAME" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="HDINSIGHT_PASSWORD" show="false" value="enc:system.encryption.key.v1:AvVh9VblH8WuzRJBRWE+7Gw2+8oxQYt7hXgN9Vzv"/>
+    <elementParameter field="PASSWORD" name="HDINSIGHT_PASSWORD" show="false" value="enc:system.encryption.key.v1:g4AJDeZ8uAW07zw56Ykyo0OcVRkeUoFYdGvmUCQI"/>
     <elementParameter field="TEXT" name="WASB_HOST" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="WASB_CONTAINER" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="WASB_USERNAME" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="WASB_PASSWORD" show="false" value="enc:system.encryption.key.v1:D+VLJJCC8Iw72Qy5b3xrOEN8ViLwQcdBv86jj5KU"/>
+    <elementParameter field="PASSWORD" name="WASB_PASSWORD" show="false" value="enc:system.encryption.key.v1:1qBaEumPTzoY1po50nw2Ln783C7z9OcrPSzGYEfJ"/>
     <elementParameter field="TEXT" name="REMOTE_FOLDER" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="GOOGLE_PROJECT_ID" show="false" value="&quot;my-google-project&quot;"/>
     <elementParameter field="TEXT" name="GOOGLE_CLUSTER_ID" show="false" value="&quot;my-cluster-id&quot;"/>
     <elementParameter field="TEXT" name="GOOGLE_REGION" show="false" value="&quot;global&quot;"/>
     <elementParameter field="TEXT" name="GOOGLE_JARS_BUCKET" show="false" value="&quot;gs://my-bucket/talend/jars&quot;"/>
     <elementParameter field="TEXT" name="ACCESS_KEY" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="SECRET_KEY" show="false" value="enc:system.encryption.key.v1:Z1QYhCJNtgF6Onu7NBR7xxDSmxhgREBPasJM96j8"/>
+    <elementParameter field="PASSWORD" name="SECRET_KEY" show="false" value="enc:system.encryption.key.v1:hSnClC7kLn89l53CuQVWO+GXY86vTbWTIwu8qbHF"/>
     <elementParameter field="CHECK" name="DEFINE_PATH_TO_GOOGLE_CREDENTIALS" show="false" value="false"/>
     <elementParameter field="TEXT" name="PATH_TO_GOOGLE_CREDENTIALS" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="QUBOLE_API_TOKEN" show="false" value="enc:system.encryption.key.v1:4u8CAY1Kpp/U+/jUA5ajtse1A9E960pRt/zQJWJn"/>
+    <elementParameter field="PASSWORD" name="QUBOLE_API_TOKEN" show="false" value="enc:system.encryption.key.v1:o4yXUwciNlIqfBlPlAPqp0wXLBImLm/e4KcsyWe9"/>
     <elementParameter field="CHECK" name="QUBOLE_CLUSTER" show="false" value="false"/>
     <elementParameter field="TEXT" name="QUBOLE_CLUSTER_LABEL" show="false" value="&quot;&quot;"/>
     <elementParameter field="CHECK" name="QUBOLE_ENDPOINT" show="false" value="false"/>
@@ -1166,6 +952,29 @@
       <column comment="" key="false" length="80" name="TLN_H" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="19" name="SECTOR_H" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
     </metadata>
+  </node>
+  <node componentName="tPartitioner" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="544" posY="320">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tPartitioner_3"/>
+    <elementParameter field="TEXT" name="NUM_PARTITIONS" value="5"/>
+    <elementParameter field="TEXT" name="QUEUE_SIZE" value="10000"/>
+    <elementParameter field="CHECK" name="HASH_PARTITION" value="false"/>
+    <elementParameter field="TABLE" name="HASH_KEYS" show="false"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" label="metadata" name="tPartitioner_3">
+      <column comment="" key="false" length="80" name="SIN_H" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="80" name="TLN_H" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="19" name="SECTOR_H" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tCollector" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="736" posY="288">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tCollector_3"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tCollector_3"/>
+  </node>
+  <node componentName="tCollector" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="416" posY="256">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tCollector_2"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tCollector_2"/>
   </node>
   <connection connectorName="FLOW" label="row5" lineStyle="0" metaname="tHashInput_1" offsetLabelX="0" offsetLabelY="0" source="tHashInput_1" target="tAggregateRow_2">
     <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
@@ -1288,36 +1097,21 @@
   <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tPostjob_1" offsetLabelX="0" offsetLabelY="0" source="tPostjob_1" target="tHiveClose_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk2"/>
   </connection>
-  <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tHiveInput_1" offsetLabelX="0" offsetLabelY="0" source="tHiveInput_1" target="tMap_1">
+  <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tHiveInput_1" offsetLabelX="0" offsetLabelY="0" source="tHiveInput_1" target="tPartitioner_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row1"/>
   </connection>
-  <connection connectorName="FLOW" label="out1" lineStyle="0" metaname="out1" offsetLabelX="0" offsetLabelY="0" source="tMap_1" target="tMap_2">
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out1"/>
+  <connection connectorName="STARTS" label="Starts" lineStyle="21" metaname="tPartitioner_1" offsetLabelX="0" offsetLabelY="0" source="tPartitioner_1" target="tCollector_1">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="Starts1"/>
   </connection>
-  <connection connectorName="FLOW" label="out2" lineStyle="0" metaname="out2" offsetLabelX="0" offsetLabelY="0" source="tMap_2" target="tAggregateRow_1">
-    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
-      <elementValue elementRef="TRACE_COLUMN" value="newColumn"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
-    </elementParameter>
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out2"/>
-  </connection>
-  <connection connectorName="FLOW" label="row4" lineStyle="0" metaname="tAggregateRow_1" offsetLabelX="0" offsetLabelY="0" source="tAggregateRow_1" target="tMap_3">
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row4"/>
-  </connection>
-  <connection connectorName="FLOW" label="out3" lineStyle="0" metaname="out3" offsetLabelX="0" offsetLabelY="0" source="tMap_3" target="tHDFSOutput_1">
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out3"/>
-  </connection>
-  <connection connectorName="FLOW" label="row2" lineStyle="8" metaname="tHiveInput_2" offsetLabelX="0" offsetLabelY="0" source="tHiveInput_2" target="tMap_1">
+  <connection connectorName="FLOW" label="row2" lineStyle="0" metaname="tHiveInput_2" offsetLabelX="0" offsetLabelY="0" source="tHiveInput_2" target="tPartitioner_2">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row2"/>
   </connection>
-  <connection connectorName="FLOW" label="row3" lineStyle="8" metaname="tHiveInput_3" offsetLabelX="0" offsetLabelY="0" source="tHiveInput_3" target="tMap_2">
+  <connection connectorName="STARTS" label="Starts" lineStyle="21" metaname="tPartitioner_2" offsetLabelX="0" offsetLabelY="0" source="tPartitioner_2" target="tCollector_2">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="Starts2"/>
+  </connection>
+  <connection connectorName="FLOW" label="row3" lineStyle="0" metaname="tHiveInput_3" offsetLabelX="0" offsetLabelY="0" source="tHiveInput_3" target="tPartitioner_3">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row3"/>
   </connection>
@@ -1378,13 +1172,33 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_17bb8c28-e9a5-4a2d-9e9b-d47cfb77a41e"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>j99lLCkEIhnnblIiicmHiNaeS5B1ZFpjz9XNV8znqtk9GukH1Cze0XB6DV6Y6EYPihQwahU3aEJ8
-8tP3mT6VrQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_34444bed-8fa5-4a04-b281-9007c55e6c7d"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>eSlOjPhqLSVj/3SJbkKt18umho6c76ikb/BoKtxmx/u3mFjEfhqkLNUGO8Ut3cz77Q7bD19MjU3q
-+BreX87vlQ==</DigestValue></Reference></SignedInfo><SignatureValue>OEunKKlr7yq2AM6kbll6C7FdjqC0CbDcrq2SNm1vDOf56QxxG0YTMM8w7Bx2H0D+XhMLeS9p0Mxm
-0/ApcxgnkgJo+n1OM3j4HvsAaWAPIkUUaY+UOObFcwiiFKWC+8JdKnRcGz+iCzCTSyCEekUSoIs2
-NV0zQbyb8FAoX8Ocew6e4xidMLz3DT/Jh0eIlRR3UrUFIaWfihYziEiDVT25+82aZ2vVSt9biPXE
-yImpHbXyIGdivAfI7byYPcA0Tgx79gk1SZ/zFEGnXnUBHK50jZvJ4OB+tIG79jaQ08tH4bz+gkjL
-mRLQpNxF37DNw/Z6D4vJa9QJfQjp6/18oGGBWg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tHiveInput_2"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tHiveInput_3"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tCollector_3"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tCollector_2"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_ede00206-0970-49fd-9931-e5ab3bf96d48"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>d09ulvwRIxo4Ochd+RdVzu8uCpO99l2VMRyOUJoo/cjaehiaOjApwl76dBFiZJf67+addIlz+x6W
+Q/9ZmKFc0g==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_319b6578-608b-45d3-81ff-186a7dc2d0b5"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>IpM17HiGeEQwKcxgIGH46VZd9hD/4eLTdqSRrydn+Mdc3xosLel530KcM49DeLX6u2E/2wyREc7f
+DWCnoZc6rg==</DigestValue></Reference></SignedInfo><SignatureValue>XcXp6/Gd2pDBYbb2L4/ndVaVzntK/Mg7hzZt5UqFt4r7KrGlDtwajEHZHqavE4R99QK+VL1aG2bC
+A8DfHsp79+fPgwfOu7ZZ4lcfMyhbQmIzReRwiJWLzKbpgVNXDpCb4HABBFy+V2x/EqJvm2v+617f
+VqEEEpwZtoxtgLpMixwK7mEKD2TysAqvwTT0an1tQWOdUdYvVkNBKpjrsOgfOc3OMOQUrpWn1QDW
+fNFEYfNfIy/M5dPy3nv4WdUwwI+9MkKHTbPl/KrxZCtJRjRtTAHr+9C/ckLLxRTwLww7KuSnMekO
+dwbmUL+nSDQK5wRLgR+ia5STmiSKERfxNVVqYA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U
@@ -1406,4 +1220,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_34444bed-8fa5-4a04-b281-9007c55e6c7d" Target="#_17bb8c28-e9a5-4a2d-9e9b-d47cfb77a41e"><Timestamp>2020-03-21 18:03:57</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_319b6578-608b-45d3-81ff-186a7dc2d0b5" Target="#_ede00206-0970-49fd-9931-e5ab3bf96d48"><Timestamp>2020-03-21 18:45:11</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
