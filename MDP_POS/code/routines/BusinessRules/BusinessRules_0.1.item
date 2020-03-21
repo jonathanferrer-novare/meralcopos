@@ -171,4 +171,80 @@ public class BusinessRules {
 	}
 	return "Unknown";	
 	}
+	
+	public static float FMo_PROJECTED_KWH(String KWH){
+		boolean match =   isNotNull(KWH);
+		
+		if (match) {
+			float kwh_float = Float.parseFloat(KWH);
+			return (float)kwh_float * 30;
+		}
+		
+		else {
+			return Float.parseFloat("0");
+		}
+		
+	}
+	
+	public static float FMo_EST_BILLED_REV(String CRS_ORG_LEVEL_2, String APPLIED_LOAD, String KWH){
+		boolean match =  isNotNull(CRS_ORG_LEVEL_2) && isNotNull(APPLIED_LOAD) && isNotNull(KWH);
+		
+		if (match) {
+			
+			double kwh_float = Float.parseFloat(KWH);
+			float APPLIED_LOAD_int = Float.parseFloat(APPLIED_LOAD);
+			double a;
+			
+			if (CRS_ORG_LEVEL_2 == "BIZ" || CRS_ORG_LEVEL_2 == "CBG"){
+				if (APPLIED_LOAD_int * 0.7 >= 500) {
+					a = kwh_float * 30 * 7.42;
+					String.valueOf(a);
+					return (float)a;
+				}
+				else if (APPLIED_LOAD_int * 0.7 >= 40) {
+//					return (float)kwh_float * 30 * 9.75;
+				}
+				else if (APPLIED_LOAD_int * 0.7 < 40) {
+//					return (float)kwh_float * 30 * 10.08;
+				}
+			}
+			
+			else {
+//				return (float)kwh_float * 30 * 10.50;
+			}	
+		}
+		
+		else {
+			return Float.parseFloat("0");	
+		}
+	}
+
+	public static float FMo_EST_DIST_REV(String CRS_ORG_LEVEL_2, String APPLIED_LOAD, String kwh){
+		boolean match =  isNotNull(CRS_ORG_LEVEL_2) && isNotNull(APPLIED_LOAD) && isNotNull(KWH);
+		
+		if (match) {
+			float kwh_float = Float.parseFloat(kwh);
+			int APPLIED_LOAD_int = Integer.parseInt(APPLIED_LOAD);
+			
+			if (CRS_ORG_LEVEL_2 == "BIZ" || CRS_ORG_LEVEL_2 == "CBG"){
+				if (APPLIED_LOAD_int * 0.7 >= 500) {
+					return (float)((kwh_float * 30 * 7.42) * 0.08);
+				}
+				else if (APPLIED_LOAD_int * 0.7 >= 40) {
+					return (float)((kwh_float * 30 * 9.75) * 0.16);
+				}
+				else if (APPLIED_LOAD_int * 0.7 < 40) {
+					return (float)((kwh_float * 30 * 10.08) * 0.21);
+				}
+			}
+			
+			else {
+				return (float)(kwh_float * 30 * 2.5);
+			}
+		}
+		else {
+			return Float.parseFloat("0");
+		}
+		
+	}
 }
