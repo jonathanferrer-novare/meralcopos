@@ -103,4 +103,12 @@ public class BusinessRules {
 		Date max = (int)TalendDate.diffDate(proj_charges_settled_date, app_ready_con_date, "dd") >= 0 ? proj_charges_settled_date:app_ready_con_date;
 		return (int)TalendDate.diffDateFloor(dcomp_date, max, "dd");
 	}
+	
+	public static int APT_WORA_DAYS_BR(String proj_charges_settled, String app_ready_con, String authzd) {
+		Date proj_charges_settled_date = TalendDate.parseDate("yyyy-MM-dd", proj_charges_settled);
+		Date app_ready_con_date = TalendDate.parseDate("yyyy-MM-dd", app_ready_con);
+		Date authzd_date = TalendDate.parseDate("yyyy-MM-dd", authzd);
+		Date max = (int)TalendDate.diffDate(proj_charges_settled_date, app_ready_con_date, "dd") >= 0 ? proj_charges_settled_date:app_ready_con_date;
+		return (int)TalendDate.diffDateFloor(max, authzd_date, "dd");
+	}
 }
