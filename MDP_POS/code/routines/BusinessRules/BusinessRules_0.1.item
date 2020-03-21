@@ -82,12 +82,13 @@ public class BusinessRules {
 		boolean date1_null = isNotNull(date1);
 		boolean date2_null = isNotNull(date2);
 		boolean date3_null = isNotNull(date3);
-		boolean date1_Format = isDate(date1);
-		boolean date2_Format = isDate(date2);
-		boolean date3_Format = isDate(date3);
+		
         
 		if(date1_null && date2_null && date3_null && date1_Format && date2_Format && date3_Format) {
-        	return true;
+			boolean date1_Format = isDate(date1);
+			boolean date2_Format = isDate(date2);
+			boolean date3_Format = isDate(date3);
+			return (date1_Format && date2_Format && date3_Format);
         
 		} else {
         	return false;
