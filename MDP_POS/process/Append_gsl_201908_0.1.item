@@ -42,7 +42,7 @@
     <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" show="false" value="enc:system.encryption.key.v1:1PsGg289/aFU7D3qmtx7f05hgzDEuiArVNN9BsN7"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" show="false" value="enc:system.encryption.key.v1:DGzE3uvKReWRQe1wWox7Fd/sVw8na+Y/GoehOdSt"/>
     <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
@@ -77,7 +77,7 @@
     <elementParameter field="TEXT" name="PROPERTIES" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:TQ4xX/U6y70B5JZYn4qh8ogKSxkN99xO4QdZ/xfz"/>
+    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:lGP6cs1c5lMYHdwDrEO2ebZvuzFj8GykS/8v5yHT"/>
     <elementParameter field="FILE" name="DBFILE" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE_STATS" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE_LOGS" show="false" value="&quot;&quot;"/>
@@ -133,7 +133,7 @@
     <elementParameter field="CHECK" name="USE_MAPRTICKET" show="false" value="false"/>
     <elementParameter field="TEXT" name="USERNAME" value="&quot;etl_dev2&quot;"/>
     <elementParameter field="TEXT" name="GROUP" show="false" value="&quot;supergroup&quot;"/>
-    <elementParameter field="PASSWORD" name="MAPRTICKET_PASSWORD" show="false" value="enc:system.encryption.key.v1:cgGiorp0hE4JO+2wj6IF2pBxdJyNb6Aeo+LwucZQ"/>
+    <elementParameter field="PASSWORD" name="MAPRTICKET_PASSWORD" show="false" value="enc:system.encryption.key.v1:W1jsOdx3cTHpVmc2UxOxTzTnVGyPyrhPvjP+N+KV"/>
     <elementParameter field="TEXT" name="MAPRTICKET_CLUSTER" show="false" value="&quot;demo.mapr.com&quot;"/>
     <elementParameter field="TEXT" name="MAPRTICKET_DURATION" show="false" value=""/>
     <elementParameter field="TABLE" name="HADOOP_ADVANCED_PROPERTIES"/>
@@ -142,8 +142,8 @@
     <elementParameter field="TEXT" name="HDFS_ENCRYPTION_KEY_PROVIDER" show="false" value="&quot;kms://http@localhost:16000/kms&quot;"/>
     <elementParameter field="TEXT" name="ADLS_FS_DEFAULT_NAME" show="false" value="&quot;adl://account.azuredatalakestore.net&quot;"/>
     <elementParameter field="TEXT" name="ADLS_CLIENT_ID" show="false" value="&quot;XXXX&quot;"/>
-    <elementParameter field="PASSWORD" name="ADLS_AUTH_TOKEN_ENDPOINT" show="false" value="enc:system.encryption.key.v1:oqeTcD0+K1ruOGAc2cDNXu4ZnRb8IkAXBaJ3ZfQWB9GWlwh91mr3EobSnRy0CS/SLklK8cVPg3zYh0eyskzwem0n+abOTYj9qQfL9CoDibE="/>
-    <elementParameter field="PASSWORD" name="ADLS_CLIENT_KEY" show="false" value="enc:system.encryption.key.v1:uOWL9wgE6xiK2jKJHjgTXwoSncsnctsov3LgoJTk1vlRyw=="/>
+    <elementParameter field="PASSWORD" name="ADLS_AUTH_TOKEN_ENDPOINT" show="false" value="enc:system.encryption.key.v1:XQNxgdYZOsIKH/F063gGADqhWoVYGCy6BErjeeUimcAfNDKIeIbioBW57dPcgXTnHdbRpzX0CpRohrbg/MsfkzwlCdKhVt7V7U4LeAQ6iaA="/>
+    <elementParameter field="PASSWORD" name="ADLS_CLIENT_KEY" show="false" value="enc:system.encryption.key.v1:EExhtrN8MnRHzb0o0DLBpZG/iLvFA8rT2+muWpW8OtAwTg=="/>
     <elementParameter field="CHECK" name="SET_MAPR_HOME_DIR" show="false" value="false"/>
     <elementParameter field="TEXT" name="MAPR_HOME_DIR" show="false" value="&quot;/opt/mapr&quot;"/>
     <elementParameter field="CHECK" name="SET_HADOOP_LOGIN" show="false" value="false"/>
@@ -254,7 +254,7 @@
     <metadata connector="FLOW" name="out1">
       <column comment="" key="true" length="500" name="SDP_GID_H" nullable="true" originalLength="500" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="500" name="SIN_H" nullable="true" originalLength="500" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="SECTOR_H" nullable="true" originalLength="500" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="SECTOR_H" nullable="true" originalLength="500" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="" type="id_Long" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="newSECTOR_H" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="500" name="Incident_ID" nullable="true" originalLength="500" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="500" name="Interruption_Duration__sec_" nullable="true" originalLength="500" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
@@ -267,8 +267,8 @@
       <outputTables name="out1" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row1.SDP_GID_H " name="SDP_GID_H" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.SIN_H " name="SIN_H" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row1.SECTOR_H " name="SECTOR_H" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="String.format(&quot;%.17e&quot;,row1.SECTOR_H) " name="newSECTOR_H" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.SECTOR_H " name="SECTOR_H" nullable="true" type="id_Long"/>
+        <mapperTableEntries expression="Long.format(&quot;%.17e&quot;,row1.SECTOR_H) " name="newSECTOR_H" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.Incident_ID " name="Incident_ID" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.Interruption_Duration__sec_ " name="Interruption_Duration__sec_" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.Interruption_time " name="Interruption_time" nullable="true" type="id_Date"/>
@@ -322,7 +322,7 @@
     <metadata connector="FLOW" name="tLogRow_1">
       <column comment="" key="true" length="500" name="SDP_GID_H" nullable="true" originalLength="500" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="500" name="SIN_H" nullable="true" originalLength="500" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="SECTOR_H" nullable="true" originalLength="500" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="SECTOR_H" nullable="true" originalLength="500" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="" type="id_Long" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="newSECTOR_H" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="500" name="Incident_ID" nullable="true" originalLength="500" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="500" name="Interruption_Duration__sec_" nullable="true" originalLength="500" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
@@ -351,13 +351,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_73779244-77fc-48f5-a0e8-565a2f5d0e31"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Spu1KvgFOERLl256quy8UTSgz/AAt0izt005fvKc+xh4QUUzQ4Ja7OjOPVUMVKgctxGwXCb/GzJX
-eB1qYCtchg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_dfee3d15-4583-4989-851a-728dbad45a94"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>aNlpa5Zoqbe6FPZw7ubY6rKByCNDX//uf3A8U8oaEEMaWf3p73VcT1dABNXKYHLrSEkLJpAR+JPJ
-j7QZpWJwqg==</DigestValue></Reference></SignedInfo><SignatureValue>Bvnokf7zVsZbfrLrQA3gjlK2+Y0Ak4Mpo1MLC4uMtqYJcdaamxnZ31uJa9NKJZpzSnD03nO8gN3L
-MZnGMaV6h8yWN8oLf0N6mU/0pspnHZM+MIr5/gokdu4K4+cT2LeW/1CRAV4/0CCMhZpSqcfC2bLp
-nXqy2TwGZXF6YXH/45f1uH4gCC/e1FAHS4TYcqedvlgF6lAgJSaEDkie0sJmyXBBqYqCYiNgIwO5
-7llOOVpwGe9ULASjUZD9ykwJq+z1M8rzyRaIq01vwnAOk/sM5NQMVXp3bf3PCYWunDRutD/8oolL
-qKxSot13Y9b6XnMNO2RwW1sDEA9kCWGav8wM+Q==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_fdb061dd-a7cc-4ece-8f65-739d08f597cf"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>i/FTvV+MdUntBZMEvdiuwcsTpkwDHuUDvtjn+JnWnILAROf1pHrZPFWbWPlD9qqo7vhJY3u5kPo7
+Zc7iCnydng==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_ea5a0ea8-c0b6-4fac-ae6a-bf7126200488"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>CZeRpktxgNX6BM5zeWxCWEN90IXBL9Re6fRFbhjccH5A7Cju0yXYcMl3xD5sATCZ6VOKi38ncc8o
+jl46HebySg==</DigestValue></Reference></SignedInfo><SignatureValue>VAfm6FO/D7T67ixZTZ7gFLZIjMW/TR368zqxpmkVt2A5su5M4aTBZz1dlKB0XFvP/mk0wo1i05Iu
+jd6we4cdkf4tAMxoTJJVvsvIAa1adscQo5H1vs+NCf9eguIcHkLpTpoK08nDXKjRDK1TQuxGy5cS
+ejWOUXf1/0pkWdYZBdizJz5TjvC7zFtqV1h0+7J87MiGj5dxBocdhX+3b8cRaOxO+ZZUC/WLh96m
+cDOwAFolTi8xpXKA8JDHuiw7fK3R/2fGU2Z5d1Qe505KM3ff1soVWD4x84s2BdPJ+WoVo3be9/rz
+mNBiFedkV4XJUQDEJlIGVy4VqS3rONbRha72kA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U
@@ -379,4 +379,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_dfee3d15-4583-4989-851a-728dbad45a94" Target="#_73779244-77fc-48f5-a0e8-565a2f5d0e31"><Timestamp>2020-03-22 06:49:26</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_ea5a0ea8-c0b6-4fac-ae6a-bf7126200488" Target="#_fdb061dd-a7cc-4ece-8f65-739d08f597cf"><Timestamp>2020-03-22 06:50:28</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
