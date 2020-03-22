@@ -28,7 +28,7 @@
     <talend.pigudf.groupid>org.example.mdp_pos.pigudf</talend.pigudf.groupid>
     <talend.routine.groupid>org.example.mdp_pos.code</talend.routine.groupid>
     <current.bundle.resources.dir>${basedir}/src/main/bundle-resources</current.bundle.resources.dir>
-    <talend.job.jvmargs>-Xms1024M -Xmx4096M -Dfile.encoding=UTF-8 </talend.job.jvmargs>
+    <talend.job.jvmargs>-Xms8192M -Xmx8192M -Dfile.encoding=UTF-8 </talend.job.jvmargs>
     <talend.job.stat>true</talend.job.stat>
     <talend.job.context>Default</talend.job.context>
     <talend.job.date>${maven.build.timestamp}</talend.job.date>
@@ -101,11 +101,6 @@
           <groupId>*</groupId>
         </exclusion>
       </exclusions>
-    </dependency>
-    <dependency>
-      <groupId>org.talend.libraries</groupId>
-      <artifactId>advancedPersistentLookupLib-1.2</artifactId>
-      <version>6.0.0</version>
     </dependency>
     <dependency>
       <groupId>net.hydromatic</groupId>
@@ -373,6 +368,12 @@
       <groupId>commons-collections</groupId>
       <artifactId>commons-collections</artifactId>
       <version>3.2.2</version>
+      <exclusions>
+        <exclusion>
+          <artifactId>*</artifactId>
+          <groupId>*</groupId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.apache.commons</groupId>
@@ -1787,11 +1788,6 @@
       </exclusions>
     </dependency>
     <dependency>
-      <groupId>org.talend.libraries</groupId>
-      <artifactId>jboss-serialization</artifactId>
-      <version>6.0.0</version>
-    </dependency>
-    <dependency>
       <groupId>com.github.stephenc.jcip</groupId>
       <artifactId>jcip-annotations</artifactId>
       <version>1.0-1</version>
@@ -2972,11 +2968,6 @@
           <groupId>*</groupId>
         </exclusion>
       </exclusions>
-    </dependency>
-    <dependency>
-      <groupId>org.talend.libraries</groupId>
-      <artifactId>trove</artifactId>
-      <version>6.0.0</version>
     </dependency>
     <dependency>
       <groupId>org.apache.twill</groupId>
