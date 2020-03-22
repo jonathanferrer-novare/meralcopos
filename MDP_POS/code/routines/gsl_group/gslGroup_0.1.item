@@ -38,4 +38,59 @@ public class gslGroup {
         }
         System.out.println("Hello " + message + " !"); //$NON-NLS-1$ //$NON-NLS-2$
     }
+    
+    public static String durationGroup(int duration){
+    	String Result = "";	
+
+
+    	if(duration > 35){
+    		Result = "> 35 Hours";
+
+    	}else if(duration > 30){
+    		Result = "> 30 Hours";
+
+    	}else if(duration > 25){
+    		Result = "> 25 Hours";
+
+    	}else if(duration > 20)
+    		Result = "> 20 Hours";
+
+    	}else if(duration > 15){
+    		Result = "> 15 Hours";
+
+    	}else if(duration > 10){
+    		Result = "> 10 Hours";
+
+    	}else if(duration > 10){
+    		Result = "> 10 Hours";
+
+    	}
+
+    	return Result;
+    }
+
+
+    public static String freqGroup(int inc_id){
+    	String Result = "";
+    	
+    	if(inc_id > 25){
+    		Result = "> 25 TIMES";
+    			break;
+    	}else if(inc_id > 20){
+    		Result = "> 20 TIMES";
+    			break;
+    	}else if(inc_id > 15){
+    		Result = "> 15 TIMES";
+    			break;
+    	}else if(inc_id > 10){
+    		Result = "> 10 TIMES";
+    			break;
+    	}else if(inc_id <= 10){
+    		Result = "<= 10 Hours";
+    			break;
+    	}
+
+    	return  Result;
+    }
+    
 }
